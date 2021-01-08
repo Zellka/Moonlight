@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Moonlight</string>
+    <string name="title_home">Home</string>
+    <string name="title_menu">Menu</string>
+    <string name="title_basket">Basket</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_profile">Profile</string>
+</resources>
