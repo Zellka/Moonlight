@@ -1,10 +1,14 @@
 package com.example.moonlightapp.ui.items
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.example.moonlightapp.R
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
+import java.util.UUID
 import kotlinx.android.synthetic.main.item_dish.*
+import java.util.*
 
 class DishItem(private val content: DishContent) : Item() {
 
@@ -19,8 +23,9 @@ class DishItem(private val content: DishContent) : Item() {
             .into(viewHolder.img_dish)
     }
 }
-
+@Entity
 data class DishContent(
+    @PrimaryKey val id: UUID = UUID.randomUUID(),
     val name: String,
     val price: String,
     val description: String,

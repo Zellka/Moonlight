@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -53,5 +54,7 @@ dependencies {
     implementation 'com.xwray:groupie:2.8.1'
     implementation 'com.xwray:groupie-kotlin-android-extensions:2.8.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'androidx.room:room-runtime:2.3.0-alpha04'
+    kapt 'androidx.room:room-compiler:2.3.0-alpha04'
 
 }
