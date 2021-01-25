@@ -44,19 +44,6 @@
             android:textSize="14sp"
             tools:ignore="RtlHardcoded" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/description_dish"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:gravity="left"
-            android:maxLines="2"
-            android:padding="5dp"
-            android:text="Это лучшее"
-            android:textColor="@android:color/black"
-            android:textSize="14sp"
-            tools:ignore="RtlHardcoded" />
-
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
