@@ -44,7 +44,7 @@ class MenuFragment : Fragment() {
                     DishContent(
                         "Тартар из телятины",
                         "₽ 289",
-                        "https://www.goodcity.com.ru/assets/product/thumbs/2b168da23194240974abdda0487fd884.jpg"
+                        "https://sun9-19.userapi.com/impg/auqzuD5ZX97CphFl93aVNzJG4keZbATqdeGQaQ/T34ByWQnCqA.jpg?size=520x0&quality=95&sign=aef74f179c5eaa9d14eaa2ac21cd587f"
                     )
                 )
             )
