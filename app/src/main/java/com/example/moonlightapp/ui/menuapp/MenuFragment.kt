@@ -20,8 +20,7 @@ class MenuFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,  savedInstanceState: Bundle?): View? {
 
         val root = inflater.inflate(R.layout.fragment_menu, container, false)
-        val rv:RecyclerView = root.findViewById(R.id.items_main)
-      /*  val dishes = listOf(
+        val dishes = listOf(
             getAppetizer(),
             getStarters(),
             getSalads(),
@@ -29,11 +28,11 @@ class MenuFragment : Fragment() {
             getSides(),
             getDesserts()
         )
-        rv.adapter = GroupAdapter<GroupieViewHolder>().apply { addAll(dishes) }*/
-        rv.adapter = GroupAdapter<GroupieViewHolder>().apply { addAll(emptyList()) }
+        val rv:RecyclerView = root.findViewById(R.id.items_main)
+        rv.adapter = GroupAdapter<GroupieViewHolder>().apply { addAll(dishes) }
         return root
     }
-    /*private fun getAppetizer(): Item {
+    private fun getAppetizer(): Item {
         return MainContainer(
             "Закуски", ::onItemClick,
             listOf(
@@ -124,5 +123,5 @@ class MenuFragment : Fragment() {
         )
     }
     fun onItemClick(url: String) {
-    }*/
+    }
 }

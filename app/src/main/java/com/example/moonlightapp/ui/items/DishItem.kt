@@ -23,9 +23,8 @@ class DishItem(private val content: DishContent) : Item() {
             .into(viewHolder.img_dish)
     }
 }
-@Entity
+
 data class DishContent(
-    @PrimaryKey val id: UUID = UUID.randomUUID(),
     val name: String,
     val price: String,
     val description: String,
