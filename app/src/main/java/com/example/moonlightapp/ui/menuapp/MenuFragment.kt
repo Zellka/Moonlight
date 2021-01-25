@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
@@ -30,8 +31,10 @@ class MenuFragment : Fragment() {
         )
         val rv:RecyclerView = root.findViewById(R.id.items_main)
         rv.adapter = GroupAdapter<GroupieViewHolder>().apply { addAll(dishes) }
+
         return root
     }
+
     private fun getAppetizer(): Item {
         return MainContainer(
             "Закуски", ::onItemClick,
@@ -40,7 +43,6 @@ class MenuFragment : Fragment() {
                     DishContent(
                         "Тартар из телятины",
                         "₽ 289",
-                        "Рубленная телячья вырезка в сочетании с крымским луком, солеными огурцами, каперсами, заправленная маслом оливковым, горчицей, бальзамическим и чили соусом. Подается с перепелиным яйцом, рукколой и слоеными гренками.",
                         "https://www.goodcity.com.ru/assets/product/thumbs/2b168da23194240974abdda0487fd884.jpg"
                     )
                 )
@@ -55,8 +57,7 @@ class MenuFragment : Fragment() {
                     DishContent(
                         "Борщ",
                         "₽ 129",
-                        "Готовится борщ на говяжьем бульоне. Подается с говядиной, сметаной, зеленью и пампушками",
-                        "https://www.goodcity.com.ru/assets/product/thumbs/41c4febf6c6af2656a93c3dcd959a849.jpg"
+                         "https://www.goodcity.com.ru/assets/product/thumbs/41c4febf6c6af2656a93c3dcd959a849.jpg"
                     )
                 )
             )
@@ -70,8 +71,7 @@ class MenuFragment : Fragment() {
                     DishContent(
                         "Цезарь",
                         "₽ 259",
-                        "Сочетание свежих хрустящих огурцов, спелых томатов, болгарского перца, сочных листьев салата и пекинской капусты с сочным куриным филе, обжаренном на гриле под фирменной заправкой, сдобренное сыром Пармезан и ароматными гренками.",
-                        "https://www.goodcity.com.ru/assets/product/thumbs/11509b2990e7673ad6a6c157fba9ba19.jpg"
+                       "https://www.goodcity.com.ru/assets/product/thumbs/11509b2990e7673ad6a6c157fba9ba19.jpg"
                     )
                 )
             )
@@ -85,7 +85,6 @@ class MenuFragment : Fragment() {
                     DishContent(
                         "Стейк Перчини",
                         "₽ 549",
-                        "Идеальное сочетание специй в стейке из нежного филе телятины, поджаренного на гриле, гарнированного помидорами черри и шампиньонами.Острое блюдо!",
                         "https://www.goodcity.com.ru/assets/product/thumbs/acaf82d63c1ef82d1005a0d514be3a2d.jpg"
                     )
                 )
@@ -100,7 +99,6 @@ class MenuFragment : Fragment() {
                     DishContent(
                         "Картофель «Гурман»",
                         "₽ 69",
-                        "Дольки картофеля в кожуре, обжаренные в большом количестве кипящего масла и приправленные пряными специями",
                         "https://www.goodcity.com.ru/assets/product/thumbs/2a550fc1ea638f3f69479dc4abf5f73d.jpg"
                     )
                 )
@@ -115,7 +113,6 @@ class MenuFragment : Fragment() {
                     DishContent(
                         "Джелато-сендвич",
                         "₽ 149",
-                        "Классический макаронс с мороженым в виде сендвича на подушке из сладкой воздушной ваты в дополнении ягод малины и шоколадных конфет",
                         "https://www.goodcity.com.ru/assets/product/thumbs/19eeba587b93197a2ef78188dfb0f183.jpg"
                     )
                 )
