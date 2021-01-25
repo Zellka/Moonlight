@@ -15,6 +15,7 @@ import com.example.moonlightapp.ui.items.MainContainer
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
+import kotlinx.android.synthetic.main.fragment_menu.*
 
 class MenuFragment : Fragment() {
 
