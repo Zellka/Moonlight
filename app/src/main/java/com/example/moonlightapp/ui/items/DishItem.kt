@@ -1,5 +1,10 @@
 package com.example.moonlightapp.ui.items
 
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.moonlightapp.R
@@ -20,6 +25,10 @@ class DishItem(private val content: DishContent) : Item() {
         Picasso.get()
             .load(content.url)
             .into(viewHolder.img_dish)
+
+        viewHolder.itemView.setOnClickListener {
+            Log.d("SelectItem", viewHolder.name_dish.text.toString())
+        }
     }
 }
 
