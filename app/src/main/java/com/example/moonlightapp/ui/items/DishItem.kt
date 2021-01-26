@@ -4,6 +4,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -27,12 +29,9 @@ class DishItem(private val content: DishContent) : Item() {
             .load(content.url)
             .into(viewHolder.img_dish)
 
+
         viewHolder.itemView.setOnClickListener {
             Log.d("SelectItem", viewHolder.name_dish.text.toString())
-            //childFragmentManager.beginTransaction().replace(R.id.nav_host_fragment,DishDetailFragment.newInstance()).commit()
-            /*val fr = getFragmentManager().beginTransaction()
-            fr.replace(R.id.fragment, Fragment_Two())
-            fr.commit()*/
         }
     }
 }
