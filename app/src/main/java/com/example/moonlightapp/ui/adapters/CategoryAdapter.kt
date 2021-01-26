@@ -1,10 +1,14 @@
-package com.example.moonlightapp.ui.categories
+package com.example.moonlightapp.ui.adapters
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.moonlightapp.R
+import com.example.moonlightapp.ui.categories.DessertFragment
+import com.example.moonlightapp.ui.categories.MainDishFragment
+import com.example.moonlightapp.ui.categories.PizzaFragment
+import com.example.moonlightapp.ui.categories.SaladFragment
 
 class CategoryAdapter(private val context: Context, fm: FragmentManager) : FragmentPagerAdapter(fm){
 

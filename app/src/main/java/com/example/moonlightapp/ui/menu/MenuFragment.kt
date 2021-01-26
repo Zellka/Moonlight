@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.moonlightapp.R
-import com.example.moonlightapp.ui.categories.CategoryAdapter
+import com.example.moonlightapp.ui.adapters.CategoryAdapter
 import com.google.android.material.tabs.TabLayout
 
 
