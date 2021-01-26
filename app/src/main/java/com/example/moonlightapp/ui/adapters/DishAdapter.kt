@@ -10,7 +10,7 @@ import com.example.moonlightapp.ui.model.Dish
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.dish_item.view.*
 
-class DishAdapter(val arrayList: ArrayList<Dish>, val context: MenuFragment): RecyclerView.Adapter<DishAdapter.ViewHolder>() {
+class DishAdapter(val arrayList: ArrayList<Dish>): RecyclerView.Adapter<DishAdapter.ViewHolder>() {
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         fun bindItems(dish: Dish){
