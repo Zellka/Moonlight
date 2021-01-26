@@ -5,6 +5,9 @@
     <string name="title_basket">Basket</string>
     <string name="title_chat">Chat</string>
     <string name="title_profile">Profile</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_pizza">Пицца</string>
+    <string name="title_salads">Салаты</string>
+    <string name="title_main_dishes">Основное</string>
+    <string name="title_desserts">Десерты</string>
 </resources>
