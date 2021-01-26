@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.moonlightapp.R
+import com.example.moonlightapp.ui.DishDetailFragment
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
@@ -28,6 +29,10 @@ class DishItem(private val content: DishContent) : Item() {
 
         viewHolder.itemView.setOnClickListener {
             Log.d("SelectItem", viewHolder.name_dish.text.toString())
+            //childFragmentManager.beginTransaction().replace(R.id.nav_host_fragment,DishDetailFragment.newInstance()).commit()
+            /*val fr = getFragmentManager().beginTransaction()
+            fr.replace(R.id.fragment, Fragment_Two())
+            fr.commit()*/
         }
     }
 }
