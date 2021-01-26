@@ -1,4 +1,4 @@
-package com.example.moonlightapp.ui.menuapp
+package com.example.moonlightapp.ui.menu
 
 import android.os.Bundle
 import android.view.LayoutInflater
