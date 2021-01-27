@@ -28,7 +28,6 @@ class MenuFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_menu, container, false)
         val dishes = listOf(
             getAppetizer(),
-            getStarters(),
             getSalads(),
             getMainDishes(),
             getSides(),
@@ -48,23 +47,7 @@ class MenuFragment : Fragment() {
                     DishContent(
                         "Тартар из телятины",
                         "₽ 289",
-                        "https://sun9-19.userapi.com/impg/auqzuD5ZX97CphFl93aVNzJG4keZbATqdeGQaQ/T34ByWQnCqA.jpg?size=520x0&quality=95&sign=aef74f179c5eaa9d14eaa2ac21cd587f"
-                    ),
-                    ::onItemClick
-                )
-            )
-        )
-    }
-
-    private fun getStarters(): Item {
-        return MainContainer(
-            "Первые блюда",
-            listOf(
-                DishItem(
-                    DishContent(
-                        "Борщ",
-                        "₽ 129",
-                        "https://www.goodcity.com.ru/assets/product/thumbs/41c4febf6c6af2656a93c3dcd959a849.jpg"
+                        "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
                     ),
                     ::onItemClick
                 )
@@ -80,7 +63,7 @@ class MenuFragment : Fragment() {
                     DishContent(
                         "Цезарь",
                         "₽ 259",
-                        "https://www.goodcity.com.ru/assets/product/thumbs/11509b2990e7673ad6a6c157fba9ba19.jpg"
+                        "https://sun9-54.userapi.com/impg/c206716/v206716449/ccf55/x72rntZHsp4.jpg?size=520x0&quality=90&sign=d6eb9a811c3d8f8c5be5de29d981395a"
                     ),
                     ::onItemClick
                 )
@@ -96,7 +79,7 @@ class MenuFragment : Fragment() {
                     DishContent(
                         "Стейк Перчини",
                         "₽ 549",
-                        "https://www.goodcity.com.ru/assets/product/thumbs/acaf82d63c1ef82d1005a0d514be3a2d.jpg"
+                        "https://sun9-45.userapi.com/impg/c858328/v858328537/1b3d37/1iAf_1isKRI.jpg?size=520x0&quality=90&sign=1bccb43a982af46341c2e1cf1f243ef7"
                     ),
                     ::onItemClick
                 )
@@ -128,7 +111,7 @@ class MenuFragment : Fragment() {
                     DishContent(
                         "Джелато-сендвич",
                         "₽ 149",
-                        "https://www.goodcity.com.ru/assets/product/thumbs/19eeba587b93197a2ef78188dfb0f183.jpg"
+                        "https://sun9-43.userapi.com/impg/c857036/v857036894/dd96b/DoXfA7rjfDk.jpg?size=520x0&quality=90&sign=8d5d8a929a5a101811072b61c975c1c6"
                     ),
                     ::onItemClick
                 )
@@ -136,9 +119,16 @@ class MenuFragment : Fragment() {
         )
     }
 
-    private fun onItemClick() {
-        DishFragment().apply {
+    private fun onItemClick(dec:String) {
+
+        val dishFragment = DishFragment()
+        val args = Bundle()
+        args.putString("nameDish", dec);
+        dishFragment.arguments = args;
+        dishFragment.show(this@MenuFragment.requireFragmentManager(), "Dialog");
+
+        /*DishFragment().apply {
             show(this@MenuFragment.requireFragmentManager(), "Dialog")
-        }
+        }*/
     }
 }
