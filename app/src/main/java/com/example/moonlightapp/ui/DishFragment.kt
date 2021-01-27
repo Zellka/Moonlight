@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.DialogFragment
 import com.example.moonlightapp.R
 
@@ -16,6 +17,14 @@ class DishFragment : DialogFragment() {
     ): View? {
 
         val root = inflater.inflate(R.layout.fragment_dish_detail, container, false)
+        val cancelBtn = root.findViewById<Button>(R.id.btn_cancel)
+        val addBtn = root.findViewById<Button>(R.id.btn_add)
+        cancelBtn.setOnClickListener {
+            dismiss()
+        }
+        addBtn.setOnClickListener {
+
+        }
         return root
     }
 }
