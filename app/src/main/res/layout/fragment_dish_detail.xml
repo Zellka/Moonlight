@@ -9,8 +9,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="80dp">
+        android:padding="8dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_dish"
@@ -23,13 +22,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/img_dish"
+            android:textSize="24sp"
             android:text="Название" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/description_dish"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/name_dish"
+            android:textSize="18sp"
             android:text="Лучшее" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -37,6 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/description_dish"
+            android:textSize="18sp"
             android:text="150г" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -44,6 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/weight_dish"
+            android:textSize="18sp"
             android:text="150 $" />
 
     </RelativeLayout>
