@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.item_dish.*
 
 class DishItem(
     private val content: DishContent,
-    private val onClick: (dec:String) -> Unit
+    private val onClick: (name:String, price:String) -> Unit
 ) : Item() {
 
     override fun getLayout() = R.layout.item_dish
@@ -22,7 +22,7 @@ class DishItem(
 
 
         viewHolder.itemView.setOnClickListener {
-            onClick(viewHolder.name_dish.text.toString())
+            onClick(viewHolder.name_dish.text.toString(), viewHolder.price_dish.text.toString())
         }
     }
 }

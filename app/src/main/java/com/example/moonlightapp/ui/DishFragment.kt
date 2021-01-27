@@ -18,10 +18,15 @@ class DishFragment : DialogFragment() {
     ): View? {
 
         val root = inflater.inflate(R.layout.fragment_dish_detail, container, false)
+
         val cancelBtn = root.findViewById<Button>(R.id.btn_cancel)
         val addBtn = root.findViewById<Button>(R.id.btn_add)
         val nameDish = root.findViewById<TextView>(R.id.dish_name)
+        val priceDish = root.findViewById<TextView>(R.id.dish_price)
+
         nameDish.text = arguments?.getString("nameDish")
+        priceDish.text = arguments?.getString("priceDish")
+
         cancelBtn.setOnClickListener {
             dismiss()
         }
