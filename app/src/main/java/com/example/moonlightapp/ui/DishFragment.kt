@@ -1,20 +1,21 @@
-package com.example.moonlightapp.ui.categories
+package com.example.moonlightapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.DialogFragment
 import com.example.moonlightapp.R
 
-class MainDishFragment : Fragment()  {
+class DishFragment : DialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.dish_list, container, false)
+
+        val root = inflater.inflate(R.layout.fragment_dish_detail, container, false)
         return root
     }
 }
