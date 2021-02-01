@@ -224,7 +224,7 @@ class MenuFragment : Fragment() {
     private fun setMainCategoryRecycler(allCategory: List<AllCategory>) {
         mainCategoryRecycler = root.findViewById(R.id.items_main)
         val layoutManager: RecyclerView.LayoutManager =
-            LinearLayoutManager(this.requireContext()) 
+            LinearLayoutManager(this.requireContext())
         mainCategoryRecycler!!.layoutManager = layoutManager
         mainRecyclerAdapter = MainRecyclerAdapter(this.requireContext(), allCategory)
         mainCategoryRecycler!!.adapter = mainRecyclerAdapter
