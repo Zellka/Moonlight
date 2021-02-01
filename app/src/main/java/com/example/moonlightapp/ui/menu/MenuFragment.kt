@@ -11,6 +11,8 @@ import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.MainRecyclerAdapter
 import com.example.moonlightapp.models.AllCategory
 import com.example.moonlightapp.models.CategoryItem
+import com.example.moonlightapp.models.ChildRepository
+import com.example.moonlightapp.models.ParentRepository
 import com.example.moonlightapp.ui.DishFragment
 import com.example.moonlightapp.util.onItemClickListener
 import java.util.*
@@ -18,9 +20,11 @@ import java.util.*
 
 class MenuFragment : Fragment() {
 
-    private var mainCategoryRecycler: RecyclerView? = null
-    private var mainRecyclerAdapter: MainRecyclerAdapter? = null
+    private lateinit var mainCategoryRecycler: RecyclerView
+    private lateinit var mainRecyclerAdapter: MainRecyclerAdapter
     private lateinit var root: View
+    private lateinit var dishData: ParentRepository
+    private lateinit var childData: ChildRepository
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -217,7 +221,6 @@ class MenuFragment : Fragment() {
         allCategory.add(AllCategory("Гарниры", categoryItemList4))
         allCategory.add(AllCategory("Десерты", categoryItemList5))
 
-
         setMainCategoryRecycler(allCategory)
         return root
     }
@@ -225,8 +228,8 @@ class MenuFragment : Fragment() {
     private fun setMainCategoryRecycler(allCategory: List<AllCategory>) {
         mainCategoryRecycler = root.findViewById(R.id.items_main)
         val layoutManager: RecyclerView.LayoutManager =
-            LinearLayoutManager(this.requireContext())
-        mainCategoryRecycler!!.layoutManager = layoutManager
+            LinearLayoutManager(context)
+        mainCategoryRecycler.layoutManager = layoutManager
         mainRecyclerAdapter = MainRecyclerAdapter(
             this.requireContext(),
             allCategory,
@@ -235,7 +238,7 @@ class MenuFragment : Fragment() {
                     showDetailDish(name, price)
                 }
             })
-        mainCategoryRecycler!!.adapter = mainRecyclerAdapter
+        mainCategoryRecycler.adapter = mainRecyclerAdapter
     }
 
     private fun showDetailDish(name: String, price: String) {
