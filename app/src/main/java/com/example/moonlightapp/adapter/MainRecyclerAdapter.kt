@@ -20,14 +20,8 @@ class MainRecyclerAdapter(
     RecyclerView.Adapter<MainRecyclerAdapter.MainViewHolder>() {
 
     class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var categoryTitle: TextView
-        var itemRecycler:RecyclerView
-
-        init {
-            categoryTitle = itemView.findViewById(R.id.title_text_view)
-            itemRecycler = itemView.findViewById(R.id.items_container)
-        }
-
+        var categoryTitle: TextView = itemView.findViewById(R.id.title_text_view)
+        var itemRecycler: RecyclerView = itemView.findViewById(R.id.items_container)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
@@ -45,8 +39,9 @@ class MainRecyclerAdapter(
         return allCategory.size
     }
 
-    private fun setCatItemRecycler(recyclerView: RecyclerView, categoryItem: List<CategoryItem>){
-        var itemRecyclerAdapter = CategoryItemAdapter(context, categoryItem,
+    private fun setCatItemRecycler(recyclerView: RecyclerView, categoryItem: List<CategoryItem>) {
+        val itemRecyclerAdapter = CategoryItemAdapter(
+            context, categoryItem,
             itemClickListener as onItemClickListener
         )
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)

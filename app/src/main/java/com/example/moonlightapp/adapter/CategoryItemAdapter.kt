@@ -25,6 +25,7 @@ class CategoryItemAdapter(
         var imgDish: ImageView? = null
         var nameDish: TextView? = null
         var priceDish: TextView? = null
+
         init {
             imgDish = itemView.findViewById(R.id.img_dish)
             nameDish = itemView.findViewById(R.id.name_dish)
