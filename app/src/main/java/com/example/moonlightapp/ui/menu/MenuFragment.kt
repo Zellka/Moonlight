@@ -1,7 +1,6 @@
 package com.example.moonlightapp.ui.menu
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,8 @@ import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.MainRecyclerAdapter
 import com.example.moonlightapp.models.AllCategory
 import com.example.moonlightapp.models.CategoryItem
+import com.example.moonlightapp.ui.DishFragment
+import com.example.moonlightapp.util.onItemClickListener
 import java.util.*
 
 
@@ -226,7 +227,20 @@ class MenuFragment : Fragment() {
         val layoutManager: RecyclerView.LayoutManager =
             LinearLayoutManager(this.requireContext())
         mainCategoryRecycler!!.layoutManager = layoutManager
-        mainRecyclerAdapter = MainRecyclerAdapter(this.requireContext(), allCategory)
+        mainRecyclerAdapter = MainRecyclerAdapter(
+            this.requireContext(),
+            allCategory,
+            object : onItemClickListener {
+
+                override fun onItemClick(name: String, price: String) {
+                    val dishFragment = DishFragment()
+                    val args = Bundle()
+                    args.putString("nameDish", name)
+                    args.putString("priceDish", price)
+                    dishFragment.arguments = args;
+                    dishFragment.show(this@MenuFragment.requireFragmentManager(), "Dialog");
+                }
+            })
         mainCategoryRecycler!!.adapter = mainRecyclerAdapter
 
     }

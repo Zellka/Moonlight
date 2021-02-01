@@ -10,12 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.models.AllCategory
 import com.example.moonlightapp.models.CategoryItem
+import com.example.moonlightapp.util.onItemClickListener
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_dish.*
 
 class CategoryItemAdapter(
     private val context: Context,
-    private val categoryItem: List<CategoryItem>
+    private val categoryItem: List<CategoryItem>,
+    private val itemClickListener: onItemClickListener
 ) :
     RecyclerView.Adapter<CategoryItemAdapter.CategoryItemViewHolder>() {
 
@@ -42,6 +44,9 @@ class CategoryItemAdapter(
         Picasso.get()
             .load(categoryItem[position].url)
             .into(holder.imgDish)
+        holder.itemView.setOnClickListener {
+            itemClickListener.onItemClick(categoryItem[position].name, categoryItem[position].price)
+        }
     }
 
     override fun getItemCount(): Int {

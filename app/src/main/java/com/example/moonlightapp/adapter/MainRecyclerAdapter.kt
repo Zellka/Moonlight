@@ -10,10 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.models.AllCategory
 import com.example.moonlightapp.models.CategoryItem
+import com.example.moonlightapp.util.onItemClickListener
 
 class MainRecyclerAdapter(
     private val context: Context,
-    private val allCategory: List<AllCategory>
+    private val allCategory: List<AllCategory>,
+    private val itemClickListener: Any
 ) :
     RecyclerView.Adapter<MainRecyclerAdapter.MainViewHolder>() {
 
@@ -44,7 +46,9 @@ class MainRecyclerAdapter(
     }
 
     private fun setCatItemRecycler(recyclerView: RecyclerView, categoryItem: List<CategoryItem>){
-        var itemRecyclerAdapter = CategoryItemAdapter(context, categoryItem)
+        var itemRecyclerAdapter = CategoryItemAdapter(context, categoryItem,
+            itemClickListener as onItemClickListener
+        )
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         recyclerView.adapter = itemRecyclerAdapter
     }
