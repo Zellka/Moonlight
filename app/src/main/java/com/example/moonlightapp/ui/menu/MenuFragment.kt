@@ -231,17 +231,19 @@ class MenuFragment : Fragment() {
             this.requireContext(),
             allCategory,
             object : onItemClickListener {
-
                 override fun onItemClick(name: String, price: String) {
-                    val dishFragment = DishFragment()
-                    val args = Bundle()
-                    args.putString("nameDish", name)
-                    args.putString("priceDish", price)
-                    dishFragment.arguments = args;
-                    dishFragment.show(this@MenuFragment.requireFragmentManager(), "Dialog");
+                    showDetailDish(name, price)
                 }
             })
         mainCategoryRecycler!!.adapter = mainRecyclerAdapter
+    }
 
+    private fun showDetailDish(name: String, price: String) {
+        val dishFragment = DishFragment()
+        val args = Bundle()
+        args.putString("nameDish", name)
+        args.putString("priceDish", price)
+        dishFragment.arguments = args
+        dishFragment.show(this@MenuFragment.requireFragmentManager(), "Dialog")
     }
 }
