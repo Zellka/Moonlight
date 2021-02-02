@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.MainRecyclerAdapter
 import com.example.moonlightapp.models.AllCategory
-import com.example.moonlightapp.models.ParentRepository
+import com.example.moonlightapp.models.CategoriesRepository
 import com.example.moonlightapp.ui.DishFragment
 import com.example.moonlightapp.util.ItemClickListener
 import java.util.*
@@ -21,7 +21,7 @@ class MenuFragment : Fragment() {
     private lateinit var root: View
     private lateinit var mainCategoryRecycler: RecyclerView
     private lateinit var mainRecyclerAdapter: MainRecyclerAdapter
-    private var dishData: ParentRepository = ParentRepository()
+    private var dishData: CategoriesRepository = CategoriesRepository()
 
     override fun onCreateView(
         inflater: LayoutInflater,

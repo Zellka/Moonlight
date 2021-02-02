@@ -1,6 +1,6 @@
 package com.example.moonlightapp.models
 
-class ChildRepository {
+class CategoryItemRepository {
     fun getAppetizerData(): List<CategoryItem> {
         val items: MutableList<CategoryItem> = ArrayList()
         items.add(

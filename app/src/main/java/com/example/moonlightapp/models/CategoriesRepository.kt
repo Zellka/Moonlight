@@ -2,8 +2,8 @@ package com.example.moonlightapp.models
 
 import java.util.ArrayList
 
-class ParentRepository {
-    private var childData: ChildRepository = ChildRepository()
+class CategoriesRepository {
+    private var childData: CategoryItemRepository = CategoryItemRepository()
 
     fun getData(): List<AllCategory> {
         val allCategory: MutableList<AllCategory> = ArrayList()
