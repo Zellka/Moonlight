@@ -8,16 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.models.AllCategory
 import com.example.moonlightapp.models.CategoryItem
-import com.example.moonlightapp.util.onItemClickListener
+import com.example.moonlightapp.util.ItemClickListener
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_dish.*
 
 class CategoryItemAdapter(
     private val context: Context,
     private val categoryItem: List<CategoryItem>,
-    private val itemClickListener: onItemClickListener
+    private val itemClickListener: ItemClickListener
 ) :
     RecyclerView.Adapter<CategoryItemAdapter.CategoryItemViewHolder>() {
 

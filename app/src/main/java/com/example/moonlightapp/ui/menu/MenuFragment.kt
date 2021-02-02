@@ -12,7 +12,7 @@ import com.example.moonlightapp.adapter.MainRecyclerAdapter
 import com.example.moonlightapp.models.AllCategory
 import com.example.moonlightapp.models.ParentRepository
 import com.example.moonlightapp.ui.DishFragment
-import com.example.moonlightapp.util.onItemClickListener
+import com.example.moonlightapp.util.ItemClickListener
 import java.util.*
 
 
@@ -42,7 +42,7 @@ class MenuFragment : Fragment() {
         mainRecyclerAdapter = MainRecyclerAdapter(
             this.requireContext(),
             allCategory,
-            object : onItemClickListener {
+            object : ItemClickListener {
                 override fun onItemClick(name: String, price: String) {
                     showDetailDish(name, price)
                 }

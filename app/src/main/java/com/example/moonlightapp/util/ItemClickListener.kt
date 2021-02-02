@@ -1,7 +1,5 @@
 package com.example.moonlightapp.util
 
-import com.example.moonlightapp.models.CategoryItem
-
-interface onItemClickListener {
+interface ItemClickListener {
     fun onItemClick(name: String, price: String)
 }
