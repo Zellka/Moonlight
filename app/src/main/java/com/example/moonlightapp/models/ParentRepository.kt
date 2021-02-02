@@ -3,10 +3,9 @@ package com.example.moonlightapp.models
 import java.util.ArrayList
 
 class ParentRepository {
+    private var childData: ChildRepository = ChildRepository()
 
-    private lateinit var childData: ChildRepository
-
-    fun getData(): MutableList<AllCategory>? {
+    fun getData(): List<AllCategory> {
         val allCategory: MutableList<AllCategory> = ArrayList()
         allCategory.add(AllCategory("Закуски", childData.getAppetizerData()))
         allCategory.add(AllCategory("Салаты", childData.getSaladData()))

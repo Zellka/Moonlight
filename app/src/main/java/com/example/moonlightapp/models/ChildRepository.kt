@@ -1,7 +1,7 @@
 package com.example.moonlightapp.models
 
 class ChildRepository {
-    fun getAppetizerData(): MutableList<CategoryItem> {
+    fun getAppetizerData(): List<CategoryItem> {
         val items: MutableList<CategoryItem> = ArrayList()
         items.add(
             CategoryItem(
@@ -40,7 +40,8 @@ class ChildRepository {
         )
         return items
     }
-    fun getSaladData(): MutableList<CategoryItem> {
+
+    fun getSaladData(): List<CategoryItem> {
         val items: MutableList<CategoryItem> = ArrayList()
         items.add(
             CategoryItem(
@@ -79,7 +80,8 @@ class ChildRepository {
         )
         return items
     }
-    fun getMainDishData(): MutableList<CategoryItem> {
+
+    fun getMainDishData(): List<CategoryItem> {
         val items: MutableList<CategoryItem> = ArrayList()
         items.add(
             CategoryItem(
@@ -118,7 +120,8 @@ class ChildRepository {
         )
         return items
     }
-    fun getSideDishData(): MutableList<CategoryItem> {
+
+    fun getSideDishData(): List<CategoryItem> {
         val items: MutableList<CategoryItem> = ArrayList()
         items.add(
             CategoryItem(
@@ -157,7 +160,8 @@ class ChildRepository {
         )
         return items
     }
-    fun getDessertData(): MutableList<CategoryItem> {
+
+    fun getDessertData(): List<CategoryItem> {
         val items: MutableList<CategoryItem> = ArrayList()
         items.add(
             CategoryItem(
