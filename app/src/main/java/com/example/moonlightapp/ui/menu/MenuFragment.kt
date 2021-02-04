@@ -12,6 +12,7 @@ import com.example.moonlightapp.adapter.MainRecyclerAdapter
 import com.example.moonlightapp.models.AllCategory
 import com.example.moonlightapp.models.CategoriesRepository
 import com.example.moonlightapp.ui.DishFragment
+import com.example.moonlightapp.ui.menu.MenuFragment.Companion.newInstance
 import com.example.moonlightapp.util.ItemClickListener
 import java.util.*
 
@@ -23,6 +24,9 @@ class MenuFragment : Fragment() {
     private lateinit var mainRecyclerAdapter: MainRecyclerAdapter
     private var dishData: CategoriesRepository = CategoriesRepository()
 
+    companion object {
+        fun newInstance() = HomeFragment()
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -52,6 +56,7 @@ class MenuFragment : Fragment() {
 
     private fun showDetailDish(name: String, price: String) {
         val dishFragment = DishFragment()
+        //val dishFragment = DishFragment.newInstance(name, price)
         val args = Bundle()
         args.putString("nameDish", name)
         args.putString("priceDish", price)

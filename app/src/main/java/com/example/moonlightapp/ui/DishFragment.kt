@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.moonlightapp.R
+import java.util.*
 
 class DishFragment : DialogFragment() {
 
@@ -35,4 +36,16 @@ class DishFragment : DialogFragment() {
         }
         return root
     }
+   /* companion object {
+
+        fun newInstance(name: String, price: String): DishFragment {
+            val args = Bundle().apply {
+                putSerializable("name", name)
+                putSerializable("price", price)
+            }
+            return DishFragment().apply {
+                arguments = args
+            }
+        }
+    }*/
 }
