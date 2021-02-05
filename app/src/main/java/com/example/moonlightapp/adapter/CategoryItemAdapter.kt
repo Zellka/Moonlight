@@ -1,9 +1,11 @@
 package com.example.moonlightapp.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -23,11 +25,13 @@ class CategoryItemAdapter(
         var imgDish: ImageView? = null
         var nameDish: TextView? = null
         var priceDish: TextView? = null
+        var btn: Button? = null
 
         init {
             imgDish = itemView.findViewById(R.id.img_dish)
             nameDish = itemView.findViewById(R.id.name_dish)
             priceDish = itemView.findViewById(R.id.price_dish)
+            btn = itemView.findViewById(R.id.btn_add_to_cart)
         }
     }
 
@@ -43,6 +47,9 @@ class CategoryItemAdapter(
         Picasso.get()
             .load(categoryItem[position].url)
             .into(holder.imgDish)
+        holder.btn?.setOnClickListener {
+            Log.d("TAG", "Элемент добавлен")
+        }
         holder.itemView.setOnClickListener {
             itemClickListener.onItemClick(categoryItem[position].name, categoryItem[position].price)
         }
