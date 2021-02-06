@@ -3,7 +3,7 @@ package com.example.moonlightapp.cart
 import io.paperdb.Paper
 
 class ShoppingCart {
-    
+
     companion object {
         fun addItem(cartItem: CartItem) {
             val cart = getCart()
