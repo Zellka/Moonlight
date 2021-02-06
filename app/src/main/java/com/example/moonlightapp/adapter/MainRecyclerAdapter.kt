@@ -14,11 +14,14 @@ import com.example.moonlightapp.util.ItemClickListener
 
 class MainRecyclerAdapter(
     private val context: Context,
-    private val allCategory: List<AllCategory>,
-    private val itemClickListener: Any
+    private val allCategory: List<AllCategory>
 ) :
     RecyclerView.Adapter<MainRecyclerAdapter.MainViewHolder>() {
+    private lateinit var itemClickListener: ItemClickListener
 
+    fun setOnItemClickListener(onItemClickListener: ItemClickListener) {
+        itemClickListener = onItemClickListener
+    }
     class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var categoryTitle: TextView = itemView.findViewById(R.id.title_text_view)
         var itemRecycler: RecyclerView = itemView.findViewById(R.id.items_container)
