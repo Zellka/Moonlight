@@ -1,18 +1,16 @@
 package com.example.moonlightapp.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
+import com.example.moonlightapp.cart.CartItem
 import com.example.moonlightapp.models.CategoryItem
 import com.example.moonlightapp.util.Saleable
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.item_dish.view.*
 
 class CategoryItemAdapter(
     private val context: Context,
@@ -22,34 +20,25 @@ class CategoryItemAdapter(
     RecyclerView.Adapter<CategoryItemAdapter.CategoryItemViewHolder>() {
 
     class CategoryItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var imgDish: ImageView? = null
-        var nameDish: TextView? = null
-        var priceDish: TextView? = null
-        var btn: Button? = null
-
-        init {
-            imgDish = itemView.findViewById(R.id.img_dish)
-            nameDish = itemView.findViewById(R.id.name_dish)
-            priceDish = itemView.findViewById(R.id.price_dish)
-            btn = itemView.findViewById(R.id.btn_add_to_cart)
+        fun bind(model: CategoryItem, saleable: Saleable){
+            Picasso.get().load(model.url).centerCrop().fit().into(itemView.img_dish)
+            itemView.name_dish.text = model.name
+            itemView.price_dish.text = model.price.toString()
+            itemView.addToCart.setOnClickListener { view ->
+                saleable.addToCart(CartItem(model),model.name)
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryItemViewHolder {
-        return CategoryItemAdapter.CategoryItemViewHolder(
+        return CategoryItemViewHolder(
             LayoutInflater.from(context).inflate(R.layout.item_dish, parent, false)
         )
     }
 
     override fun onBindViewHolder(holder: CategoryItemViewHolder, position: Int) {
-        holder.nameDish!!.text = categoryItem[position].name
-        holder.priceDish!!.text = categoryItem[position].price
-        Picasso.get()
-            .load(categoryItem[position].url)
-            .into(holder.imgDish)
-        holder.btn?.setOnClickListener {
-            Log.d("TAG", "Элемент добавлен")
-        }
+        val item = categoryItem[position]
+        holder.bind(item, saleable)
         holder.itemView.setOnClickListener {
             saleable.onItemClick(categoryItem[position].name, categoryItem[position].price)
         }

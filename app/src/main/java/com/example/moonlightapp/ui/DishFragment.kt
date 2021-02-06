@@ -26,7 +26,7 @@ class DishFragment : DialogFragment() {
         val priceDish = root.findViewById<TextView>(R.id.dish_price)
 
         nameDish.text = arguments?.getString("nameDish")
-        priceDish.text = arguments?.getString("priceDish")
+        priceDish.text = arguments?.getInt("priceDish").toString()
 
         cancelBtn.setOnClickListener {
             dismiss()
