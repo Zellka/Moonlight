@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_profile
             )
         )
+        navView.getOrCreateBadge(R.id.navigation_cart).number = ShoppingCart.getShoppingCartSize()
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
