@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso
 class ShoppingCartAdapter(
     var context: Context,
     var cartItems: MutableList<CartItem>,
-    var removable: Removable
+    private var removable: Removable
 ) :
     RecyclerView.Adapter<ShoppingCartAdapter.ViewHolder>() {
 

@@ -11,7 +11,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.moonlightapp.R
 import com.example.moonlightapp.cart.ShoppingCart
 import io.paperdb.Paper
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,11 +34,5 @@ class MainActivity : AppCompatActivity() {
         navView.getOrCreateBadge(R.id.navigation_cart).number = ShoppingCart.getShoppingCartSize()
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        swipeRefreshLayout.setOnRefreshListener {
-            navView.getOrCreateBadge(R.id.navigation_cart).number =
-                ShoppingCart.getShoppingCartSize()
-            swipeRefreshLayout.isRefreshing = false
-        }
     }
 }
