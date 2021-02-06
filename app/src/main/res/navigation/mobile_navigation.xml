@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/navigation_cart"
         android:name="com.example.moonlightapp.ui.menu.CartFragment"
-        android:label="@string/title_basket"
+        android:label="@string/title_cart"
         tools:layout="@layout/fragment_cart" />
 
     <fragment
