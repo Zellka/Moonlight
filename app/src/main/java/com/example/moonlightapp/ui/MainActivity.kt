@@ -9,10 +9,14 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.moonlightapp.R
+import com.example.moonlightapp.cart.ShoppingCart
+import io.paperdb.Paper
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Paper.init(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
@@ -30,5 +34,11 @@ class MainActivity : AppCompatActivity(){
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        swipeRefreshLayout.setOnRefreshListener {
+            navView.getOrCreateBadge(R.id.navigation_cart).number =
+                ShoppingCart.getShoppingCartSize()
+            swipeRefreshLayout.isRefreshing = false
+        }
     }
 }
