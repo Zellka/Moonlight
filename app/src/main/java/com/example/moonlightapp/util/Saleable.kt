@@ -1,5 +1,8 @@
 package com.example.moonlightapp.util
 
+import com.example.moonlightapp.cart.CartItem
+
 interface Saleable {
-    fun onItemClick(name: String, price: String)
+    fun onItemClick(name: String, price: Int)
+    fun addToCart(cartItem: CartItem, nameDish:String)
 }
