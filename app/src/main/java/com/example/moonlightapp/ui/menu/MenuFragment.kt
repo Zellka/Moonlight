@@ -17,7 +17,7 @@ import com.example.moonlightapp.util.ItemClickListener
 import java.util.*
 
 
-class MenuFragment : Fragment() {
+class MenuFragment : Fragment(), ItemClickListener  {
 
     private lateinit var root: View
     private lateinit var mainCategoryRecycler: RecyclerView
@@ -43,18 +43,12 @@ class MenuFragment : Fragment() {
         val layoutManager: RecyclerView.LayoutManager =
             LinearLayoutManager(context)
         mainCategoryRecycler.layoutManager = layoutManager
-        mainRecyclerAdapter = MainRecyclerAdapter(
-            this.requireContext(),
-            allCategory,
-            object : ItemClickListener {
-                override fun onItemClick(name: String, price: String) {
-                    showDetailDish(name, price)
-                }
-            })
+        mainRecyclerAdapter = MainRecyclerAdapter(this.requireContext(), allCategory)
+        mainRecyclerAdapter.setOnItemClickListener(this)
         mainCategoryRecycler.adapter = mainRecyclerAdapter
     }
 
-    private fun showDetailDish(name: String, price: String) {
+    override fun onItemClick(name: String, price: String) {
         val dishFragment = DishFragment()
         //val dishFragment = DishFragment.newInstance(name, price)
         val args = Bundle()
