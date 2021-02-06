@@ -9,8 +9,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.moonlightapp.R
-import com.example.moonlightapp.ui.menu.HomeFragment
-import com.example.moonlightapp.ui.menu.MenuFragment
 
 class MainActivity : AppCompatActivity(){
 
@@ -25,7 +23,7 @@ class MainActivity : AppCompatActivity(){
             setOf(
                 R.id.navigation_home,
                 R.id.navigation_menu,
-                R.id.navigation_basket,
+                R.id.navigation_cart,
                 R.id.navigation_chat,
                 R.id.navigation_profile
             )

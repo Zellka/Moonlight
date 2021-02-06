@@ -18,10 +18,10 @@
         tools:layout="@layout/fragment_menu" />
 
     <fragment
-        android:id="@+id/navigation_basket"
-        android:name="com.example.moonlightapp.ui.menu.BasketFragment"
+        android:id="@+id/navigation_cart"
+        android:name="com.example.moonlightapp.ui.menu.CartFragment"
         android:label="@string/title_basket"
-        tools:layout="@layout/fragment_basket" />
+        tools:layout="@layout/fragment_cart" />
 
     <fragment
         android:id="@+id/navigation_chat"
