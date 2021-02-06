@@ -10,15 +10,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.cart.CartItem
-import com.example.moonlightapp.cart.ShoppingCart
 import com.example.moonlightapp.util.Removable
 import com.squareup.picasso.Picasso
 
-class ShoppingCartAdapter(var context: Context, var cartItems: MutableList<CartItem>, var removable: Removable) :
+class ShoppingCartAdapter(
+    var context: Context,
+    var cartItems: MutableList<CartItem>,
+    var removable: Removable
+) :
     RecyclerView.Adapter<ShoppingCartAdapter.ViewHolder>() {
-
-
-    //private lateinit var removable: Removable
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ShoppingCartAdapter.ViewHolder {
         val layout = LayoutInflater.from(context).inflate(R.layout.cart_item, parent, false)
@@ -28,7 +28,6 @@ class ShoppingCartAdapter(var context: Context, var cartItems: MutableList<CartI
     override fun getItemCount(): Int = cartItems.size
 
     override fun onBindViewHolder(viewHolder: ShoppingCartAdapter.ViewHolder, position: Int) {
-        //viewHolder.bindItem(cartItems[position])
         val model = cartItems[position]
         viewHolder.nameDish!!.text = model.product.name
         viewHolder.priceDish!!.text = model.product.price.toString()
@@ -37,7 +36,6 @@ class ShoppingCartAdapter(var context: Context, var cartItems: MutableList<CartI
             .load(model.product.url)
             .into(viewHolder.imgDish)
         viewHolder.remove?.setOnClickListener {
-            //ShoppingCart.removeItem(cartItems, position)
             removable.removeDish(cartItems, position)
             notifyDataSetChanged()
         }
@@ -50,32 +48,5 @@ class ShoppingCartAdapter(var context: Context, var cartItems: MutableList<CartI
         var priceDish: TextView? = itemView.findViewById(R.id.product_price)
         var remove: Button? = itemView.findViewById(R.id.removeItem)
         var quantity: TextView? = itemView.findViewById(R.id.product_quantity)
-        /*@SuppressLint("SetTextI18n", "CheckResult")
-        fun bindItem(cartItem: CartItem) {
-
-            Picasso.get().load(cartItem.product.url).fit().into(itemView.product_image)
-            itemView.product_name.text = cartItem.product.name
-            itemView.product_price.text = "$${cartItem.product.price}"
-            itemView.product_quantity.text = cartItem.quantity.toString()
-
-            Observable.create(ObservableOnSubscribe<MutableList<CartItem>> {
-
-                itemView.removeItem.setOnClickListener { view ->
-                    val item =
-                        CartItem(cartItem.product)
-                    ShoppingCart.removeItem(item)
-                    Toast.makeText(itemView.context, "Удалено: " + cartItem.product.name, Toast.LENGTH_SHORT).show()
-                    it.onNext(ShoppingCart.getCart())
-                }
-
-            }).subscribe { cart ->
-                var quantity = 0
-                cart.forEach { basketItem ->
-                    quantity += basketItem.quantity
-                }
-                (itemView.context as MainActivity).nav_view.getOrCreateBadge(R.id.navigation_basket).number =
-                    quantity
-            }
-        }*/
     }
 }
