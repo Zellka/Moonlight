@@ -10,17 +10,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.models.AllCategory
 import com.example.moonlightapp.models.CategoryItem
-import com.example.moonlightapp.util.ItemClickListener
+import com.example.moonlightapp.util.Saleable
 
 class MainRecyclerAdapter(
     private val context: Context,
     private val allCategory: List<AllCategory>
 ) :
     RecyclerView.Adapter<MainRecyclerAdapter.MainViewHolder>() {
-    private lateinit var itemClickListener: ItemClickListener
+    private lateinit var saleable: Saleable
 
-    fun setOnItemClickListener(onItemClickListener: ItemClickListener) {
-        itemClickListener = onItemClickListener
+    fun setOnItemClickListener(onSaleable: Saleable) {
+        saleable = onSaleable
     }
     class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var categoryTitle: TextView = itemView.findViewById(R.id.title_text_view)
@@ -44,7 +44,7 @@ class MainRecyclerAdapter(
 
     private fun setCatItemRecycler(recyclerView: RecyclerView, categoryItem: List<CategoryItem>) {
         val itemRecyclerAdapter = CategoryItemAdapter(
-            context, categoryItem, itemClickListener
+            context, categoryItem, saleable
         )
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         recyclerView.adapter = itemRecyclerAdapter

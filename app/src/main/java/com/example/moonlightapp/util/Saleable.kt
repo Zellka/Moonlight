@@ -1,5 +1,5 @@
 package com.example.moonlightapp.util
 
-interface ItemClickListener {
+interface Saleable {
     fun onItemClick(name: String, price: String)
 }

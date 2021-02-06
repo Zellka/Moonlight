@@ -12,12 +12,11 @@ import com.example.moonlightapp.adapter.MainRecyclerAdapter
 import com.example.moonlightapp.models.AllCategory
 import com.example.moonlightapp.models.CategoriesRepository
 import com.example.moonlightapp.ui.DishFragment
-import com.example.moonlightapp.ui.menu.MenuFragment.Companion.newInstance
-import com.example.moonlightapp.util.ItemClickListener
+import com.example.moonlightapp.util.Saleable
 import java.util.*
 
 
-class MenuFragment : Fragment(), ItemClickListener  {
+class MenuFragment : Fragment(), Saleable  {
 
     private lateinit var root: View
     private lateinit var mainCategoryRecycler: RecyclerView

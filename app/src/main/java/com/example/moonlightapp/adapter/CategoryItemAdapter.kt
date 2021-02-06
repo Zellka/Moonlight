@@ -11,13 +11,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.models.CategoryItem
-import com.example.moonlightapp.util.ItemClickListener
+import com.example.moonlightapp.util.Saleable
 import com.squareup.picasso.Picasso
 
 class CategoryItemAdapter(
     private val context: Context,
     private val categoryItem: List<CategoryItem>,
-    private val itemClickListener: ItemClickListener
+    private val saleable: Saleable
 ) :
     RecyclerView.Adapter<CategoryItemAdapter.CategoryItemViewHolder>() {
 
@@ -51,7 +51,7 @@ class CategoryItemAdapter(
             Log.d("TAG", "Элемент добавлен")
         }
         holder.itemView.setOnClickListener {
-            itemClickListener.onItemClick(categoryItem[position].name, categoryItem[position].price)
+            saleable.onItemClick(categoryItem[position].name, categoryItem[position].price)
         }
     }
 
