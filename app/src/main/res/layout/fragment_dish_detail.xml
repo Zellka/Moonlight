@@ -62,16 +62,6 @@
             android:padding="10dp"
             android:text="Отмена" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dish_weight"
-            android:layout_alignParentRight="true"
-            android:layout_toRightOf="@+id/btn_cancel"
-            android:padding="10dp"
-            android:text="Добавить" />
-
     </RelativeLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
