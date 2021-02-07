@@ -49,11 +49,12 @@ class MenuFragment : Fragment(), Saleable {
         mainCategoryRecycler.adapter = mainRecyclerAdapter
     }
 
-    override fun onItemClick(name: String, price: Int) {
+    override fun onItemClick(name: String, price: Int, url: String) {
         val dishFragment = DishFragment()
         //val dishFragment = DishFragment.newInstance(name, price)
         val args = Bundle()
         args.putString("nameDish", name)
+        args.putString("imgDish", url)
         args.putInt("priceDish", price)
         dishFragment.arguments = args
         dishFragment.show(this@MenuFragment.requireFragmentManager(), "Dialog")
