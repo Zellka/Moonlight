@@ -9,13 +9,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.cart.CartItem
+import com.example.moonlightapp.models.Cart
 import com.example.moonlightapp.common.Removable
 import com.squareup.picasso.Picasso
 
 class ShoppingCartAdapter(
     var context: Context,
-    var cartItems: MutableList<CartItem>,
+    var cartItems: MutableList<Cart>,
     private var removable: Removable
 ) :
     RecyclerView.Adapter<ShoppingCartAdapter.ViewHolder>() {

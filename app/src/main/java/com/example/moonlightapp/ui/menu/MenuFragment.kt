@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.MainRecyclerAdapter
-import com.example.moonlightapp.cart.CartItem
+import com.example.moonlightapp.models.Cart
 import com.example.moonlightapp.cart.ShoppingCart
 import com.example.moonlightapp.models.Categories
 import com.example.moonlightapp.data.CategoriesModel
@@ -61,8 +61,8 @@ class MenuFragment : Fragment(), Saleable {
     }
 
     @SuppressLint("CheckResult")
-    override fun addToCart(cartItem: CartItem, nameDish: String) {
-        Observable.create(ObservableOnSubscribe<MutableList<CartItem>> {
+    override fun addToCart(cartItem: Cart, nameDish: String) {
+        Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
             ShoppingCart.addItem(cartItem)
             it.onNext(ShoppingCart.getCart())
         }).subscribe { cart ->

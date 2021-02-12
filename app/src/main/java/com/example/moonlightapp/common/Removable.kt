@@ -1,7 +1,7 @@
 package com.example.moonlightapp.common
 
-import com.example.moonlightapp.cart.CartItem
+import com.example.moonlightapp.models.Cart
 
 interface Removable {
-    fun removeDish(cartItems: MutableList<CartItem>, position: Int)
+    fun removeDish(cartItems: MutableList<Cart>, position: Int)
 }

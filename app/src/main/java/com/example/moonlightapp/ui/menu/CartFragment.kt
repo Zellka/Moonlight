@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.ShoppingCartAdapter
-import com.example.moonlightapp.cart.CartItem
+import com.example.moonlightapp.models.Cart
 import com.example.moonlightapp.cart.ShoppingCart
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.common.Removable
@@ -36,8 +36,8 @@ class CartFragment : Fragment(), Removable {
     }
 
     @SuppressLint("CheckResult")
-    override fun removeDish(cartItems: MutableList<CartItem>, position: Int) {
-        Observable.create(ObservableOnSubscribe<MutableList<CartItem>> {
+    override fun removeDish(cartItems: MutableList<Cart>, position: Int) {
+        Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
             ShoppingCart.removeItem(cartItems, position)
             it.onNext(ShoppingCart.getCart())
         }).subscribe { cart ->

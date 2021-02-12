@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.cart.CartItem
+import com.example.moonlightapp.models.Cart
 import com.example.moonlightapp.models.Dish
 import com.example.moonlightapp.common.Saleable
 import com.squareup.picasso.Picasso
@@ -25,7 +25,7 @@ class CategoryItemAdapter(
             itemView.name_dish.text = model.name
             itemView.price_dish.text = model.price.toString()
             itemView.addToCart.setOnClickListener { view ->
-                saleable.addToCart(CartItem(model),model.name)
+                saleable.addToCart(Cart(model),model.name)
             }
         }
     }

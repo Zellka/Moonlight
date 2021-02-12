@@ -1,11 +1,12 @@
 package com.example.moonlightapp.cart
 
+import com.example.moonlightapp.models.Cart
 import io.paperdb.Paper
 
 class ShoppingCart {
 
     companion object {
-        fun addItem(cartItem: CartItem) {
+        fun addItem(cartItem: Cart) {
             val cart = getCart()
 
             val targetItem = cart.singleOrNull { it.product.name == cartItem.product.name }
@@ -18,7 +19,7 @@ class ShoppingCart {
             saveCart(cart)
         }
 
-        fun removeItem(cartItems: MutableList<CartItem>, position: Int) {
+        fun removeItem(cartItems: MutableList<Cart>, position: Int) {
             val targetItem =
                 cartItems.singleOrNull { it.product.name == cartItems[position].product.name }
             if (targetItem != null) {
@@ -31,11 +32,11 @@ class ShoppingCart {
             saveCart(cartItems)
         }
 
-        private fun saveCart(cart: MutableList<CartItem>) {
+        private fun saveCart(cart: MutableList<Cart>) {
             Paper.book().write("cart", cart)
         }
 
-        fun getCart(): MutableList<CartItem> {
+        fun getCart(): MutableList<Cart> {
             return Paper.book().read("cart", mutableListOf())
         }
 
