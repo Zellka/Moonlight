@@ -12,11 +12,11 @@ import com.example.moonlightapp.entity.Categories
 import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.common.ItemClickListener
 
-class MainRecyclerAdapter(
+class CategoriesAdapter(
     private val context: Context,
     private val allCategory: List<Categories>
 ) :
-    RecyclerView.Adapter<MainRecyclerAdapter.MainViewHolder>() {
+    RecyclerView.Adapter<CategoriesAdapter.MainViewHolder>() {
     private lateinit var listener: ItemClickListener
 
     fun setOnItemClickListener(onSaleable: ItemClickListener) {

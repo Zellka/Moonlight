@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.adapter.MainRecyclerAdapter
+import com.example.moonlightapp.adapter.CategoriesAdapter
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.cart.ShoppingCart
 import com.example.moonlightapp.entity.Categories
@@ -26,8 +26,8 @@ import java.util.*
 class MenuFragment : Fragment(), ItemClickListener {
 
     private lateinit var root: View
-    private lateinit var mainCategoryRecycler: RecyclerView
-    private lateinit var mainRecyclerAdapter: MainRecyclerAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var categoriesAdapter: CategoriesAdapter
     private var dishData: CategoriesModel = CategoriesModel()
 
     override fun onCreateView(
@@ -41,13 +41,13 @@ class MenuFragment : Fragment(), ItemClickListener {
     }
 
     private fun setMainCategoryRecycler(allCategory: List<Categories>) {
-        mainCategoryRecycler = root.findViewById(R.id.items_main)
+        recyclerView = root.findViewById(R.id.items_main)
         val layoutManager: RecyclerView.LayoutManager =
             LinearLayoutManager(context)
-        mainCategoryRecycler.layoutManager = layoutManager
-        mainRecyclerAdapter = MainRecyclerAdapter(this.requireContext(), allCategory)
-        mainRecyclerAdapter.setOnItemClickListener(this)
-        mainCategoryRecycler.adapter = mainRecyclerAdapter
+        recyclerView.layoutManager = layoutManager
+        categoriesAdapter = CategoriesAdapter(this.requireContext(), allCategory)
+        categoriesAdapter.setOnItemClickListener(this)
+        recyclerView.adapter = categoriesAdapter
     }
 
     override fun onItemClick(item: Dish) {
