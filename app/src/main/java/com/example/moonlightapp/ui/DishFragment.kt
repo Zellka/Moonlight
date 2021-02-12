@@ -36,16 +36,4 @@ class DishFragment : DialogFragment() {
         }
         return root
     }
-    /* companion object {
-
-         fun newInstance(name: String, price: String): DishFragment {
-             val args = Bundle().apply {
-                 putSerializable("name", name)
-                 putSerializable("price", price)
-             }
-             return DishFragment().apply {
-                 arguments = args
-             }
-         }
-     }*/
 }
