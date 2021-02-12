@@ -40,7 +40,7 @@ class CategoryItemAdapter(
         val item = categoryItem[position]
         holder.bind(item, listener)
         holder.itemView.setOnClickListener {
-            listener.onItemClick(categoryItem[position].name, categoryItem[position].price, categoryItem[position].url)
+            listener.onItemClick(categoryItem[position])
         }
     }
 

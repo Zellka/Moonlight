@@ -17,6 +17,7 @@ import com.example.moonlightapp.data.CategoriesModel
 import com.example.moonlightapp.ui.DishFragment
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.common.ItemClickListener
+import com.example.moonlightapp.entity.Dish
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 import io.reactivex.Observable
@@ -49,13 +50,13 @@ class MenuFragment : Fragment(), ItemClickListener {
         mainCategoryRecycler.adapter = mainRecyclerAdapter
     }
 
-    override fun onItemClick(name: String, price: Int, url: String) {
+    override fun onItemClick(item: Dish) {
         val dishFragment = DishFragment()
         //val dishFragment = DishFragment.newInstance(name, price)
         val args = Bundle()
-        args.putString("nameDish", name)
-        args.putString("imgDish", url)
-        args.putInt("priceDish", price)
+        args.putString("nameDish", item.name)
+        args.putString("imgDish", item.url)
+        args.putInt("priceDish", item.price)
         dishFragment.arguments = args
         dishFragment.show(this@MenuFragment.requireFragmentManager(), "Dialog")
     }
