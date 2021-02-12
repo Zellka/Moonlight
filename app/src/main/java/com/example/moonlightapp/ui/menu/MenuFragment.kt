@@ -36,11 +36,11 @@ class MenuFragment : Fragment(), ItemClickListener {
         savedInstanceState: Bundle?
     ): View {
         root = inflater.inflate(R.layout.fragment_menu, container, false)
-        setMainCategoryRecycler(dishData.getData())
+        setCategoriesRecycler(dishData.getData())
         return root
     }
 
-    private fun setMainCategoryRecycler(allCategory: List<Categories>) {
+    private fun setCategoriesRecycler(allCategory: List<Categories>) {
         recyclerView = root.findViewById(R.id.items_main)
         val layoutManager: RecyclerView.LayoutManager =
             LinearLayoutManager(context)
