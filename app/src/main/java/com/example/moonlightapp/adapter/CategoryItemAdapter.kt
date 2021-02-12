@@ -8,19 +8,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.common.Saleable
+import com.example.moonlightapp.common.ItemClickListener
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_dish.view.*
 
 class CategoryItemAdapter(
     private val context: Context,
     private val categoryItem: List<Dish>,
-    private val saleable: Saleable
+    private val listener: ItemClickListener
 ) :
     RecyclerView.Adapter<CategoryItemAdapter.CategoryItemViewHolder>() {
 
     class CategoryItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(model: Dish, saleable: Saleable){
+        fun bind(model: Dish, saleable: ItemClickListener){
             Picasso.get().load(model.url).centerCrop().fit().into(itemView.img_dish)
             itemView.name_dish.text = model.name
             itemView.price_dish.text = model.price.toString()
@@ -38,9 +38,9 @@ class CategoryItemAdapter(
 
     override fun onBindViewHolder(holder: CategoryItemViewHolder, position: Int) {
         val item = categoryItem[position]
-        holder.bind(item, saleable)
+        holder.bind(item, listener)
         holder.itemView.setOnClickListener {
-            saleable.onItemClick(categoryItem[position].name, categoryItem[position].price, categoryItem[position].url)
+            listener.onItemClick(categoryItem[position].name, categoryItem[position].price, categoryItem[position].url)
         }
     }
 

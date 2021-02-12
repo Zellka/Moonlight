@@ -16,13 +16,13 @@ import com.example.moonlightapp.entity.Categories
 import com.example.moonlightapp.data.CategoriesModel
 import com.example.moonlightapp.ui.DishFragment
 import com.example.moonlightapp.ui.MainActivity
-import com.example.moonlightapp.common.Saleable
+import com.example.moonlightapp.common.ItemClickListener
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 import io.reactivex.Observable
 import java.util.*
 
-class MenuFragment : Fragment(), Saleable {
+class MenuFragment : Fragment(), ItemClickListener {
 
     private lateinit var root: View
     private lateinit var mainCategoryRecycler: RecyclerView
