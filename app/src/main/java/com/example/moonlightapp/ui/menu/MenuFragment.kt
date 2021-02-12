@@ -52,7 +52,6 @@ class MenuFragment : Fragment(), ItemClickListener {
 
     override fun onItemClick(item: Dish) {
         val dishFragment = DishFragment()
-        //val dishFragment = DishFragment.newInstance(name, price)
         val args = Bundle()
         args.putString("nameDish", item.name)
         args.putString("imgDish", item.url)
