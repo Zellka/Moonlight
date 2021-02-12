@@ -13,7 +13,7 @@ import com.example.moonlightapp.adapter.MainRecyclerAdapter
 import com.example.moonlightapp.cart.CartItem
 import com.example.moonlightapp.cart.ShoppingCart
 import com.example.moonlightapp.models.AllCategory
-import com.example.moonlightapp.models.CategoriesRepository
+import com.example.moonlightapp.models.CategoriesModel
 import com.example.moonlightapp.ui.DishFragment
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.common.Saleable
@@ -27,7 +27,7 @@ class MenuFragment : Fragment(), Saleable {
     private lateinit var root: View
     private lateinit var mainCategoryRecycler: RecyclerView
     private lateinit var mainRecyclerAdapter: MainRecyclerAdapter
-    private var dishData: CategoriesRepository = CategoriesRepository()
+    private var dishData: CategoriesModel = CategoriesModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
