@@ -33,7 +33,8 @@
             android:orientation="horizontal"
             android:visibility="visible"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry"
+            tools:listitem="@layout/item_dish" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
