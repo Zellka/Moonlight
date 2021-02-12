@@ -1,4 +1,6 @@
-package com.example.moonlightapp.models
+package com.example.moonlightapp.data
+
+import com.example.moonlightapp.models.CategoryItem
 
 class CategoryItemModel {
     fun getAppetizerData(): List<CategoryItem> {

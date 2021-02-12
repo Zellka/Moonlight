@@ -13,7 +13,7 @@ import com.example.moonlightapp.adapter.MainRecyclerAdapter
 import com.example.moonlightapp.cart.CartItem
 import com.example.moonlightapp.cart.ShoppingCart
 import com.example.moonlightapp.models.AllCategory
-import com.example.moonlightapp.models.CategoriesModel
+import com.example.moonlightapp.data.CategoriesModel
 import com.example.moonlightapp.ui.DishFragment
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.common.Saleable
