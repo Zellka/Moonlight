@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.models.Cart
+import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.common.Removable
 import com.squareup.picasso.Picasso
 

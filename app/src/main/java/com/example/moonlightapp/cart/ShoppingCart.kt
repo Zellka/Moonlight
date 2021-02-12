@@ -1,6 +1,6 @@
 package com.example.moonlightapp.cart
 
-import com.example.moonlightapp.models.Cart
+import com.example.moonlightapp.entity.Cart
 import io.paperdb.Paper
 
 class ShoppingCart {

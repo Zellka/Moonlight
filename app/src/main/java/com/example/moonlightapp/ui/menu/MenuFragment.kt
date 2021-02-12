@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.MainRecyclerAdapter
-import com.example.moonlightapp.models.Cart
+import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.cart.ShoppingCart
-import com.example.moonlightapp.models.Categories
+import com.example.moonlightapp.entity.Categories
 import com.example.moonlightapp.data.CategoriesModel
 import com.example.moonlightapp.ui.DishFragment
 import com.example.moonlightapp.ui.MainActivity

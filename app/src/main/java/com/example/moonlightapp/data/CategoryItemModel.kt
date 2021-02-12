@@ -1,6 +1,6 @@
 package com.example.moonlightapp.data
 
-import com.example.moonlightapp.models.Dish
+import com.example.moonlightapp.entity.Dish
 
 class CategoryItemModel {
     fun getAppetizerData(): List<Dish> {

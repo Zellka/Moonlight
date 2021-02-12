@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.ShoppingCartAdapter
-import com.example.moonlightapp.models.Cart
+import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.cart.ShoppingCart
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.common.Removable

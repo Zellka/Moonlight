@@ -1,6 +1,6 @@
 package com.example.moonlightapp.data
 
-import com.example.moonlightapp.models.Categories
+import com.example.moonlightapp.entity.Categories
 import java.util.ArrayList
 
 class CategoriesModel {

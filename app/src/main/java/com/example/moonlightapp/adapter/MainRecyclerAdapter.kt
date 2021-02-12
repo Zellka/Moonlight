@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.models.Categories
-import com.example.moonlightapp.models.Dish
+import com.example.moonlightapp.entity.Categories
+import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.common.Saleable
 
 class MainRecyclerAdapter(

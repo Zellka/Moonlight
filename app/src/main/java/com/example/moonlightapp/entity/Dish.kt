@@ -1,4 +1,4 @@
-package com.example.moonlightapp.models
+package com.example.moonlightapp.entity
 
 data class Dish (
     var name: String,
