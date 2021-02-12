@@ -1,40 +1,40 @@
 package com.example.moonlightapp.data
 
-import com.example.moonlightapp.models.CategoryItem
+import com.example.moonlightapp.models.Dish
 
 class CategoryItemModel {
-    fun getAppetizerData(): List<CategoryItem> {
-        val items: MutableList<CategoryItem> = ArrayList()
+    fun getAppetizerData(): List<Dish> {
+        val items: MutableList<Dish> = ArrayList()
         items.add(
-            CategoryItem(
+            Dish(
                 "Снеки1",
                 289,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Снеки2",
                 289,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Снеки3",
                 289,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Снеки4",
                 289,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Снеки5",
                 289,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
@@ -43,38 +43,38 @@ class CategoryItemModel {
         return items
     }
 
-    fun getSaladData(): List<CategoryItem> {
-        val items: MutableList<CategoryItem> = ArrayList()
+    fun getSaladData(): List<Dish> {
+        val items: MutableList<Dish> = ArrayList()
         items.add(
-            CategoryItem(
+            Dish(
                 "Крабовый1",
                 389,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Крабовый2",
                 389,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Крабовый3",
                 389,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Крабовый4",
                 389,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Крабовый5",
                 389,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
@@ -83,38 +83,38 @@ class CategoryItemModel {
         return items
     }
 
-    fun getMainDishData(): List<CategoryItem> {
-        val items: MutableList<CategoryItem> = ArrayList()
+    fun getMainDishData(): List<Dish> {
+        val items: MutableList<Dish> = ArrayList()
         items.add(
-            CategoryItem(
+            Dish(
                 "Мясо1",
                 400,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Мясо2",
                 400,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Мясо3",
                 400,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Мясо4",
                 400,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Мясо5",
                 400,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
@@ -123,38 +123,38 @@ class CategoryItemModel {
         return items
     }
 
-    fun getSideDishData(): List<CategoryItem> {
-        val items: MutableList<CategoryItem> = ArrayList()
+    fun getSideDishData(): List<Dish> {
+        val items: MutableList<Dish> = ArrayList()
         items.add(
-            CategoryItem(
+            Dish(
                 "Гречка1",
                 100,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Гречка2",
                 100,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Гречка3",
                 100,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Гречка4",
                 100,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Гречка5",
                 100,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
@@ -163,38 +163,38 @@ class CategoryItemModel {
         return items
     }
 
-    fun getDessertData(): List<CategoryItem> {
-        val items: MutableList<CategoryItem> = ArrayList()
+    fun getDessertData(): List<Dish> {
+        val items: MutableList<Dish> = ArrayList()
         items.add(
-            CategoryItem(
+            Dish(
                 "Торт1",
                 500,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Торт2",
                 500,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Торт3",
                 500,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Торт4",
                 500,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
-            CategoryItem(
+            Dish(
                 "Торт5",
                 500,
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"

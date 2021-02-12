@@ -7,20 +7,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.cart.CartItem
-import com.example.moonlightapp.models.CategoryItem
+import com.example.moonlightapp.models.Dish
 import com.example.moonlightapp.common.Saleable
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_dish.view.*
 
 class CategoryItemAdapter(
     private val context: Context,
-    private val categoryItem: List<CategoryItem>,
+    private val categoryItem: List<Dish>,
     private val saleable: Saleable
 ) :
     RecyclerView.Adapter<CategoryItemAdapter.CategoryItemViewHolder>() {
 
     class CategoryItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(model: CategoryItem, saleable: Saleable){
+        fun bind(model: Dish, saleable: Saleable){
             Picasso.get().load(model.url).centerCrop().fit().into(itemView.img_dish)
             itemView.name_dish.text = model.name
             itemView.price_dish.text = model.price.toString()

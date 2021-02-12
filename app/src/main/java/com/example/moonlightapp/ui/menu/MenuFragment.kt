@@ -12,7 +12,7 @@ import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.MainRecyclerAdapter
 import com.example.moonlightapp.cart.CartItem
 import com.example.moonlightapp.cart.ShoppingCart
-import com.example.moonlightapp.models.AllCategory
+import com.example.moonlightapp.models.Categories
 import com.example.moonlightapp.data.CategoriesModel
 import com.example.moonlightapp.ui.DishFragment
 import com.example.moonlightapp.ui.MainActivity
@@ -39,7 +39,7 @@ class MenuFragment : Fragment(), Saleable {
         return root
     }
 
-    private fun setMainCategoryRecycler(allCategory: List<AllCategory>) {
+    private fun setMainCategoryRecycler(allCategory: List<Categories>) {
         mainCategoryRecycler = root.findViewById(R.id.items_main)
         val layoutManager: RecyclerView.LayoutManager =
             LinearLayoutManager(context)

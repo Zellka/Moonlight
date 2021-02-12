@@ -8,13 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.models.AllCategory
-import com.example.moonlightapp.models.CategoryItem
+import com.example.moonlightapp.models.Categories
+import com.example.moonlightapp.models.Dish
 import com.example.moonlightapp.common.Saleable
 
 class MainRecyclerAdapter(
     private val context: Context,
-    private val allCategory: List<AllCategory>
+    private val allCategory: List<Categories>
 ) :
     RecyclerView.Adapter<MainRecyclerAdapter.MainViewHolder>() {
     private lateinit var saleable: Saleable
@@ -42,7 +42,7 @@ class MainRecyclerAdapter(
         return allCategory.size
     }
 
-    private fun setCatItemRecycler(recyclerView: RecyclerView, categoryItem: List<CategoryItem>) {
+    private fun setCatItemRecycler(recyclerView: RecyclerView, categoryItem: List<Dish>) {
         val itemRecyclerAdapter = CategoryItemAdapter(
             context, categoryItem, saleable
         )
