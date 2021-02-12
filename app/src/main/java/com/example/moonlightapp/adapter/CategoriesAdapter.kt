@@ -24,7 +24,7 @@ class CategoriesAdapter(
     }
     class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var categoryTitle: TextView = itemView.findViewById(R.id.title_text_view)
-        var itemRecycler: RecyclerView = itemView.findViewById(R.id.items_container)
+        var itemRecycler: RecyclerView = itemView.findViewById(R.id.recycler_nested)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
