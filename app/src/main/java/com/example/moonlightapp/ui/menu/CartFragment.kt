@@ -13,7 +13,7 @@ import com.example.moonlightapp.adapter.ShoppingCartAdapter
 import com.example.moonlightapp.cart.CartItem
 import com.example.moonlightapp.cart.ShoppingCart
 import com.example.moonlightapp.ui.MainActivity
-import com.example.moonlightapp.util.Removable
+import com.example.moonlightapp.common.Removable
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*

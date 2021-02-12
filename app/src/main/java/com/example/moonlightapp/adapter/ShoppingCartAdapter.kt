@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.cart.CartItem
-import com.example.moonlightapp.util.Removable
+import com.example.moonlightapp.common.Removable
 import com.squareup.picasso.Picasso
 
 class ShoppingCartAdapter(

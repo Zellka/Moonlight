@@ -16,7 +16,7 @@ import com.example.moonlightapp.models.AllCategory
 import com.example.moonlightapp.models.CategoriesRepository
 import com.example.moonlightapp.ui.DishFragment
 import com.example.moonlightapp.ui.MainActivity
-import com.example.moonlightapp.util.Saleable
+import com.example.moonlightapp.common.Saleable
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 import io.reactivex.Observable

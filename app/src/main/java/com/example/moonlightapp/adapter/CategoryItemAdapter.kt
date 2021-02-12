@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.cart.CartItem
 import com.example.moonlightapp.models.CategoryItem
-import com.example.moonlightapp.util.Saleable
+import com.example.moonlightapp.common.Saleable
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_dish.view.*
 

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.models.AllCategory
 import com.example.moonlightapp.models.CategoryItem
-import com.example.moonlightapp.util.Saleable
+import com.example.moonlightapp.common.Saleable
 
 class MainRecyclerAdapter(
     private val context: Context,
