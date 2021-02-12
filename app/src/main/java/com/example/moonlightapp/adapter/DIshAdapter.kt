@@ -12,12 +12,12 @@ import com.example.moonlightapp.common.ItemClickListener
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_dish.view.*
 
-class CategoryItemAdapter(
+class DIshAdapter(
     private val context: Context,
     private val categoryItem: List<Dish>,
     private val listener: ItemClickListener
 ) :
-    RecyclerView.Adapter<CategoryItemAdapter.CategoryItemViewHolder>() {
+    RecyclerView.Adapter<DIshAdapter.CategoryItemViewHolder>() {
 
     class CategoryItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(model: Dish, saleable: ItemClickListener){

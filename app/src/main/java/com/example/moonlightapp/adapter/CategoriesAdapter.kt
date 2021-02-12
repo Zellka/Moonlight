@@ -43,7 +43,7 @@ class CategoriesAdapter(
     }
 
     private fun setCatItemRecycler(recyclerView: RecyclerView, categoryItem: List<Dish>) {
-        val itemRecyclerAdapter = CategoryItemAdapter(
+        val itemRecyclerAdapter = DIshAdapter(
             context, categoryItem, listener
         )
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
