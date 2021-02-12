@@ -61,7 +61,7 @@ class MenuFragment : Fragment(), ItemClickListener {
     }
 
     @SuppressLint("CheckResult")
-    override fun addToCart(cartItem: Cart, nameDish: String) {
+    override fun addToCart(cartItem: Cart) {
         Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
             ShoppingCart.addItem(cartItem)
             it.onNext(ShoppingCart.getCart())

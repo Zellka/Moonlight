@@ -25,7 +25,7 @@ class CategoryItemAdapter(
             itemView.name_dish.text = model.name
             itemView.price_dish.text = model.price.toString()
             itemView.addToCart.setOnClickListener { view ->
-                saleable.addToCart(Cart(model),model.name)
+                saleable.addToCart(Cart(model))
             }
         }
     }
