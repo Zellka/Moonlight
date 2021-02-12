@@ -41,7 +41,7 @@ class MenuFragment : Fragment(), ItemClickListener {
     }
 
     private fun setCategoriesRecycler(allCategory: List<Categories>) {
-        recyclerView = root.findViewById(R.id.items_main)
+        recyclerView = root.findViewById(R.id.recycler_parent)
         val layoutManager: RecyclerView.LayoutManager =
             LinearLayoutManager(context)
         recyclerView.layoutManager = layoutManager
