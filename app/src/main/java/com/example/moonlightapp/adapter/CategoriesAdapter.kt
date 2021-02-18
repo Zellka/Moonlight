@@ -22,6 +22,7 @@ class CategoriesAdapter(
     fun setOnItemClickListener(onSaleable: ItemClickListener) {
         listener = onSaleable
     }
+
     class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var categoryTitle: TextView = itemView.findViewById(R.id.title_text_view)
         var itemRecycler: RecyclerView = itemView.findViewById(R.id.recycler_nested)
@@ -38,12 +39,10 @@ class CategoriesAdapter(
         setCatItemRecycler(holder.itemRecycler, allCategory[position].categoryItem)
     }
 
-    override fun getItemCount(): Int {
-        return allCategory.size
-    }
+    override fun getItemCount(): Int = allCategory.size
 
     private fun setCatItemRecycler(recyclerView: RecyclerView, categoryItem: List<Dish>) {
-        val itemRecyclerAdapter = DIshAdapter(
+        val itemRecyclerAdapter = DishAdapter(
             context, categoryItem, listener
         )
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
