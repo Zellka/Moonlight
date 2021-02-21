@@ -1,13 +1,48 @@
 <resources>
     <string name="app_name">Moonlight</string>
-    <string name="title_home">Home</string>
-    <string name="title_menu">Menu</string>
-    <string name="title_cart">Cart</string>
-    <string name="title_chat">Chat</string>
-    <string name="title_profile">Profile</string>
+    <string name="title_home">Главная</string>
+    <string name="title_menu">Меню</string>
+    <string name="title_cart">Корзина</string>
+    <string name="title_chat">Чат</string>
+    <string name="title_profile">Профиль</string>
 
     <string name="title_pizza">Пицца</string>
     <string name="title_salads">Салаты</string>
     <string name="title_main_dishes">Основное</string>
     <string name="title_desserts">Десерты</string>
+
+    <string name="text_greeting">Привет!</string>
+    <string name="log_in">Войти</string>
+    <string name="order_history">Заказы</string>
+    <string name="favorites">Избранное</string>
+    <string name="title_city">Ваш город</string>
+    <string name="name_city">Донецк</string>
+    <string name="title_communication">Давай общаться!</string>
+    <string name="call_to_chat">Напиши нам в чат</string>
+    <string name="help_offer">Ответим на любой вопрос и оформим заказ</string>
+    <string name="delivery_service_number">+38 (071) 333–33-00</string>
+    <string name="call_to_call">Звони, будем рады слышать</string>
+
+    <string name="title_delivery">Доставка и оплата</string>
+    <string name="information_delivery">Заказы принимаются круглосуточно каждый день по телефону +38 (071) 000–00-00 или в режиме онлайн через приложение. Мы доставляем заказы с 10:00 до 21:00. Каждый заказ готовится индивидуально и упаковывается непосредственно перед отправкой.</string>
+
+    <string name="title_time_and_cost_delivery">Время и стоимость доставки</string>
+    <string name="time_and_cost_delivery">Доставка осуществляется по Донецку с 10:00 до 21:00. Доставка бесплатная. Минимальная сумма заказа - 400 рублей.</string>
+
+    <string name="title_delivery_areas">В районы</string>
+    <string name="green_zone">
+        - Ворошиловский район
+        - Калининский район
+        - Будённовский район
+        - Куйбышевский район
+        - Ленинский район
+    </string>
+    <string name="information_green_zone">Зелёная зона - бесплатная доставка в течение 30 минут.</string>
+    <string name="yellow_zone">
+        - Киевский район
+        - Кировский район
+        - Петровский район
+        - Пролетарский район
+    </string>
+    <string name="information_yellow_zone">Жёлтая зона - бесплатная доставка в течение часа.</string>
 </resources>
