@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.moonlightapp.AuthorizationActivity
 import com.example.moonlightapp.DeliveryActivity
 import com.example.moonlightapp.R
 
@@ -25,9 +26,13 @@ class ProfileFragment : Fragment() {
         val btnOrderHistory = root.findViewById<Button>(R.id.order_history)
         val btnFavorites = root.findViewById<Button>(R.id.favorites)
         val btnDelivery = root.findViewById<Button>(R.id.delivery)
-        val intent = Intent(this.context, DeliveryActivity::class.java)
-        btnDelivery.setOnClickListener {
+        val intent = Intent(this.context, AuthorizationActivity::class.java)
+        btnLogInOut.setOnClickListener {
             startActivity(intent)
+        }
+        val intentDel = Intent(this.context, DeliveryActivity::class.java)
+        btnDelivery.setOnClickListener {
+            startActivity(intentDel)
         }
 
         return root
