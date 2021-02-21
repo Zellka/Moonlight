@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="70dp"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_greeting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -22,6 +21,7 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_log_in_out"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/log_in"
@@ -29,6 +29,7 @@
             android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/log_in_out"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:text="->" />
@@ -42,11 +43,13 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/order_history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/order_history" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/favorites"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/favorites" />
@@ -123,6 +126,7 @@
             android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/delivery"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:text="->" />
