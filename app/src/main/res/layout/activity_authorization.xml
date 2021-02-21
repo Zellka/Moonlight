@@ -45,12 +45,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_error">
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <com.github.pinball83.maskededittext.MaskedEditText
             android:id="@+id/enter_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_number"
-            android:inputType="phone" />
+            android:inputType="number"
+            app:mask="+38 (071) *** **-**"
+            app:notMaskedSymbol="*" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -59,10 +61,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#0000FF"
-        android:enabled="false"
         android:text="@string/log_in"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
