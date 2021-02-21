@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.moonlightapp.AuthorizationActivity
-import com.example.moonlightapp.DeliveryActivity
+import com.example.moonlightapp.ui.AuthorizationActivity
+import com.example.moonlightapp.ui.DeliveryActivity
 import com.example.moonlightapp.R
 
 class ProfileFragment : Fragment() {

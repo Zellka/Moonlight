@@ -1,7 +1,8 @@
-package com.example.moonlightapp
+package com.example.moonlightapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.moonlightapp.R
 
 class DeliveryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
