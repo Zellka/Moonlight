@@ -11,9 +11,13 @@
     <string name="title_main_dishes">Основное</string>
     <string name="title_desserts">Десерты</string>
 
+    <string name="hint_name">Имя</string>
+    <string name="hint_number">Номер телефона</string>
+
     <string name="text_greeting">Привет!</string>
     <string name="log_in">Войти</string>
     <string name="log_out">Выйти</string>
+    <string name="authorization">Авторизация</string>
     <string name="order_history">Заказы</string>
     <string name="favorites">Избранное</string>
     <string name="title_city">Ваш город</string>
