@@ -7,12 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import com.example.moonlightapp.R
 import com.example.moonlightapp.ui.AuthorizationActivity
 import com.example.moonlightapp.ui.DeliveryActivity
-import com.example.moonlightapp.R
 
 class ProfileFragment : Fragment() {
+
+   private lateinit var textGreeting:TextView
+   private lateinit var textLogInOut:TextView
+   private lateinit var btnLogInOut:Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,22 +25,36 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_profile, container, false)
-        val textGreeting = root.findViewById<TextView>(R.id.text_greeting)
-        val textLogInOut = root.findViewById<TextView>(R.id.text_log_in_out)
-        val btnLogInOut = root.findViewById<Button>(R.id.log_in_out)
+
+        textGreeting = root.findViewById<TextView>(R.id.text_greeting)
+        textLogInOut = root.findViewById<TextView>(R.id.text_log_in_out)
+        btnLogInOut = root.findViewById<Button>(R.id.log_in_out)
         val btnOrderHistory = root.findViewById<Button>(R.id.order_history)
         val btnFavorites = root.findViewById<Button>(R.id.favorites)
         val btnDelivery = root.findViewById<Button>(R.id.delivery)
+
         val intent = Intent(this.context, AuthorizationActivity::class.java)
         btnLogInOut.setOnClickListener {
-            startActivity(intent)
+            startActivityForResult(intent, 0)
         }
         val intentDel = Intent(this.context, DeliveryActivity::class.java)
         btnDelivery.setOnClickListener {
             startActivity(intentDel)
         }
-
         return root
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==0){
+            textGreeting.text = data!!.getStringExtra("nameUser") + "!"
+            textLogInOut.setText(R.string.log_out)
+            btnLogInOut.isVisible = false
+            btnLogInOut.isClickable = false
+//            btnLogInOut.setOnClickListener {
+//                textGreeting.setText(R.string.text_greeting)
+//                textLogInOut.setText(R.string.log_in)
+//            }
+        }
+    }
 }
