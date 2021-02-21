@@ -12,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.AuthorizationActivity"/>
-        <activity android:name=".ui.DeliveryActivity"/>
+        <activity android:name=".ui.AuthorizationActivity"
+            android:parentActivityName=".ui.MainActivity"/>
+        <activity android:name=".ui.DeliveryActivity"
+            android:parentActivityName=".ui.MainActivity"/>
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/app_name">
