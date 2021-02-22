@@ -1,5 +1,6 @@
 package com.example.moonlightapp.ui.menu
 
+import android.R.attr
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment
 import com.example.moonlightapp.R
 import com.example.moonlightapp.ui.AuthorizationActivity
 import com.example.moonlightapp.ui.DeliveryActivity
+
 
 class ProfileFragment : Fragment() {
 
@@ -46,11 +48,12 @@ class ProfileFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode==0){
-            textGreeting.text = data!!.getStringExtra("nameUser") + "!"
-            textLogInOut.setText(R.string.log_out)
-            btnLogInOut.isVisible = false
-            btnLogInOut.isClickable = false
+        if (data == null) {
+            return
         }
+        textGreeting.text = data.getStringExtra("nameUser")
+        textLogInOut.setText(R.string.log_out)
+        btnLogInOut.isVisible = false
+        btnLogInOut.isClickable = false
     }
 }

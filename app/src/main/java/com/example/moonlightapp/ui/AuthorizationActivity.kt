@@ -25,7 +25,7 @@ class AuthorizationActivity : AppCompatActivity() {
             if(enterName.text.isNotEmpty() && enterNumber.text.isNotEmpty()){
                 val intent = Intent()
                 intent.putExtra("nameUser", enterName.text.toString())
-                setResult(1, intent)
+                setResult(RESULT_OK, intent)
                 this.finish();
 
             }
