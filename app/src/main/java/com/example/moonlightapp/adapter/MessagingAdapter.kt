@@ -35,6 +35,8 @@ class MessagingAdapter : RecyclerView.Adapter<MessagingAdapter.MessageViewHolder
                     visibility = View.VISIBLE
                 }
                 holder.itemView.bot_message.visibility = View.GONE
+                holder.itemView.bot_message_time.visibility = View.GONE
+                holder.itemView.your_message_time.text = currentMessage.time
             }
             RECEIVE_ID -> {
                 holder.itemView.bot_message.apply {
@@ -42,6 +44,8 @@ class MessagingAdapter : RecyclerView.Adapter<MessagingAdapter.MessageViewHolder
                     visibility = View.VISIBLE
                 }
                 holder.itemView.your_message.visibility = View.GONE
+                holder.itemView.your_message_time.visibility = View.GONE
+                holder.itemView.bot_message_time.text = currentMessage.time
             }
         }
     }
