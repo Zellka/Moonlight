@@ -50,4 +50,7 @@
         - Пролетарский район
     </string>
     <string name="information_yellow_zone">Жёлтая зона - бесплатная доставка в течение часа.</string>
+
+    <string name="hint_message">Напиши сообщение</string>
+    <string name="text_btn_send">Отправить</string>
 </resources>
