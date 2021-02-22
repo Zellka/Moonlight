@@ -43,8 +43,7 @@ class ChatFragment : Fragment() {
 
         clickEvents()
 
-        customBotMessage("Привет! Чем я могу помочь?")
-        customBotMessage("1.Как оформить заказ\n2.Условия доставки\n3.Сколько ждать заказ?\n4.Как можно оплатить?\n5.Как можно связаться?\n\nили задайте свой вопрос")
+        customBotMessage("Привет! Вам нужна помощь?")
         return root
     }
 
@@ -86,23 +85,19 @@ class ChatFragment : Fragment() {
         val timeStamp = Time.timeStamp()
 
         GlobalScope.launch {
-            //bot response delay
-            delay(1000)
+            delay(2000)
             withContext(Dispatchers.Main) {
-                //gets the response
                 val response = BotResponse.basicResponses(message)
                 messagesList.add(Message(response, RECEIVE_ID, timeStamp))
                 adapter.insertMessage(Message(response, RECEIVE_ID, timeStamp))
                 recyclerView.scrollToPosition(adapter.itemCount - 1)
-
             }
         }
     }
     override fun onStart() {
         super.onStart()
-        //in case there are messages, scroll to bottom when reopening app
         GlobalScope.launch {
-            delay(100)
+            delay(1000)
             withContext(Dispatchers.Main) {
                 recyclerView.scrollToPosition(adapter.itemCount - 1)
             }
@@ -110,7 +105,7 @@ class ChatFragment : Fragment() {
     }
     private fun customBotMessage(message: String) {
         GlobalScope.launch {
-            delay(1000)
+            delay(100)
             withContext(Dispatchers.Main) {
                 val timeStamp = Time.timeStamp()
                 messagesList.add(Message(message, RECEIVE_ID, timeStamp))
