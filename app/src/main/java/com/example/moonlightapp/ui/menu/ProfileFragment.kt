@@ -35,7 +35,7 @@ class ProfileFragment : Fragment() {
 
         val intent = Intent(this.context, AuthorizationActivity::class.java)
         btnLogInOut.setOnClickListener {
-            startActivityForResult(intent, 0)
+            startActivityForResult(intent, 1)
         }
         val intentDel = Intent(this.context, DeliveryActivity::class.java)
         btnDelivery.setOnClickListener {
@@ -51,10 +51,6 @@ class ProfileFragment : Fragment() {
             textLogInOut.setText(R.string.log_out)
             btnLogInOut.isVisible = false
             btnLogInOut.isClickable = false
-//            btnLogInOut.setOnClickListener {
-//                textGreeting.setText(R.string.text_greeting)
-//                textLogInOut.setText(R.string.log_in)
-//            }
         }
     }
 }
