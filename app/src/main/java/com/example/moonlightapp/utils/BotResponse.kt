@@ -1,9 +1,5 @@
 package com.example.moonlightapp.utils
 
-import java.sql.Date
-import java.sql.Timestamp
-import java.text.SimpleDateFormat
-
 object BotResponse {
 
     fun basicResponses(_message: String): String {
@@ -13,7 +9,6 @@ object BotResponse {
 
         return when {
 
-            //Hello
             message.contains("привет") || message.contains("здравствуйте") -> {
                 when (random) {
                     0 -> "Привет!"
@@ -21,18 +16,22 @@ object BotResponse {
                     2 -> "Добрый день"
                     else -> "error" }
             }
-
-            //How are you?
-            message.contains("как дела") -> {
+            message.contains("спасибо") || message.contains("ок") -> {
                 when (random) {
-                    0 -> "Всё хорошо. Спасибо"
-                    1 -> "Неплохо.Спасибо!"
-                    2 -> "Прекрасно"
-                    else -> "error"
-                }
+                    0 -> "Был рад помочь"
+                    1 -> "Обращайтесь ещё"
+                    2 -> "Всегда рад помочь"
+                    else -> "error" }
             }
+            message.contains("1") -> "Перейдите в раздел 'Корзина' и нажмите на 'Оформить заказ'"
+            message.contains("2") -> "Доставка осуществляется по всему Донецку. Доставка бесплатная. Минимальная сумма доставки - 400 рублей"
+            message.contains("3") -> "Среднее время ожидания 30-60 минут"
+            message.contains("4") -> "Оплата производится наличными курьеру"
+            message.contains("5") -> "По номеру телефона: +38 (071) 333–33-00"
 
-            //when the programme doesn't understand
+            message.contains("достав") && message.contains("?") -> "Доставка осуществляется по всему Донецку. За дополнительной информацией обращайтесь: +38 (071) 333–33-00 "
+            message.contains("жало") -> "Вы можете обратиться: +38 (071) 333–33-00"
+
             else -> {
                 when (random) {
                     0 -> "Я не понимаю..."

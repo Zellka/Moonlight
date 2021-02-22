@@ -29,7 +29,6 @@ class ChatFragment : Fragment() {
     private var messagesList = mutableListOf<Message>()
 
     private lateinit var adapter: MessagingAdapter
-    //private val botList = listOf("Екатерина", "Иван", "Валерия", "София", "Евгений")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,8 +43,8 @@ class ChatFragment : Fragment() {
 
         clickEvents()
 
-        //val random = (0..3).random()
         customBotMessage("Привет! Чем я могу помочь?")
+        customBotMessage("1.Как оформить заказ\n2.Условия доставки\n3.Сколько ждать заказ?\n4.Как можно оплатить?\n5.Как можно связаться?\n\nили задайте свой вопрос")
         return root
     }
 
