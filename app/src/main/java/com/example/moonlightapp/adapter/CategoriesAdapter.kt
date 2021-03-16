@@ -13,11 +13,11 @@ import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.common.ItemClickListener
 
 class CategoriesAdapter(
-    private val context: Context,
-    private val allCategory: List<Categories>
+    private val context: Context
 ) :
     RecyclerView.Adapter<CategoriesAdapter.MainViewHolder>() {
     private lateinit var listener: ItemClickListener
+    private var allCategory: MutableList<Categories> = ArrayList()
 
     fun setOnItemClickListener(onSaleable: ItemClickListener) {
         listener = onSaleable
@@ -43,9 +43,14 @@ class CategoriesAdapter(
 
     private fun setCatItemRecycler(recyclerView: RecyclerView, categoryItem: List<Dish>) {
         val itemRecyclerAdapter = DishAdapter(
-            context, categoryItem, listener
+            categoryItem, listener
         )
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         recyclerView.adapter = itemRecyclerAdapter
+    }
+
+    fun setList(dishList: MutableList<Categories>) {
+        allCategory = dishList
+        notifyDataSetChanged()
     }
 }

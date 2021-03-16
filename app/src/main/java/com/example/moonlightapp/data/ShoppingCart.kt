@@ -1,4 +1,4 @@
-package com.example.moonlightapp.cart
+package com.example.moonlightapp.data
 
 import com.example.moonlightapp.entity.Cart
 import io.paperdb.Paper

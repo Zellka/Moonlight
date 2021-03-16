@@ -8,35 +8,35 @@ class CategoryItemModel {
         items.add(
             Dish(
                 "Снеки1",
-                289,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Снеки2",
-                289,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Снеки3",
-                289,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Снеки4",
-                289,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Снеки5",
-                289,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
@@ -48,35 +48,35 @@ class CategoryItemModel {
         items.add(
             Dish(
                 "Крабовый1",
-                389,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Крабовый2",
-                389,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Крабовый3",
-                389,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Крабовый4",
-                389,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Крабовый5",
-                389,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
@@ -88,35 +88,35 @@ class CategoryItemModel {
         items.add(
             Dish(
                 "Мясо1",
-                400,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Мясо2",
-                400,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Мясо3",
-                400,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Мясо4",
-                400,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Мясо5",
-                400,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
@@ -128,35 +128,35 @@ class CategoryItemModel {
         items.add(
             Dish(
                 "Гречка1",
-                100,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Гречка2",
-                100,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Гречка3",
-                100,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Гречка4",
-                100,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Гречка5",
-                100,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
@@ -168,35 +168,35 @@ class CategoryItemModel {
         items.add(
             Dish(
                 "Торт1",
-                500,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Торт2",
-                500,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Торт3",
-                500,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Торт4",
-                500,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )
         items.add(
             Dish(
                 "Торт5",
-                500,
+                "289",
                 "https://sun9-29.userapi.com/impg/c854024/v854024546/2235f1/yHBkXIcQnBk.jpg?size=520x0&quality=90&sign=8c559cc05bf42491b56129418a7d488e"
             )
         )

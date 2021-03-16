@@ -33,6 +33,10 @@ android {
     androidExtensions {
         experimental = true
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -56,5 +60,7 @@ dependencies {
     implementation 'io.paperdb:paperdb:2.7.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
     implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+    //databinding
+    kapt "com.android.databinding:compiler:$kotlin_version"
 
 }

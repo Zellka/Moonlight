@@ -9,25 +9,31 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
+import com.example.moonlightapp.common.ItemClickListener
 import com.example.moonlightapp.entity.Cart
-import com.example.moonlightapp.common.Removable
 import com.squareup.picasso.Picasso
 
 class ShoppingCartAdapter(
     var context: Context,
-    var cartItems: MutableList<Cart>,
-    private var removable: Removable
+    private var listener: ItemClickListener
 ) :
     RecyclerView.Adapter<ShoppingCartAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ShoppingCartAdapter.ViewHolder {
+    private var cartItems: MutableList<Cart> = ArrayList()
+
+    fun setList(cartList: MutableList<Cart>) {
+        cartItems = cartList
+        notifyDataSetChanged()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ViewHolder {
         val layout = LayoutInflater.from(context).inflate(R.layout.cart_item, parent, false)
         return ViewHolder(layout)
     }
 
     override fun getItemCount(): Int = cartItems.size
 
-    override fun onBindViewHolder(viewHolder: ShoppingCartAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val model = cartItems[position]
         viewHolder.nameDish!!.text = model.product.name
         viewHolder.priceDish!!.text = model.product.price.toString()
@@ -36,13 +42,12 @@ class ShoppingCartAdapter(
             .load(model.product.url)
             .into(viewHolder.imgDish)
         viewHolder.remove?.setOnClickListener {
-            removable.removeDish(cartItems, position)
+            listener.removeDish(cartItems, position)
             notifyDataSetChanged()
         }
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
         var imgDish: ImageView? = itemView.findViewById(R.id.product_image)
         var nameDish: TextView? = itemView.findViewById(R.id.product_name)
         var priceDish: TextView? = itemView.findViewById(R.id.product_price)

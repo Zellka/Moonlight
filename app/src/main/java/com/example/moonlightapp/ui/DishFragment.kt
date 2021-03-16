@@ -27,7 +27,7 @@ class DishFragment : DialogFragment() {
         val imgDish = root.findViewById<ImageView>(R.id.dish_img)
 
         nameDish.text = arguments?.getString("nameDish")
-        priceDish.text = arguments?.getInt("priceDish").toString()
+        priceDish.text = arguments?.getString("priceDish")
         val url: String? = arguments?.getString("imgDish")
         Picasso.get().load(url).centerCrop().fit().into(imgDish)
 

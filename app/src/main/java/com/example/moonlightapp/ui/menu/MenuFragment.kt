@@ -6,18 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.CategoriesAdapter
 import com.example.moonlightapp.entity.Cart
-import com.example.moonlightapp.cart.ShoppingCart
-import com.example.moonlightapp.entity.Categories
-import com.example.moonlightapp.data.CategoriesModel
 import com.example.moonlightapp.ui.DishFragment
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.common.ItemClickListener
 import com.example.moonlightapp.entity.Dish
+import com.example.moonlightapp.viewmodels.DishViewModel
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 import io.reactivex.Observable
@@ -25,50 +25,78 @@ import java.util.*
 
 class MenuFragment : Fragment(), ItemClickListener {
 
-    private lateinit var root: View
     private lateinit var recyclerView: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
-    private var dishData: CategoriesModel = CategoriesModel()
+    private lateinit var dishViewModel: DishViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        dishViewModel = ViewModelProvider(this).get(DishViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        root = inflater.inflate(R.layout.fragment_menu, container, false)
-        setCategoriesRecycler(dishData.getData())
-        return root
+        return inflater.inflate(R.layout.fragment_menu, container, false)
     }
 
-    private fun setCategoriesRecycler(allCategory: List<Categories>) {
-        recyclerView = root.findViewById(R.id.recycler_parent)
-        val layoutManager: RecyclerView.LayoutManager =
-            LinearLayoutManager(context)
-        recyclerView.layoutManager = layoutManager
-        categoriesAdapter = CategoriesAdapter(this.requireContext(), allCategory)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        dishViewModel.getAllCategoriesList()
+        recyclerView = view.findViewById(R.id.recycler_parent)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        categoriesAdapter = CategoriesAdapter(this.requireContext())
         categoriesAdapter.setOnItemClickListener(this)
+        dishViewModel.categoriesMutableLiveData.observe(
+            viewLifecycleOwner
+        ) { postModels ->
+            categoriesAdapter.setList(postModels)
+        }
         recyclerView.adapter = categoriesAdapter
     }
 
-    override fun onItemClick(item: Dish) {
+    override fun showItem(item: Dish) {
         val dishFragment = DishFragment()
         val args = Bundle()
         args.putString("nameDish", item.name)
         args.putString("imgDish", item.url)
-        args.putInt("priceDish", item.price)
+        args.putString("priceDish", item.price)
         dishFragment.arguments = args
         dishFragment.show(this@MenuFragment.requireFragmentManager(), "Dialog")
     }
 
     @SuppressLint("CheckResult")
     override fun addToCart(cartItem: Cart) {
+        dishViewModel.getCartList()
         Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
-            ShoppingCart.addItem(cartItem)
-            it.onNext(ShoppingCart.getCart())
+            dishViewModel.addDishToCart(cartItem)
+            dishViewModel.cartMutableLiveData.observe(viewLifecycleOwner){
+                postModels -> it.onNext(postModels)
+            }
         }).subscribe { cart ->
             var quantity = 0
-            cart.forEach { basketItem ->
-                quantity += basketItem.quantity
+            cart.forEach { cartItem ->
+                quantity += cartItem.quantity
+            }
+            (context as MainActivity).nav_view.getOrCreateBadge(R.id.navigation_cart).number =
+                quantity
+        }
+    }
+
+    @SuppressLint("CheckResult")
+    override fun removeDish(cartItems: MutableList<Cart>, position: Int) {
+        dishViewModel.getCartList()
+        Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
+            dishViewModel.removeDishFromCart(cartItems, position)
+            dishViewModel.cartMutableLiveData.observe(viewLifecycleOwner){
+                    postModels -> it.onNext(postModels)
+            }
+        }).subscribe { cart ->
+            var quantity = 0
+            cart.forEach { cartItem ->
+                quantity += cartItem.quantity
             }
             (context as MainActivity).nav_view.getOrCreateBadge(R.id.navigation_cart).number =
                 quantity

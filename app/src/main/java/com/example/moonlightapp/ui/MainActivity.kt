@@ -1,7 +1,6 @@
 package com.example.moonlightapp.ui
 
 import android.os.Bundle
-import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -9,7 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.moonlightapp.R
-import com.example.moonlightapp.cart.ShoppingCart
+import com.example.moonlightapp.data.ShoppingCart
 import io.paperdb.Paper
 
 class MainActivity : AppCompatActivity() {

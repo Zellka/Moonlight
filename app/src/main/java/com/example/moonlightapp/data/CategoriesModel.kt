@@ -6,7 +6,7 @@ import java.util.ArrayList
 class CategoriesModel {
     private var childData: CategoryItemModel = CategoryItemModel()
 
-    fun getData(): List<Categories> {
+    fun getData(): MutableList<Categories> {
         val allCategory: MutableList<Categories> = ArrayList()
         allCategory.add(Categories("Закуски", childData.getAppetizerData()))
         allCategory.add(Categories("Салаты", childData.getSaladData()))
