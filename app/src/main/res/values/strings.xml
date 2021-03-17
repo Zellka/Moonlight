@@ -53,4 +53,16 @@
 
     <string name="hint_message">Напиши сообщение</string>
     <string name="text_btn_send">Отправить</string>
+
+
+
+    <string name="name_order">Имя получателя</string>
+    <string name="number_order">Номер мобильного</string>
+    <string name="street_order">Улица</string>
+    <string name="home_order">№ дома/строения</string>
+    <string name="number_office_order">№ квартиры/офиса/каб.</string>
+    <string name="code_intercom_order">Код домофона</string>
+    <string name="comment_order">Комментарий к заказу</string>
+    <string name="Donetsk">Донецк</string>
+    <string name="Makeevka">Макеевка</string>
 </resources>
