@@ -1,9 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.detail.OrderActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/order_layout"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:paddingLeft="30dp"
+        android:paddingTop="30dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/nameOrder"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/name_order"
+                android:inputType="textPersonName"
+                android:paddingTop="30dp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/numberOrder"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/number_order"
+                android:inputType="phone" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Donetsk"
+                    android:textSize="18dp" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Makeevka"
+                    android:textSize="18dp" />
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/streetOrder"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/street_order" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/homeOrder"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/home_order"
+                android:inputType="number" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/numberOfficeOrder"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/number_office_order"
+                android:inputType="number" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/codeIntercomOrder"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/code_intercom_order"
+                android:inputType="number" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/commentOrder"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/comment_order" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/order_layout"
+        android:gravity="center_horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_arrange"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/order_layout"
+            android:text="Оформить заказ"
+            android:textSize="30dp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>
