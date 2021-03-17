@@ -1,4 +1,4 @@
-package com.example.moonlightapp.ui
+package com.example.moonlightapp.ui.detail
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

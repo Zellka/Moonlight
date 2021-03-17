@@ -1,4 +1,4 @@
-package com.example.moonlightapp.ui.menu
+package com.example.moonlightapp.ui.main
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -14,8 +14,8 @@ import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.CategoriesAdapter
 import com.example.moonlightapp.common.Addable
 import com.example.moonlightapp.entity.Cart
-import com.example.moonlightapp.ui.DishFragment
-import com.example.moonlightapp.ui.MainActivity
+import com.example.moonlightapp.ui.detail.DishFragment
+import com.example.moonlightapp.ui.detail.MainActivity
 import com.example.moonlightapp.common.ItemClickable
 import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.viewmodels.DishViewModel
@@ -61,9 +61,9 @@ class MenuFragment : Fragment(), ItemClickable, Addable {
     override fun showDish(item: Dish) {
         val dishFragment = DishFragment()
         val args = Bundle()
-        args.putString("nameDish", item.name)
-        args.putString("imgDish", item.url)
-        args.putString("priceDish", item.price)
+        args.putString("NAME_DISH", item.name)
+        args.putString("IMAGE_DISH", item.url)
+        args.putString("PRICE_DISH", item.price)
         dishFragment.arguments = args
         dishFragment.show(this@MenuFragment.requireFragmentManager(), "Dialog")
     }
@@ -73,11 +73,11 @@ class MenuFragment : Fragment(), ItemClickable, Addable {
         dishViewModel.getCartList()
         Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
             dishViewModel.addDishToCart(cartItem)
-            dishViewModel.cartMutableLiveData.observe(viewLifecycleOwner){
-                    postModels -> it.onNext(postModels)
+            dishViewModel.cartMutableLiveData.observe(viewLifecycleOwner) { postModels ->
+                it.onNext(postModels)
             }
         }).subscribe { cart ->
-            var quantity = 0
+            var quantity = 1
             cart.forEach { cartItem ->
                 quantity += cartItem.quantity
             }

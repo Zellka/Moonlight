@@ -1,4 +1,4 @@
-package com.example.moonlightapp.ui.menu
+package com.example.moonlightapp.ui.main
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -11,27 +11,23 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.adapter.ShoppingCartAdapter
-import com.example.moonlightapp.common.ItemClickable
+import com.example.moonlightapp.adapter.CartAdapter
 import com.example.moonlightapp.common.Removable
 import com.example.moonlightapp.entity.Cart
-import com.example.moonlightapp.data.ShoppingCart
-import com.example.moonlightapp.ui.MainActivity
-import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.ui.DishFragment
-import com.example.moonlightapp.viewmodels.DishViewModel
+import com.example.moonlightapp.ui.detail.MainActivity
+import com.example.moonlightapp.viewmodels.CartViewModel
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 
 class CartFragment : Fragment(), Removable {
-    lateinit var adapter: ShoppingCartAdapter
+    lateinit var adapter: CartAdapter
     private lateinit var recyclerView: RecyclerView
-    lateinit var dishViewModel: DishViewModel
+    lateinit var cartViewModel: CartViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        dishViewModel = ViewModelProvider(this).get(DishViewModel::class.java)
+        cartViewModel = ViewModelProvider(this).get(CartViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -44,10 +40,10 @@ class CartFragment : Fragment(), Removable {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = ShoppingCartAdapter(this.requireContext(), this)
+        adapter = CartAdapter(this.requireContext(), this)
         recyclerView = view.findViewById(R.id.rv_basket)
-        dishViewModel.getCartList()
-        dishViewModel.cartMutableLiveData.observe(viewLifecycleOwner){
+        cartViewModel.getCartList()
+        cartViewModel.cartMutableLiveData.observe(viewLifecycleOwner){
                 postModels -> adapter.setList(postModels)
         }
         recyclerView.adapter = adapter
@@ -57,12 +53,14 @@ class CartFragment : Fragment(), Removable {
     @SuppressLint("CheckResult")
     override fun removeFromCart(cartItems: MutableList<Cart>, position: Int) {
         Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
-            ShoppingCart.removeItem(cartItems, position)
-            it.onNext(ShoppingCart.getCart())
+            cartViewModel.removeDishFromCart(cartItems, position)
+            cartViewModel.cartMutableLiveData.observe(viewLifecycleOwner){
+                    postModels -> it.onNext(postModels)
+            }
         }).subscribe { cart ->
             var quantity = 0
-            cart.forEach { basketItem ->
-                quantity += basketItem.quantity
+            cart.forEach { cartItem ->
+                quantity += cartItem.quantity
             }
             (context as MainActivity).nav_view.getOrCreateBadge(R.id.navigation_cart).number =
                 quantity

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.DeliveryActivity">
+    tools:context=".ui.detail.DeliveryActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:textSize="20sp"

@@ -1,4 +1,4 @@
-package com.example.moonlightapp.ui
+package com.example.moonlightapp.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

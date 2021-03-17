@@ -1,6 +1,5 @@
-package com.example.moonlightapp.ui.menu
+package com.example.moonlightapp.ui.main
 
-import android.R.attr
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,8 +10,8 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.moonlightapp.R
-import com.example.moonlightapp.ui.AuthorizationActivity
-import com.example.moonlightapp.ui.DeliveryActivity
+import com.example.moonlightapp.ui.detail.AuthorizationActivity
+import com.example.moonlightapp.ui.detail.DeliveryActivity
 
 
 class ProfileFragment : Fragment() {

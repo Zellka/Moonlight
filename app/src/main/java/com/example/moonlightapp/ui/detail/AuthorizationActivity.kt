@@ -1,4 +1,4 @@
-package com.example.moonlightapp.ui
+package com.example.moonlightapp.ui.detail
 
 import android.content.Intent
 import android.os.Bundle

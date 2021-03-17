@@ -1,67 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.DishFragment">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/dish_img"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:src="@mipmap/ic_launcher" />
+    <data>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/dish_name"
+        <variable
+            name="dish"
+            type="com.example.moonlightapp.entity.Dish" />
+    </data>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.detail.DishFragment">
+
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dish_img"
-            android:paddingTop="8dp"
-            android:text="Название"
-            android:textSize="24sp" />
+            android:padding="8dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/dish_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dish_name"
-            android:paddingTop="8dp"
-            android:text="Лучшее"
-            android:textSize="18sp" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/dish_img"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                app:imageUrl="@{dish.url}"
+                android:src="@mipmap/ic_launcher" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/dish_weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dish_description"
-            android:paddingTop="8dp"
-            android:text="150г"
-            android:textSize="18sp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dish_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dish_img"
+                android:paddingTop="8dp"
+                android:text="@{dish.name}"
+                android:textSize="24sp" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/dish_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dish_weight"
-            android:paddingTop="8dp"
-            android:text="150 $"
-            android:textSize="18sp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dish_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dish_name"
+                android:paddingTop="8dp"
+                android:text="Лучшее"
+                android:textSize="18sp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dish_weight"
-            android:layout_toRightOf="@+id/dish_price"
-            android:padding="10dp"
-            android:text="Отмена" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dish_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dish_description"
+                android:paddingTop="8dp"
+                android:text="150г"
+                android:textSize="18sp" />
 
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dish_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dish_weight"
+                android:paddingTop="8dp"
+                android:text="@{dish.price}"
+                android:textSize="18sp" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dish_weight"
+                android:layout_toRightOf="@+id/dish_price"
+                android:padding="10dp"
+                android:text="Отмена" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dish_weight"
+                android:layout_toRightOf="@+id/btn_cancel"
+                android:padding="10dp"
+                android:text="Добавить" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>
