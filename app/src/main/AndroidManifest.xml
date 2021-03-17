@@ -12,10 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.detail.AuthorizationActivity"
-            android:parentActivityName=".ui.detail.MainActivity"/>
-        <activity android:name=".ui.detail.DeliveryActivity"
-            android:parentActivityName=".ui.detail.MainActivity"/>
+        <activity android:name=".ui.detail.OrderActivity"></activity>
+        <activity
+            android:name=".ui.detail.AuthorizationActivity"
+            android:parentActivityName=".ui.detail.MainActivity" />
+        <activity
+            android:name=".ui.detail.DeliveryActivity"
+            android:parentActivityName=".ui.detail.MainActivity" />
         <activity
             android:name=".ui.detail.MainActivity"
             android:label="@string/app_name">
