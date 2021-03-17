@@ -5,44 +5,41 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import androidx.core.view.isVisible
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.moonlightapp.R
+import com.example.moonlightapp.databinding.FragmentProfileBinding
 import com.example.moonlightapp.ui.detail.AuthorizationActivity
 import com.example.moonlightapp.ui.detail.DeliveryActivity
 
-
 class ProfileFragment : Fragment() {
-
-   private lateinit var textGreeting:TextView
-   private lateinit var textLogInOut:TextView
-   private lateinit var btnLogInOut:Button
+    private lateinit var binding: FragmentProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val root = inflater.inflate(R.layout.fragment_profile, container, false)
+    ): View {
+        binding = DataBindingUtil.inflate(
+            LayoutInflater.from(context),
+            R.layout.fragment_profile,
+            container,
+            false
+        )
+        return binding.root
+    }
 
-        textGreeting = root.findViewById<TextView>(R.id.text_greeting)
-        textLogInOut = root.findViewById<TextView>(R.id.text_log_in_out)
-        btnLogInOut = root.findViewById<Button>(R.id.log_in_out)
-        val btnOrderHistory = root.findViewById<Button>(R.id.order_history)
-        val btnFavorites = root.findViewById<Button>(R.id.favorites)
-        val btnDelivery = root.findViewById<Button>(R.id.delivery)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val intent = Intent(this.context, AuthorizationActivity::class.java)
-        btnLogInOut.setOnClickListener {
+        binding.logInOut.setOnClickListener {
             startActivityForResult(intent, 1)
         }
-        val intentDel = Intent(this.context, DeliveryActivity::class.java)
-        btnDelivery.setOnClickListener {
-            startActivity(intentDel)
+        val intentDelivery = Intent(this.context, DeliveryActivity::class.java)
+        binding.delivery.setOnClickListener {
+            startActivity(intentDelivery)
         }
-        return root
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -50,9 +47,10 @@ class ProfileFragment : Fragment() {
         if (data == null) {
             return
         }
-        textGreeting.text = data.getStringExtra("nameUser")
-        textLogInOut.setText(R.string.log_out)
-        btnLogInOut.isVisible = false
-        btnLogInOut.isClickable = false
+        binding.textGreeting.text = data.getStringExtra("NAME_USER")
+        binding.textLogInOut.setText(R.string.log_out)
+        binding.logInOut.isVisible = false
+        binding.logInOut.isClickable = false
+
     }
 }
