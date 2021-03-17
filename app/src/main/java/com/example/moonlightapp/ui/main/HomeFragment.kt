@@ -5,36 +5,39 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.ViewFlipper
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.moonlightapp.R
+import com.example.moonlightapp.databinding.FragmentHomeBinding
 
+class HomeFragment : Fragment() {
 
-class HomeFragment : Fragment(){
-
-    private lateinit var viewFlipper:ViewFlipper
     private var images = intArrayOf(R.drawable.food1, R.drawable.food2, R.drawable.food3)
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        viewFlipper = root.findViewById(R.id.view_flipper)
-        flipImage()
-
-        return root
+    ): View {
+        binding = DataBindingUtil.inflate(
+            LayoutInflater.from(context),
+            R.layout.fragment_home,
+            container,
+            false
+        )
+        return binding.root
     }
 
-    private fun flipImage(){
-        for(i in images) {
-            viewFlipper.setInAnimation(this.context, android.R.anim.slide_in_left)
-            viewFlipper.setOutAnimation(this.context, android.R.anim.slide_out_right)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.viewFlipper
+        for (i in images) {
+            binding.viewFlipper.setInAnimation(this.context, android.R.anim.slide_in_left)
+            binding.viewFlipper.setOutAnimation(this.context, android.R.anim.slide_out_right)
             val view = ImageView(this.context)
             view.setImageResource(i)
-            viewFlipper.addView(view)
+            binding.viewFlipper.addView(view)
         }
     }
 }
