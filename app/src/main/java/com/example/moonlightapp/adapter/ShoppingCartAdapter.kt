@@ -9,13 +9,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.common.ItemClickListener
+import com.example.moonlightapp.common.Removable
 import com.example.moonlightapp.entity.Cart
 import com.squareup.picasso.Picasso
 
 class ShoppingCartAdapter(
     var context: Context,
-    private var listener: ItemClickListener
+    private var removable: Removable
 ) :
     RecyclerView.Adapter<ShoppingCartAdapter.ViewHolder>() {
 
@@ -42,7 +42,7 @@ class ShoppingCartAdapter(
             .load(model.product.url)
             .into(viewHolder.imgDish)
         viewHolder.remove?.setOnClickListener {
-            listener.removeDish(cartItems, position)
+            removable.removeFromCart(cartItems, position)
             notifyDataSetChanged()
         }
     }

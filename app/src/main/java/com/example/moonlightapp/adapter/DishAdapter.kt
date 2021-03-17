@@ -5,22 +5,24 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
+import com.example.moonlightapp.common.Addable
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.common.ItemClickListener
+import com.example.moonlightapp.common.ItemClickable
 import com.example.moonlightapp.databinding.ItemDishBinding
 
 class DishAdapter(
     private val categoryItem: List<Dish>,
-    private val listener: ItemClickListener
+    private val listener: ItemClickable,
+    private val addable: Addable
 ) :
     RecyclerView.Adapter<DishAdapter.CategoryItemViewHolder>() {
 
     class CategoryItemViewHolder(private val binding: ItemDishBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: Dish, saleable: ItemClickListener){
+        fun bind(data: Dish, addable: Addable){
             binding.dish = data
             binding.addToCart.setOnClickListener {
-                saleable.addToCart(Cart(data))
+                addable.addToCart(Cart(data))
             }
         }
     }
@@ -37,9 +39,9 @@ class DishAdapter(
 
     override fun onBindViewHolder(holder: CategoryItemViewHolder, position: Int) {
         val item = categoryItem[position]
-        holder.bind(item, listener)
+        holder.bind(item, addable)
         holder.itemView.setOnClickListener {
-            listener.showItem(categoryItem[position])
+            listener.showDish(categoryItem[position])
         }
     }
 

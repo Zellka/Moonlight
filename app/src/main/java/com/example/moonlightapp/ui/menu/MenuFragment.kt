@@ -12,10 +12,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.CategoriesAdapter
+import com.example.moonlightapp.common.Addable
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.ui.DishFragment
 import com.example.moonlightapp.ui.MainActivity
-import com.example.moonlightapp.common.ItemClickListener
+import com.example.moonlightapp.common.ItemClickable
 import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.viewmodels.DishViewModel
 import io.reactivex.ObservableOnSubscribe
@@ -23,7 +24,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import io.reactivex.Observable
 import java.util.*
 
-class MenuFragment : Fragment(), ItemClickListener {
+class MenuFragment : Fragment(), ItemClickable, Addable {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
@@ -47,7 +48,7 @@ class MenuFragment : Fragment(), ItemClickListener {
         dishViewModel.getAllCategoriesList()
         recyclerView = view.findViewById(R.id.recycler_parent)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        categoriesAdapter = CategoriesAdapter(this.requireContext())
+        categoriesAdapter = CategoriesAdapter(this.requireContext(), this)
         categoriesAdapter.setOnItemClickListener(this)
         dishViewModel.categoriesMutableLiveData.observe(
             viewLifecycleOwner
@@ -57,7 +58,7 @@ class MenuFragment : Fragment(), ItemClickListener {
         recyclerView.adapter = categoriesAdapter
     }
 
-    override fun showItem(item: Dish) {
+    override fun showDish(item: Dish) {
         val dishFragment = DishFragment()
         val args = Bundle()
         args.putString("nameDish", item.name)
@@ -72,24 +73,6 @@ class MenuFragment : Fragment(), ItemClickListener {
         dishViewModel.getCartList()
         Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
             dishViewModel.addDishToCart(cartItem)
-            dishViewModel.cartMutableLiveData.observe(viewLifecycleOwner){
-                postModels -> it.onNext(postModels)
-            }
-        }).subscribe { cart ->
-            var quantity = 0
-            cart.forEach { cartItem ->
-                quantity += cartItem.quantity
-            }
-            (context as MainActivity).nav_view.getOrCreateBadge(R.id.navigation_cart).number =
-                quantity
-        }
-    }
-
-    @SuppressLint("CheckResult")
-    override fun removeDish(cartItems: MutableList<Cart>, position: Int) {
-        dishViewModel.getCartList()
-        Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
-            dishViewModel.removeDishFromCart(cartItems, position)
             dishViewModel.cartMutableLiveData.observe(viewLifecycleOwner){
                     postModels -> it.onNext(postModels)
             }

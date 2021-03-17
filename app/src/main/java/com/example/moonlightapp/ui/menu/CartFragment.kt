@@ -12,7 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.ShoppingCartAdapter
-import com.example.moonlightapp.common.ItemClickListener
+import com.example.moonlightapp.common.ItemClickable
+import com.example.moonlightapp.common.Removable
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.data.ShoppingCart
 import com.example.moonlightapp.ui.MainActivity
@@ -23,7 +24,7 @@ import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 
-class CartFragment : Fragment(), ItemClickListener {
+class CartFragment : Fragment(), Removable {
     lateinit var adapter: ShoppingCartAdapter
     private lateinit var recyclerView: RecyclerView
     lateinit var dishViewModel: DishViewModel
@@ -53,22 +54,8 @@ class CartFragment : Fragment(), ItemClickListener {
         recyclerView.layoutManager = LinearLayoutManager(context)
     }
 
-    override fun showItem(item: Dish) {
-        val dishFragment = DishFragment()
-        val args = Bundle()
-        args.putString("nameDish", item.name)
-        args.putString("imgDish", item.url)
-        args.putString("priceDish", item.price)
-        dishFragment.arguments = args
-        dishFragment.show(this@CartFragment.requireFragmentManager(), "Dialog")
-    }
-
     @SuppressLint("CheckResult")
-    override fun addToCart(cartItem: Cart) {
-    }
-
-    @SuppressLint("CheckResult")
-    override fun removeDish(cartItems: MutableList<Cart>, position: Int) {
+    override fun removeFromCart(cartItems: MutableList<Cart>, position: Int) {
         Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
             ShoppingCart.removeItem(cartItems, position)
             it.onNext(ShoppingCart.getCart())
