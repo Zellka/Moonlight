@@ -1,6 +1,5 @@
 package com.example.moonlightapp.ui.detail
 
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
@@ -14,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_ordering.*
 import java.time.LocalDate
 
 class OrderingActivity : AppCompatActivity() {
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ordering)
