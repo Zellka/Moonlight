@@ -4,8 +4,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.moonlightapp.data.ShoppingCart
 import com.example.moonlightapp.data.CategoriesRepository
+import com.example.moonlightapp.data.FavouriteList
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Categories
+import com.example.moonlightapp.entity.Dish
 
 class MenuViewModel: ViewModel() {
 
@@ -23,6 +25,10 @@ class MenuViewModel: ViewModel() {
 
     fun addDishToCart(cartItem: Cart){
         ShoppingCart.addItem(cartItem)
+    }
+
+    fun addToFavourites(dishItem: Dish){
+        FavouriteList.updateItem(dishItem)
     }
 
     fun getCartList(){

@@ -18,13 +18,14 @@ import com.example.moonlightapp.ui.detail.DishFragment
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.utils.ItemClickable
 import com.example.moonlightapp.entity.Dish
+import com.example.moonlightapp.utils.FavouriteClickable
 import com.example.moonlightapp.viewmodels.MenuViewModel
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 import io.reactivex.Observable
 import java.util.*
 
-class MenuFragment : Fragment(), ItemClickable, Addable {
+class MenuFragment : Fragment(), ItemClickable, Addable, FavouriteClickable {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
@@ -48,7 +49,7 @@ class MenuFragment : Fragment(), ItemClickable, Addable {
         dishViewModel.getAllCategoriesList()
         recyclerView = view.findViewById(R.id.recycler_parent)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        categoriesAdapter = CategoriesAdapter(this.requireContext(), this)
+        categoriesAdapter = CategoriesAdapter(this.requireContext(), this, this)
         categoriesAdapter.setOnItemClickListener(this)
         dishViewModel.categoriesMutableLiveData.observe(
             viewLifecycleOwner
@@ -84,5 +85,9 @@ class MenuFragment : Fragment(), ItemClickable, Addable {
             (context as MainActivity).nav_view.getOrCreateBadge(R.id.navigation_cart).number =
                 quantity
         }
+    }
+
+    override fun addToFavourites(item: Dish) {
+        dishViewModel.addToFavourites(item)
     }
 }
