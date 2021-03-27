@@ -4,6 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,15 +15,18 @@ import com.example.moonlightapp.entity.Categories
 import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.utils.FavouriteClickable
 import com.example.moonlightapp.utils.ItemClickable
+import java.util.*
+import kotlin.collections.ArrayList
 
 class CategoriesAdapter(
     private val context: Context,
     private val addable: Addable,
     private var favListener: FavouriteClickable
 ) :
-    RecyclerView.Adapter<CategoriesAdapter.MainViewHolder>() {
+    RecyclerView.Adapter<CategoriesAdapter.MainViewHolder>(), Filterable {
     private lateinit var listener: ItemClickable
     private var allCategory: MutableList<Categories> = ArrayList()
+    private var categories: MutableList<Categories> = ArrayList()
 
     fun setOnItemClickListener(onSaleable: ItemClickable) {
         listener = onSaleable
@@ -55,6 +60,44 @@ class CategoriesAdapter(
 
     fun setList(dishList: MutableList<Categories>) {
         allCategory = dishList
+        categories = dishList
         notifyDataSetChanged()
+    }
+
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charSearch = constraint.toString()
+                if (charSearch.isEmpty()) {
+                    allCategory = categories
+                } else {
+                    val resultList: MutableList<Categories> = ArrayList()
+                    for (row in categories) {
+                        for (dish in row.categoryItem) {
+                            if (row.categoryTitle.toLowerCase(Locale.ROOT)
+                                    .contains(charSearch.toLowerCase(Locale.ROOT))
+                            ) {
+                                resultList.add(row)
+                            } else if (dish.name.toLowerCase(Locale.ROOT)
+                                    .contains(charSearch.toLowerCase(Locale.ROOT))
+                            ) {
+                                resultList.add(row)
+                            }
+                        }
+
+                    }
+                    allCategory = resultList
+                }
+                val filterResults = FilterResults()
+                filterResults.values = allCategory
+                return filterResults
+            }
+
+            @Suppress("UNCHECKED_CAST")
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                allCategory = results?.values as MutableList<Categories>
+                notifyDataSetChanged()
+            }
+        }
     }
 }
