@@ -14,6 +14,7 @@
         android:layout_height="match_parent"
         android:paddingBottom="65dp"
         android:scrollbars="vertical"
+        tools:listitem="@layout/cart_item"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <include layout="@layout/total_panel" />

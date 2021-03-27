@@ -28,6 +28,7 @@
                 android:layout_width="300dp"
                 android:layout_height="300dp"
                 app:imageUrl="@{dish.url}"
+                android:scaleType="centerCrop"
                 android:src="@mipmap/ic_launcher" />
 
             <androidx.appcompat.widget.AppCompatTextView
