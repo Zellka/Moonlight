@@ -67,9 +67,15 @@ class CartFragment : Fragment(), Removable {
         }
         btnToOrder.setOnClickListener {
             if (totalTextView.text != "0.0") {
-                val intent = Intent(context, OrderingActivity::class.java)
-                intent.putExtra("TOTAL_SUM", totalSum)
-                context?.startActivity(intent)
+                if (totalTextView.text.toString().toDouble() > 400.0) {
+                    val intent = Intent(context, OrderingActivity::class.java)
+                    intent.putExtra("TOTAL_SUM", totalSum)
+                    context?.startActivity(intent)
+                } else {
+                    Toast.makeText(context, "Минимальная сумма заказа 400₽", Toast.LENGTH_SHORT)
+                        .show()
+                }
+
             } else {
                 Toast.makeText(context, "Корзина пуста", Toast.LENGTH_SHORT).show()
             }
