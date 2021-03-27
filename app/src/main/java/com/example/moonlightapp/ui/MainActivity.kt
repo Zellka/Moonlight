@@ -1,4 +1,4 @@
-package com.example.moonlightapp.ui.detail
+package com.example.moonlightapp.ui
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home,
                 R.id.navigation_menu,
                 R.id.navigation_cart,
                 R.id.navigation_chat,

@@ -14,12 +14,12 @@
         <activity android:name=".ui.detail.OrderActivity"/>
         <activity
             android:name=".ui.detail.AuthorizationActivity"
-            android:parentActivityName=".ui.detail.MainActivity" />
+            android:parentActivityName=".ui.MainActivity" />
         <activity
             android:name=".ui.detail.DeliveryActivity"
-            android:parentActivityName=".ui.detail.MainActivity" />
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".ui.detail.MainActivity"
+            android:name=".ui.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

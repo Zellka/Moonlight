@@ -15,7 +15,7 @@ import com.example.moonlightapp.adapter.CategoriesAdapter
 import com.example.moonlightapp.common.Addable
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.ui.detail.DishFragment
-import com.example.moonlightapp.ui.detail.MainActivity
+import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.common.ItemClickable
 import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.viewmodels.DishViewModel

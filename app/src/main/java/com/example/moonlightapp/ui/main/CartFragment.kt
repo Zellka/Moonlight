@@ -18,7 +18,7 @@ import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.CartAdapter
 import com.example.moonlightapp.common.Removable
 import com.example.moonlightapp.entity.Cart
-import com.example.moonlightapp.ui.detail.MainActivity
+import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.ui.detail.OrderActivity
 import com.example.moonlightapp.viewmodels.CartViewModel
 import io.reactivex.Observable
