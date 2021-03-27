@@ -2,7 +2,7 @@ package com.example.moonlightapp.data
 
 import com.example.moonlightapp.entity.Dish
 
-class CategoryItemModel {
+class DishesRepository {
     fun getAppetizerData(): List<Dish> {
         val items: MutableList<Dish> = ArrayList()
         items.add(

@@ -3,8 +3,8 @@ package com.example.moonlightapp.data
 import com.example.moonlightapp.entity.Categories
 import java.util.ArrayList
 
-class CategoriesModel {
-    private var childData: CategoryItemModel = CategoryItemModel()
+class CategoriesRepository {
+    private var childData: DishesRepository = DishesRepository()
 
     fun getData(): MutableList<Categories> {
         val allCategory: MutableList<Categories> = ArrayList()

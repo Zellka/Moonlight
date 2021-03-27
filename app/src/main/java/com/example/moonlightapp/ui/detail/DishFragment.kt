@@ -15,18 +15,18 @@ import com.example.moonlightapp.databinding.FragmentDishDetailBinding
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.ui.MainActivity
-import com.example.moonlightapp.viewmodels.DishViewModel
+import com.example.moonlightapp.viewmodels.MenuViewModel
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 
 class DishFragment : DialogFragment(), Addable {
 
-    private lateinit var dishViewModel: DishViewModel
+    private lateinit var dishViewModel: MenuViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        dishViewModel = ViewModelProvider(this).get(DishViewModel::class.java)
+        dishViewModel = ViewModelProvider(this).get(MenuViewModel::class.java)
     }
 
     override fun onCreateView(

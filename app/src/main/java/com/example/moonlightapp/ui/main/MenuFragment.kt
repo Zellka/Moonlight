@@ -18,7 +18,7 @@ import com.example.moonlightapp.ui.detail.DishFragment
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.utils.ItemClickable
 import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.viewmodels.DishViewModel
+import com.example.moonlightapp.viewmodels.MenuViewModel
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 import io.reactivex.Observable
@@ -28,11 +28,11 @@ class MenuFragment : Fragment(), ItemClickable, Addable {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
-    private lateinit var dishViewModel: DishViewModel
+    private lateinit var dishViewModel: MenuViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        dishViewModel = ViewModelProvider(this).get(DishViewModel::class.java)
+        dishViewModel = ViewModelProvider(this).get(MenuViewModel::class.java)
     }
 
     override fun onCreateView(
