@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/ic_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.detail.OrderActivity"/>
+        <activity android:name=".ui.detail.FavoriteActivity"></activity>
+        <activity android:name=".ui.detail.OrderActivity" />
         <activity
             android:name=".ui.detail.AuthorizationActivity"
             android:parentActivityName=".ui.MainActivity" />
