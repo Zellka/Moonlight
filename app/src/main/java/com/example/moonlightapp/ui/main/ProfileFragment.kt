@@ -12,6 +12,7 @@ import com.example.moonlightapp.R
 import com.example.moonlightapp.databinding.FragmentProfileBinding
 import com.example.moonlightapp.ui.detail.AuthorizationActivity
 import com.example.moonlightapp.ui.detail.DeliveryActivity
+import com.example.moonlightapp.ui.detail.FavoriteActivity
 
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
@@ -39,6 +40,10 @@ class ProfileFragment : Fragment() {
         val intentDelivery = Intent(this.context, DeliveryActivity::class.java)
         binding.delivery.setOnClickListener {
             startActivity(intentDelivery)
+        }
+        val intentFavorites = Intent(this.context, FavoriteActivity::class.java)
+        binding.favorites.setOnClickListener {
+            startActivity(intentFavorites)
         }
     }
 
