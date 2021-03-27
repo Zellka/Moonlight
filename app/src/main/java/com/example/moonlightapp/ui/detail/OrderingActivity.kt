@@ -13,11 +13,13 @@ import kotlinx.android.synthetic.main.activity_ordering.*
 import java.time.LocalDate
 
 class OrderingActivity : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ordering)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.title = "Оформление заказа"
         val arguments = intent.extras
         val totalSum = arguments!!["TOTAL_SUM"].toString()
         val orderNum = (1..101).random()

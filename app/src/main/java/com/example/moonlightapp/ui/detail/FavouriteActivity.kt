@@ -25,6 +25,7 @@ class FavouriteActivity : AppCompatActivity(), FavouriteClickable {
         favouriteViewModel = ViewModelProvider(this).get(FavouriteViewModel::class.java)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.title = "Избранное"
 
         recyclerView = findViewById(R.id.rv_favourite)
         recyclerView.layoutManager = LinearLayoutManager(this)

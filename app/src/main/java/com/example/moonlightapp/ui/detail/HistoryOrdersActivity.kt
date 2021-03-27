@@ -24,6 +24,7 @@ class HistoryOrdersActivity : AppCompatActivity() {
         orderViewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.title = "История заказов"
 
         recyclerView = findViewById(R.id.rv_order)
         recyclerView.layoutManager = LinearLayoutManager(this)

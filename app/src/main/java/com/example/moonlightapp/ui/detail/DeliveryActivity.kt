@@ -11,6 +11,7 @@ class DeliveryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_delivery)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.title = "Доставка и оплата"
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
