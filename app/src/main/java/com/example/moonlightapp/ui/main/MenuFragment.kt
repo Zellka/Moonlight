@@ -107,7 +107,7 @@ class MenuFragment : Fragment(), ItemClickable, Addable, FavouriteClickable {
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
-                    //adapter.filter.filter(newText)
+                    categoriesAdapter.filter.filter(newText)
                     return true
                 }
             })
