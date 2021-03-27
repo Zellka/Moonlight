@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_menu,
                 R.id.navigation_cart,
                 R.id.navigation_chat,
-                R.id.navigation_profile
+                R.id.navigation_info
             )
         )
         navView.getOrCreateBadge(R.id.navigation_cart).number = ShoppingCart.getShoppingCartSize()

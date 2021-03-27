@@ -64,4 +64,5 @@
     <string name="comment_order">Комментарий к заказу</string>
     <string name="Donetsk">Донецк</string>
     <string name="Makeevka">Макеевка</string>
+    <string name="title_info">Ещё</string>
 </resources>

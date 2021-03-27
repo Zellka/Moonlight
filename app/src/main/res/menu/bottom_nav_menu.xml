@@ -17,8 +17,8 @@
         android:title="@string/title_chat" />
 
     <item
-        android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_person_black_24dp"
-        android:title="@string/title_profile" />
+        android:id="@+id/navigation_info"
+        android:icon="@drawable/ic_baseline_notes_24"
+        android:title="@string/title_info" />
 
 </menu>
