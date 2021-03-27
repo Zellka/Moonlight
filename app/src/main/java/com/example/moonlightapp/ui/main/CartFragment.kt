@@ -19,7 +19,7 @@ import com.example.moonlightapp.adapter.CartAdapter
 import com.example.moonlightapp.utils.Removable
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.ui.MainActivity
-import com.example.moonlightapp.ui.detail.OrderActivity
+import com.example.moonlightapp.ui.detail.OrderingActivity
 import com.example.moonlightapp.viewmodels.CartViewModel
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
@@ -31,6 +31,7 @@ class CartFragment : Fragment(), Removable {
     private lateinit var cartViewModel: CartViewModel
     private lateinit var totalTextView: TextView
     private lateinit var btnToOrder: Button
+    private lateinit var dishList: MutableList<Cart>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +53,7 @@ class CartFragment : Fragment(), Removable {
         cartViewModel.getCartList()
         cartViewModel.cartMutableLiveData.observe(viewLifecycleOwner) { postModels ->
             adapter.setList(postModels)
+            dishList = postModels
         }
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
@@ -63,7 +65,7 @@ class CartFragment : Fragment(), Removable {
         }
         btnToOrder.setOnClickListener {
             if (totalTextView.text != "0.0") {
-                val intent = Intent(context, OrderActivity::class.java)
+                val intent = Intent(context, OrderingActivity::class.java)
                 context?.startActivity(intent)
             } else {
                 Toast.makeText(context, "Корзина пуста", Toast.LENGTH_SHORT).show()
