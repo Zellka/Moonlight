@@ -13,6 +13,7 @@ import com.example.moonlightapp.databinding.FragmentProfileBinding
 import com.example.moonlightapp.ui.detail.AuthorizationActivity
 import com.example.moonlightapp.ui.detail.DeliveryActivity
 import com.example.moonlightapp.ui.detail.FavouriteActivity
+import com.example.moonlightapp.ui.detail.HistoryOrdersActivity
 
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
@@ -44,6 +45,10 @@ class ProfileFragment : Fragment() {
         val intentFavorites = Intent(this.context, FavouriteActivity::class.java)
         binding.favorites.setOnClickListener {
             startActivity(intentFavorites)
+        }
+        val intentOrders = Intent(this.context, HistoryOrdersActivity::class.java)
+        binding.orderHistory.setOnClickListener {
+            startActivity(intentOrders)
         }
     }
 

@@ -13,10 +13,16 @@ class OrderList {
             if (targetItem == null) {
                 orderList.add(order)
             }
-            saveCart(orderList)
+            saveOrderList(orderList)
         }
 
-        private fun saveCart(orderList: MutableList<HistoryOrder>) {
+        fun clearList(){
+            val orderList = getOrdersList()
+            orderList.clear()
+            saveOrderList(orderList)
+        }
+
+        private fun saveOrderList(orderList: MutableList<HistoryOrder>) {
             Paper.book().write("orders", orderList)
         }
 

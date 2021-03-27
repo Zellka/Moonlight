@@ -60,12 +60,15 @@ class CartFragment : Fragment(), Removable {
         totalTextView = view.findViewById(R.id.total_price)
         btnToOrder = view.findViewById(R.id.button_order)
         cartViewModel.getTotalPrice()
+        var totalSum = ""
         cartViewModel.totalPriceMutableLiveData.observe(viewLifecycleOwner) { totalPrice ->
             totalTextView.text = "$totalPrice"
+            totalSum = "$totalPrice ₽"
         }
         btnToOrder.setOnClickListener {
             if (totalTextView.text != "0.0") {
                 val intent = Intent(context, OrderingActivity::class.java)
+                intent.putExtra("TOTAL_SUM", totalSum)
                 context?.startActivity(intent)
             } else {
                 Toast.makeText(context, "Корзина пуста", Toast.LENGTH_SHORT).show()
