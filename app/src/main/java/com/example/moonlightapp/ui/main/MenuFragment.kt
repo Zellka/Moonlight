@@ -2,9 +2,8 @@ package com.example.moonlightapp.ui.main
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
@@ -34,6 +33,7 @@ class MenuFragment : Fragment(), ItemClickable, Addable, FavouriteClickable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dishViewModel = ViewModelProvider(this).get(MenuViewModel::class.java)
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -89,5 +89,29 @@ class MenuFragment : Fragment(), ItemClickable, Addable, FavouriteClickable {
 
     override fun addToFavourites(item: Dish) {
         dishViewModel.addToFavourites(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.search_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+
+        if (id == R.id.search_action) {
+            val searchView = item.actionView as SearchView
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    //adapter.filter.filter(newText)
+                    return true
+                }
+            })
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
