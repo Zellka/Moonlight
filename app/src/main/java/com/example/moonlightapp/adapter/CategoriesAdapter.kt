@@ -8,10 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.common.Addable
+import com.example.moonlightapp.utils.Addable
 import com.example.moonlightapp.entity.Categories
 import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.common.ItemClickable
+import com.example.moonlightapp.utils.ItemClickable
 
 class CategoriesAdapter(
     private val context: Context,

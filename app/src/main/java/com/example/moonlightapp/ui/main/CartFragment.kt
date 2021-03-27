@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.CartAdapter
-import com.example.moonlightapp.common.Removable
+import com.example.moonlightapp.utils.Removable
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.ui.detail.OrderActivity

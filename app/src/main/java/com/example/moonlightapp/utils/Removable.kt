@@ -1,4 +1,4 @@
-package com.example.moonlightapp.common
+package com.example.moonlightapp.utils
 
 import com.example.moonlightapp.entity.Cart
 

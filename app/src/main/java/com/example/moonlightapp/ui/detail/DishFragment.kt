@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import com.example.moonlightapp.R
-import com.example.moonlightapp.common.Addable
+import com.example.moonlightapp.utils.Addable
 import com.example.moonlightapp.databinding.FragmentDishDetailBinding
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Dish

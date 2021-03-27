@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.common.Removable
+import com.example.moonlightapp.utils.Removable
 import com.example.moonlightapp.databinding.CartItemBinding
 import com.example.moonlightapp.entity.Cart
 import kotlinx.android.synthetic.main.cart_item.view.*
