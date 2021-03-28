@@ -78,10 +78,12 @@ class CategoriesAdapter(
                                     .contains(charSearch.toLowerCase(Locale.ROOT))
                             ) {
                                 resultList.add(row)
+                                break
                             } else if (dish.name.toLowerCase(Locale.ROOT)
                                     .contains(charSearch.toLowerCase(Locale.ROOT))
                             ) {
                                 resultList.add(row)
+                                break
                             }
                         }
 
