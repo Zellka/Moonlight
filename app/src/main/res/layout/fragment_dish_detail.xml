@@ -23,19 +23,35 @@
             android:layout_height="wrap_content"
             android:padding="8dp">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/dish_img"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                app:imageUrl="@{dish.url}"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/ic_launcher" />
+
+            <RelativeLayout
+                android:id="@+id/img_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dish_img"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    app:imageUrl="@{dish.url}" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/add_to_favourite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:paddingStart="270dp"
+                    android:src="@drawable/ic_heart" />
+
+            </RelativeLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/dish_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/dish_img"
+                android:layout_below="@+id/img_layout"
                 android:paddingTop="8dp"
                 android:text="@{dish.name}"
                 android:textSize="24sp" />

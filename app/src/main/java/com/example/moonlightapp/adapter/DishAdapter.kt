@@ -33,10 +33,10 @@ class DishAdapter(
             binding.addToFavourite.setOnClickListener {
                 favListener.addToFavourites(data)
                 if (flag) {
-                    binding.addToFavourite.setImageResource(R.drawable.ic_baseline_favorite_24)
+                    binding.addToFavourite.setImageResource(R.drawable.ic_heart_select)
                     flag = !flag
                 } else {
-                    binding.addToFavourite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                    binding.addToFavourite.setImageResource(R.drawable.ic_heart)
                     flag = !flag
                 }
             }
@@ -60,9 +60,9 @@ class DishAdapter(
             listener.showDish(item)
         }
         if (FavouriteList.isFavourite(item)) {
-            holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_baseline_favorite_24)
+            holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_heart_select)
         } else {
-            holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+            holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_heart)
         }
     }
 

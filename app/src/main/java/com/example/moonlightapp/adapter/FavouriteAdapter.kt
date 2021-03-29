@@ -33,9 +33,9 @@ class FavouriteAdapter(private var listener: FavouriteClickable) :
         val item = dishList[position]
         holder.bind(item, listener)
         if (FavouriteList.isFavourite(item)) {
-            holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_baseline_favorite_24)
+            holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_heart_select)
         } else {
-            holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+            holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_heart)
         }
     }
 
@@ -50,10 +50,10 @@ class FavouriteAdapter(private var listener: FavouriteClickable) :
             binding.addToFavourite.setOnClickListener {
                 listener.addToFavourites(data)
                 if (flag) {
-                    binding.addToFavourite.setImageResource(R.drawable.ic_baseline_favorite_24)
+                    binding.addToFavourite.setImageResource(R.drawable.ic_heart_select)
                     flag = !flag
                 } else {
-                    binding.addToFavourite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                    binding.addToFavourite.setImageResource(R.drawable.ic_heart)
                     flag = !flag
                 }
             }

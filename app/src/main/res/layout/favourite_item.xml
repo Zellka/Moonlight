@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:paddingStart="90dp"
-                    android:src="@drawable/ic_baseline_favorite_border_24" />
+                    android:src="@drawable/ic_heart" />
 
             </RelativeLayout>
 
