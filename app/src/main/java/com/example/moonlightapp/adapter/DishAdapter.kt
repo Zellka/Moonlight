@@ -1,5 +1,6 @@
 package com.example.moonlightapp.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -53,6 +54,7 @@ class DishAdapter(
         return CategoryItemViewHolder(binding)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: CategoryItemViewHolder, position: Int) {
         val item = categoryItem[position]
         holder.bind(item, addable, favListener)

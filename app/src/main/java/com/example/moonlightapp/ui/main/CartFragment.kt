@@ -20,12 +20,13 @@ import com.example.moonlightapp.utils.Removable
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.ui.detail.OrderingActivity
+import com.example.moonlightapp.utils.Addable
 import com.example.moonlightapp.viewmodels.CartViewModel
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 
-class CartFragment : Fragment(), Removable {
+class CartFragment : Fragment(), Removable, Addable {
     private lateinit var adapter: CartAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var cartViewModel: CartViewModel
@@ -48,7 +49,7 @@ class CartFragment : Fragment(), Removable {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = CartAdapter(this.requireContext(), this)
+        adapter = CartAdapter(this.requireContext(), this, this)
         recyclerView = view.findViewById(R.id.rv_basket)
         cartViewModel.getCartList()
         cartViewModel.cartMutableLiveData.observe(viewLifecycleOwner) { postModels ->
@@ -91,6 +92,28 @@ class CartFragment : Fragment(), Removable {
             }
         }).subscribe { cart ->
             var quantity = 0
+            cart.forEach { cartItem ->
+                quantity += cartItem.quantity
+            }
+            cartViewModel.getTotalPrice()
+            cartViewModel.totalPriceMutableLiveData.observe(viewLifecycleOwner) { totalPrice ->
+                totalTextView.text = "$totalPrice"
+            }
+            (context as MainActivity).nav_view.getOrCreateBadge(R.id.navigation_cart).number =
+                quantity
+        }
+    }
+
+    @SuppressLint("CheckResult")
+    override fun addToCart(cartItem: Cart) {
+        cartViewModel.getCartList()
+        Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
+            cartViewModel.addDishToCart(cartItem)
+            cartViewModel.cartMutableLiveData.observe(viewLifecycleOwner) { postModels ->
+                it.onNext(postModels)
+            }
+        }).subscribe { cart ->
+            var quantity = 1
             cart.forEach { cartItem ->
                 quantity += cartItem.quantity
             }
