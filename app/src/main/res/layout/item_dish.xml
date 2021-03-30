@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
         app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -41,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:paddingStart="80dp"
+                    android:paddingStart="90dp"
                     android:src="@drawable/ic_heart" />
 
             </RelativeLayout>
@@ -53,10 +54,14 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/montserrat_medium"
                 android:gravity="left"
-                android:padding="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="5dp"
+                android:paddingBottom="2dp"
+                android:maxLines="1"
                 android:text="@{dish.name}"
                 android:textColor="@android:color/black"
-                android:textSize="16dp"
+                android:textSize="12dp"
                 tools:ignore="RtlHardcoded" />
 
             <RelativeLayout
@@ -70,22 +75,40 @@
                     android:layout_alignParentLeft="true"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="left"
-                    android:padding="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
                     android:text="@{dish.price}"
                     android:ellipsize="end"
+                    android:textStyle="normal"
                     android:textColor="@android:color/black"
-                    android:textSize="16dp"
+                    android:textSize="18dp"
+                    tools:ignore="RtlHardcoded" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/currency_symbols"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/price_dish"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="left"
+                    android:textStyle="normal"
+                    android:text="₽"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="0dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
                     tools:ignore="RtlHardcoded" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/addToCart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:paddingRight="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:src="@drawable/ic_plus_20" />
+                    android:background="@drawable/btn_to_cart_selector" />
 
             </RelativeLayout>
 

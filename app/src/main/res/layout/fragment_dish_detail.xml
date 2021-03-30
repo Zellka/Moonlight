@@ -24,7 +24,6 @@
             android:layout_height="wrap_content"
             android:padding="8dp">
 
-
             <RelativeLayout
                 android:id="@+id/img_layout"
                 android:layout_width="250dp"
@@ -54,7 +53,7 @@
                     android:background="@null"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/ic_baseline_close_24"/>
+                    android:src="@drawable/ic_cancel"/>
 
             </RelativeLayout>
 
