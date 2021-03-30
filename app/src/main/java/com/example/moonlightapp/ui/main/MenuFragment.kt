@@ -1,6 +1,7 @@
 package com.example.moonlightapp.ui.main
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.widget.SearchView
@@ -19,9 +20,11 @@ import com.example.moonlightapp.utils.ItemClickable
 import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.utils.FavouriteClickable
 import com.example.moonlightapp.viewmodels.MenuViewModel
+import com.google.android.material.snackbar.Snackbar
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 import io.reactivex.Observable
+import kotlinx.android.synthetic.main.fragment_menu.*
 import java.util.*
 
 class MenuFragment : Fragment(), ItemClickable, Addable, FavouriteClickable {
@@ -72,6 +75,9 @@ class MenuFragment : Fragment(), ItemClickable, Addable, FavouriteClickable {
     @SuppressLint("CheckResult")
     override fun addToCart(cartItem: Cart) {
         dishViewModel.getCartList()
+        Snackbar.make(menu_container, "Добавлено: " + cartItem.product.name + ' ' + cartItem.quantity + " шт.", Snackbar.LENGTH_SHORT).setBackgroundTint(
+            Color.parseColor("#FFFFFF")).setTextColor(Color.BLACK)
+            .show()
         Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
             dishViewModel.addDishToCart(cartItem)
             dishViewModel.cartMutableLiveData.observe(viewLifecycleOwner) { postModels ->
