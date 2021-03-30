@@ -75,8 +75,10 @@ class MenuFragment : Fragment(), ItemClickable, Addable, FavouriteClickable {
     @SuppressLint("CheckResult")
     override fun addToCart(cartItem: Cart) {
         dishViewModel.getCartList()
-        Snackbar.make(menu_container, "Добавлено: " + cartItem.product.name + ' ' + cartItem.quantity + " шт.", Snackbar.LENGTH_SHORT).setBackgroundTint(
-            Color.parseColor("#FFFFFF")).setTextColor(Color.BLACK)
+        Snackbar.make(menu_container, "Добавлено: " + cartItem.product.name, Snackbar.LENGTH_SHORT)
+            .setBackgroundTint(
+                Color.parseColor("#FFFFFF")
+            ).setTextColor(Color.BLACK)
             .show()
         Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
             dishViewModel.addDishToCart(cartItem)
