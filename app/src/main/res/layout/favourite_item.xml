@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         app:cardBackgroundColor="@android:color/white"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="0dp"
         app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -61,7 +61,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{dish.name}"
-                    android:fontFamily="@font/montserrat_medium"
                     android:textColor="@android:color/black"
                     android:textSize="19sp" />
 
@@ -71,7 +70,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@{dish.price}"
-                    android:fontFamily="@font/montserrat_medium"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 

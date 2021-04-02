@@ -18,8 +18,7 @@
         android:layout_margin="5dp"
         android:elevation="5dp"
         app:behavior_hideable="true"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        android:background="@drawable/rounded">
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -60,7 +59,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/img_layout"
                 android:ellipsize="end"
-                android:fontFamily="@font/montserrat_medium"
                 android:maxLines="2"
                 android:paddingTop="8dp"
                 android:text="@{dish.name}"
@@ -72,7 +70,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dish_name"
                 android:ellipsize="end"
-                android:fontFamily="@font/montserrat_medium"
                 android:maxLines="3"
                 android:paddingTop="8dp"
                 android:text="Лучшее"
@@ -83,7 +80,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dish_description"
-                android:fontFamily="@font/montserrat_medium"
                 android:paddingTop="8dp"
                 android:text="150г"
                 android:textSize="18sp" />
@@ -93,7 +89,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dish_weight"
-                android:fontFamily="@font/montserrat_medium"
                 android:paddingTop="8dp"
                 android:text="@{dish.price}"
                 android:textSize="18dp" />
@@ -104,7 +99,6 @@
                 android:layout_below="@+id/dish_weight"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/dish_price"
-                android:fontFamily="@font/montserrat_medium"
                 android:gravity="left"
                 android:textStyle="normal"
                 android:text="₽"
@@ -124,11 +118,8 @@
                 android:background="@null"
                 android:src="@drawable/btn_to_cart_selector_30" />
 
-
         </RelativeLayout>
 
-
     </FrameLayout>
-
 
 </layout>
