@@ -9,9 +9,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.moonlightapp.R
 import com.example.moonlightapp.databinding.FragmentInfoBinding
+import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.ui.detail.DeliveryActivity
 import com.example.moonlightapp.ui.detail.FavouriteActivity
 import com.example.moonlightapp.ui.detail.HistoryOrdersActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class InfoFragment : Fragment() {
     private lateinit var binding: FragmentInfoBinding
@@ -21,6 +23,7 @@ class InfoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        (context as MainActivity).toolbar_title.text = context?.getString(R.string.title_info)
         binding = DataBindingUtil.inflate(
             LayoutInflater.from(context),
             R.layout.fragment_info,

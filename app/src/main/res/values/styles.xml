@@ -1,23 +1,31 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColor">@color/black</item>
-        <item name="background">@color/white</item>
-        <item name="fontFamily">@font/montserrat_medium</item>
-        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
 
-    <style name="AppBottomSheetDialogTheme"
-        parent="Theme.Design.Light.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="searchViewStyle">@style/SearchView</item>
     </style>
 
-    <style name="AppModalStyle"
-        parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/rounded</item>
+    <style name="SearchView" parent="Widget.AppCompat.Light.SearchView">
+        <item name="searchHintIcon">@null</item>
+    </style>
+
+    <style name="CustomToolBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="background">@color/colorPrimary</item>
+        <item name="iconTint">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="titleTextColor">@color/colorAccent</item>
+        <item name="subtitleTextColor">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="searchHintIcon">@null</item>
+
     </style>
 
 </resources>
