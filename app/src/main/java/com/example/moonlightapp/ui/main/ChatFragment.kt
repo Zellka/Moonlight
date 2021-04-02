@@ -15,7 +15,6 @@ import com.example.moonlightapp.entity.Message
 import com.example.moonlightapp.utils.BotResponse
 import com.example.moonlightapp.utils.Constants.RECEIVE_ID
 import com.example.moonlightapp.utils.Constants.SEND_ID
-import com.example.moonlightapp.utils.Time
 import kotlinx.coroutines.*
 
 class ChatFragment : Fragment() {
@@ -67,27 +66,24 @@ class ChatFragment : Fragment() {
     }
     private fun sendMessage() {
         val message = enterMes.text.toString()
-        val timeStamp = Time.timeStamp()
 
         if (message.isNotEmpty()) {
-            messagesList.add(Message(message, SEND_ID, timeStamp))
+            messagesList.add(Message(message, SEND_ID))
             enterMes.setText("")
 
-            adapter.insertMessage(Message(message, SEND_ID, timeStamp))
+            adapter.insertMessage(Message(message, SEND_ID))
             recyclerView.scrollToPosition(adapter.itemCount - 1)
 
             botResponse(message)
         }
     }
     private fun botResponse(message: String) {
-        val timeStamp = Time.timeStamp()
-
         GlobalScope.launch {
             delay(2000)
             withContext(Dispatchers.Main) {
                 val response = BotResponse.basicResponses(message)
-                messagesList.add(Message(response, RECEIVE_ID, timeStamp))
-                adapter.insertMessage(Message(response, RECEIVE_ID, timeStamp))
+                messagesList.add(Message(response, RECEIVE_ID))
+                adapter.insertMessage(Message(response, RECEIVE_ID))
                 recyclerView.scrollToPosition(adapter.itemCount - 1)
             }
         }
@@ -105,9 +101,8 @@ class ChatFragment : Fragment() {
         GlobalScope.launch {
             delay(100)
             withContext(Dispatchers.Main) {
-                val timeStamp = Time.timeStamp()
-                messagesList.add(Message(message, RECEIVE_ID, timeStamp))
-                adapter.insertMessage(Message(message, RECEIVE_ID, timeStamp))
+                messagesList.add(Message(message, RECEIVE_ID))
+                adapter.insertMessage(Message(message, RECEIVE_ID))
 
                 recyclerView.scrollToPosition(adapter.itemCount - 1)
             }
