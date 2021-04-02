@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import com.example.moonlightapp.R
-import com.example.moonlightapp.databinding.DishBinding
+import com.example.moonlightapp.databinding.FragmentDishBinding
 import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Dish
@@ -35,9 +35,9 @@ class DishFragment : BottomSheetDialogFragment(), AddableToCart {
         savedInstanceState: Bundle?
     ): View {
 
-        val binding: DishBinding = DataBindingUtil.inflate(
+        val binding: FragmentDishBinding = DataBindingUtil.inflate(
             LayoutInflater.from(context),
-            R.layout.dish,
+            R.layout.fragment_dish,
             container,
             false
         )

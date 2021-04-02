@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import kotlinx.android.synthetic.main.message_item.view.*
+import kotlinx.android.synthetic.main.item_message.view.*
 import com.example.moonlightapp.entity.Message
 
 class MessagingAdapter : RecyclerView.Adapter<MessagingAdapter.MessageViewHolder>() {
@@ -17,7 +17,7 @@ class MessagingAdapter : RecyclerView.Adapter<MessagingAdapter.MessageViewHolder
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder =
         MessageViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.message_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_message, parent, false)
         )
 
     override fun getItemCount(): Int = messagesList.size

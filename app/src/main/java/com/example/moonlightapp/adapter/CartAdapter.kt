@@ -7,10 +7,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.utils.RemovableFromCart
-import com.example.moonlightapp.databinding.CartItemBinding
+import com.example.moonlightapp.databinding.ItemCartBinding
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.utils.AddableToCart
-import kotlinx.android.synthetic.main.cart_item.view.*
+import kotlinx.android.synthetic.main.item_cart.view.*
 
 class CartAdapter(
     var context: Context,
@@ -22,9 +22,9 @@ class CartAdapter(
     private var cartItems: MutableList<Cart> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ViewHolder {
-        val binding: CartItemBinding = DataBindingUtil.inflate(
+        val binding: ItemCartBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            R.layout.cart_item,
+            R.layout.item_cart,
             parent,
             false
         )
@@ -46,7 +46,7 @@ class CartAdapter(
         }
     }
 
-    class ViewHolder(private val binding: CartItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemCartBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Cart) {
             binding.cart = data
             binding.productQuantity.text = data.quantity.toString()

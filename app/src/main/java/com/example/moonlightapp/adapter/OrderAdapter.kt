@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.databinding.OrderItemBinding
+import com.example.moonlightapp.databinding.ItemOrderBinding
 import com.example.moonlightapp.entity.HistoryOrder
 
 class OrderAdapter() :
@@ -14,9 +14,9 @@ class OrderAdapter() :
     private var orderList: MutableList<HistoryOrder> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): OrderViewHolder {
-        val binding: OrderItemBinding = DataBindingUtil.inflate(
+        val binding: ItemOrderBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            R.layout.order_item,
+            R.layout.item_order,
             parent,
             false
         )
@@ -30,7 +30,7 @@ class OrderAdapter() :
         viewHolder.bind(model)
     }
 
-    class OrderViewHolder(private val binding: OrderItemBinding) :
+    class OrderViewHolder(private val binding: ItemOrderBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: HistoryOrder) {
             binding.order = data

@@ -115,8 +115,8 @@
                 android:layout_alignParentRight="true"
                 android:paddingTop="8dp"
                 android:layout_margin="10dp"
-                android:background="@null"
-                android:src="@drawable/btn_to_cart_selector_30" />
+                android:background="@drawable/btn_to_cart_selector"
+                android:src="@drawable/ic_plus_30" />
 
         </RelativeLayout>
 

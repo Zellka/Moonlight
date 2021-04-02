@@ -7,12 +7,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.data.FavouriteList
-import com.example.moonlightapp.databinding.FavouriteItemBinding
+import com.example.moonlightapp.databinding.ItemFavouriteBinding
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.utils.UpdatableFavourites
-import kotlinx.android.synthetic.main.favourite_item.view.*
+import kotlinx.android.synthetic.main.item_favourite.view.*
 
 class FavouriteAdapter(private var listener: UpdatableFavourites,
                        private val addable: AddableToCart) :
@@ -25,9 +25,9 @@ class FavouriteAdapter(private var listener: UpdatableFavourites,
         parent: ViewGroup,
         viewType: Int
     ): FavouriteViewHolder {
-        val binding: FavouriteItemBinding = DataBindingUtil.inflate(
+        val binding: ItemFavouriteBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            R.layout.favourite_item,
+            R.layout.item_favourite,
             parent,
             false
         )
@@ -46,7 +46,7 @@ class FavouriteAdapter(private var listener: UpdatableFavourites,
 
     override fun getItemCount(): Int = dishList.size
 
-    class FavouriteViewHolder(private val binding: FavouriteItemBinding) :
+    class FavouriteViewHolder(private val binding: ItemFavouriteBinding) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("CheckResult")
         fun bind(data: Dish, listener: UpdatableFavourites, favourites: FavouriteList, addable: AddableToCart) {
