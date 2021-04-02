@@ -13,6 +13,8 @@ import io.paperdb.Paper
 
 class MainActivity : AppCompatActivity() {
 
+    private var cart: ShoppingCart = ShoppingCart()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         Paper.init(this)
         super.onCreate(savedInstanceState)
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_info
             )
         )
-        navView.getOrCreateBadge(R.id.navigation_cart).number = ShoppingCart.getShoppingCartSize()
+        navView.getOrCreateBadge(R.id.navigation_cart).number = cart.getShoppingCartSize()
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

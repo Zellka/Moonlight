@@ -6,17 +6,23 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.example.moonlightapp.R
 import com.example.moonlightapp.data.OrderList
 import com.example.moonlightapp.entity.HistoryOrder
+import com.example.moonlightapp.viewmodels.OrderViewModel
 import kotlinx.android.synthetic.main.activity_ordering.*
 import java.time.LocalDate
 
 class OrderingActivity : AppCompatActivity() {
+
+    private lateinit var orderViewModel: OrderViewModel
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ordering)
+        orderViewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = "Оформление заказа"
@@ -28,7 +34,7 @@ class OrderingActivity : AppCompatActivity() {
         button_order.setOnClickListener {
             if (userName.text!!.isNotEmpty() && userNumber.text!!.isNotEmpty() && userHome.text!!.isNotEmpty() && userStreet.text!!.isNotEmpty()) {
                 Toast.makeText(this, "Заказ оформлен", Toast.LENGTH_SHORT).show()
-                OrderList.addItem(order)
+                orderViewModel.addOrder(order)
             }
         }
     }

@@ -23,14 +23,17 @@ class DishAdapter(
 ) :
     RecyclerView.Adapter<DishAdapter.CategoryItemViewHolder>() {
 
+    private var favourites: FavouriteList = FavouriteList()
+
     class CategoryItemViewHolder(private val binding: ItemDishBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: Dish, addable: AddableToCart, favListener: UpdatableFavourites) {
+
+        fun bind(data: Dish, addable: AddableToCart, favListener: UpdatableFavourites, favourites: FavouriteList) {
             binding.dish = data
             binding.addToCart.setOnClickListener {
                 addable.addToCart(Cart(data))
             }
-            var flag = !FavouriteList.isFavourite(data)
+            var flag = !favourites.isFavourite(data)
             binding.addToFavourite.setOnClickListener {
                 favListener.addToFavourites(data)
                 if (flag) {
@@ -57,11 +60,11 @@ class DishAdapter(
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: CategoryItemViewHolder, position: Int) {
         val item = categoryItem[position]
-        holder.bind(item, addable, favListener)
+        holder.bind(item, addable, favListener, favourites)
         holder.itemView.setOnClickListener {
             listener.showDish(item)
         }
-        if (FavouriteList.isFavourite(item)) {
+        if (favourites.isFavourite(item)) {
             holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_heart_select)
         } else {
             holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_heart)

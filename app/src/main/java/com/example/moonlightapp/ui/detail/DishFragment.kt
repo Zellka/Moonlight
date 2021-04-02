@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import com.example.moonlightapp.R
-import com.example.moonlightapp.data.FavouriteList
 import com.example.moonlightapp.databinding.DishBinding
 import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.entity.Cart
@@ -46,15 +45,15 @@ class DishFragment : BottomSheetDialogFragment(), AddableToCart {
         val priceDish: String = arguments?.getString("PRICE_DISH").toString() + ""
         val imgDish: String = arguments?.getString("IMAGE_DISH").toString()
         val data = Dish(nameDish, priceDish, imgDish)
-        FavouriteList.isFavourite(data)
-        if (FavouriteList.isFavourite(data)) {
+        dishViewModel.isFavourite(data)
+        if (dishViewModel.isFavourite(data)) {
             binding.addToFavourite.setImageResource(R.drawable.ic_heart_select_30)
         } else {
             binding.addToFavourite.setImageResource(R.drawable.ic_heart_30)
         }
-        var flag = !FavouriteList.isFavourite(data)
+        var flag = !dishViewModel.isFavourite(data)
         binding.addToFavourite.setOnClickListener {
-            FavouriteList.updateItem(data)
+            dishViewModel.addToFavourites(data)
             if (flag) {
                 binding.addToFavourite.setImageResource(R.drawable.ic_heart_select_30)
                 flag = !flag

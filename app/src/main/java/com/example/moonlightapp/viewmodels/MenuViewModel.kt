@@ -18,20 +18,26 @@ class MenuViewModel: ViewModel() {
         MutableLiveData()
 
     private var dishData: CategoriesRepository = CategoriesRepository()
+    private var cart: ShoppingCart = ShoppingCart()
+    private var favourites: FavouriteList = FavouriteList()
 
     fun getAllCategoriesList() {
         categoriesMutableLiveData.value = dishData.getData()
     }
 
+    fun isFavourite(item: Dish): Boolean {
+        return favourites.isFavourite(item)
+    }
+
     fun addDishToCart(cartItem: Cart){
-        ShoppingCart.addItem(cartItem)
+        cart.addItem(cartItem)
     }
 
     fun addToFavourites(dishItem: Dish){
-        FavouriteList.updateItem(dishItem)
+        favourites.updateItem(dishItem)
     }
 
     fun getCartList(){
-        cartMutableLiveData.value = ShoppingCart.getCart()
+        cartMutableLiveData.value = cart.getCart()
     }
 }

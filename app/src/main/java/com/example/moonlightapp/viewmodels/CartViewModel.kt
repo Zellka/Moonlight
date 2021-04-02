@@ -5,7 +5,9 @@ import androidx.lifecycle.ViewModel
 import com.example.moonlightapp.data.ShoppingCart
 import com.example.moonlightapp.entity.Cart
 
-class CartViewModel: ViewModel() {
+class CartViewModel : ViewModel() {
+
+    private var cart: ShoppingCart = ShoppingCart()
 
     var cartMutableLiveData: MutableLiveData<MutableList<Cart>> =
         MutableLiveData()
@@ -13,20 +15,21 @@ class CartViewModel: ViewModel() {
     var totalPriceMutableLiveData: MutableLiveData<Double> =
         MutableLiveData()
 
-    fun addDishToCart(cartItem: Cart){
-        ShoppingCart.addItem(cartItem)
+    fun addDishToCart(cartItem: Cart) {
+        cart.addItem(cartItem)
     }
 
-    fun removeDishFromCart(cartItems:MutableList<Cart>, position: Int){
-        ShoppingCart.removeItem(cartItems, position)
+    fun removeDishFromCart(cartItems: MutableList<Cart>, position: Int) {
+        cart.removeItem(cartItems, position)
     }
 
-    fun getCartList(){
-        cartMutableLiveData.value = ShoppingCart.getCart()
+    fun getCartList() {
+        cartMutableLiveData.value = cart.getCart()
     }
 
-    fun getTotalPrice(){
-        val totalPrice = ShoppingCart.getCart().fold(0.toDouble()) { acc, cartItem -> acc + cartItem.quantity.times(cartItem.product.price.toDouble()) }
+    fun getTotalPrice() {
+        val totalPrice = cart.getCart()
+            .fold(0.toDouble()) { acc, cartItem -> acc + cartItem.quantity.times(cartItem.product.price.toDouble()) }
         totalPriceMutableLiveData.value = totalPrice
     }
 }

@@ -1,5 +1,7 @@
 package com.example.moonlightapp.ui.detail
 
+import android.annotation.SuppressLint
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -9,11 +11,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.FavouriteAdapter
+import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Dish
+import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.utils.UpdatableFavourites
 import com.example.moonlightapp.viewmodels.FavouriteViewModel
+import com.google.android.material.snackbar.Snackbar
+import io.reactivex.Observable
+import io.reactivex.ObservableOnSubscribe
+import kotlinx.android.synthetic.main.activity_favourite.*
 
-class FavouriteActivity : AppCompatActivity(), UpdatableFavourites {
+class FavouriteActivity : AppCompatActivity(), UpdatableFavourites, AddableToCart {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: FavouriteAdapter
@@ -29,7 +37,7 @@ class FavouriteActivity : AppCompatActivity(), UpdatableFavourites {
 
         recyclerView = findViewById(R.id.rv_favourite)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = FavouriteAdapter(this)
+        adapter = FavouriteAdapter(this, this)
         favouriteViewModel.getFavouritesList()
         favouriteViewModel.favouritesMutableLiveData.observe(this) { postModels ->
             adapter.setList(postModels)
@@ -49,5 +57,21 @@ class FavouriteActivity : AppCompatActivity(), UpdatableFavourites {
 
     override fun addToFavourites(item: Dish) {
         favouriteViewModel.addToFavourites(item)
+    }
+
+    @SuppressLint("CheckResult")
+    override fun addToCart(cartItem: Cart) {
+        favouriteViewModel.getCartList()
+        Snackbar.make(favorite_layout, "Добавлено: " + cartItem.product.name, Snackbar.LENGTH_SHORT)
+            .setBackgroundTint(
+                Color.parseColor("#FFFFFF")
+            ).setTextColor(Color.BLACK)
+            .show()
+        Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
+            favouriteViewModel.addDishToCart(cartItem)
+            favouriteViewModel.cartMutableLiveData.observe(this) { postModels ->
+                it.onNext(postModels)
+            }
+        }).subscribe()
     }
 }

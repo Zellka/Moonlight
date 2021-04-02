@@ -7,14 +7,20 @@ import com.example.moonlightapp.entity.HistoryOrder
 
 class OrderViewModel : ViewModel() {
 
+    private var orders: OrderList = OrderList()
+
     var ordersMutableLiveData: MutableLiveData<MutableList<HistoryOrder>> =
         MutableLiveData()
 
     fun getAllOrderList() {
-        ordersMutableLiveData.value = OrderList.getOrdersList()
+        ordersMutableLiveData.value = orders.getOrdersList()
+    }
+
+    fun addOrder(order: HistoryOrder){
+        orders.addItem(order)
     }
 
     fun clearAllList() {
-        OrderList.clearList()
+        orders.clearList()
     }
 }
