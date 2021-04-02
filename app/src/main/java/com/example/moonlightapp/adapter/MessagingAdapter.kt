@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.moonlightapp.utils.Constants.RECEIVE_ID
-import com.example.moonlightapp.utils.Constants.SEND_ID
 import com.example.moonlightapp.R
 import kotlinx.android.synthetic.main.message_item.view.*
 import com.example.moonlightapp.entity.Message
@@ -29,14 +27,14 @@ class MessagingAdapter : RecyclerView.Adapter<MessagingAdapter.MessageViewHolder
         val currentMessage = messagesList[position]
 
         when (currentMessage.id) {
-            SEND_ID -> {
+            Companion.SEND_ID -> {
                 holder.itemView.your_message.apply {
                     text = currentMessage.message
                     visibility = View.VISIBLE
                 }
                 holder.itemView.bot_message.visibility = View.GONE
             }
-            RECEIVE_ID -> {
+            Companion.RECEIVE_ID -> {
                 holder.itemView.bot_message.apply {
                     text = currentMessage.message
                     visibility = View.VISIBLE
@@ -49,5 +47,10 @@ class MessagingAdapter : RecyclerView.Adapter<MessagingAdapter.MessageViewHolder
     fun insertMessage(message: Message) {
         this.messagesList.add(message)
         notifyItemInserted(messagesList.size)
+    }
+
+    companion object {
+        const val SEND_ID = "SEND_ID"
+        const val RECEIVE_ID = "RECEIVE_ID"
     }
 }
