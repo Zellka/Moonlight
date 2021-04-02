@@ -9,10 +9,10 @@ import com.example.moonlightapp.R
 import com.example.moonlightapp.data.FavouriteList
 import com.example.moonlightapp.databinding.FavouriteItemBinding
 import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.utils.FavouriteClickable
+import com.example.moonlightapp.utils.UpdatableFavourites
 import kotlinx.android.synthetic.main.favourite_item.view.*
 
-class FavouriteAdapter(private var listener: FavouriteClickable) :
+class FavouriteAdapter(private var listener: UpdatableFavourites) :
     RecyclerView.Adapter<FavouriteAdapter.FavouriteViewHolder>() {
     private var dishList: MutableList<Dish> = ArrayList()
 
@@ -44,7 +44,7 @@ class FavouriteAdapter(private var listener: FavouriteClickable) :
     class FavouriteViewHolder(private val binding: FavouriteItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("CheckResult")
-        fun bind(data: Dish, listener: FavouriteClickable) {
+        fun bind(data: Dish, listener: UpdatableFavourites) {
             binding.dish = data
             var flag = !FavouriteList.isFavourite(data)
             binding.addToFavourite.setOnClickListener {

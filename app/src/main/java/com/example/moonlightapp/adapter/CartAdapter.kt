@@ -6,16 +6,16 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.utils.Removable
+import com.example.moonlightapp.utils.RemovableFromCart
 import com.example.moonlightapp.databinding.CartItemBinding
 import com.example.moonlightapp.entity.Cart
-import com.example.moonlightapp.utils.Addable
+import com.example.moonlightapp.utils.AddableToCart
 import kotlinx.android.synthetic.main.cart_item.view.*
 
 class CartAdapter(
     var context: Context,
-    private var removable: Removable,
-    private var addable: Addable
+    private var removable: RemovableFromCart,
+    private var addable: AddableToCart
 ) :
     RecyclerView.Adapter<CartAdapter.ViewHolder>() {
 

@@ -10,25 +10,25 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.utils.Addable
+import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.entity.Categories
 import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.utils.FavouriteClickable
-import com.example.moonlightapp.utils.ItemClickable
+import com.example.moonlightapp.utils.UpdatableFavourites
+import com.example.moonlightapp.utils.ShowableDish
 import java.util.*
 import kotlin.collections.ArrayList
 
 class CategoriesAdapter(
     private val context: Context,
-    private val addable: Addable,
-    private var favListener: FavouriteClickable
+    private val addable: AddableToCart,
+    private var favListener: UpdatableFavourites
 ) :
     RecyclerView.Adapter<CategoriesAdapter.MainViewHolder>(), Filterable {
-    private lateinit var listener: ItemClickable
+    private lateinit var listener: ShowableDish
     private var allCategory: MutableList<Categories> = ArrayList()
     private var categories: MutableList<Categories> = ArrayList()
 
-    fun setOnItemClickListener(onSaleable: ItemClickable) {
+    fun setOnItemClickListener(onSaleable: ShowableDish) {
         listener = onSaleable
     }
 

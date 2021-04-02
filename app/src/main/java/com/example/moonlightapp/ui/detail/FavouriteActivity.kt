@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.FavouriteAdapter
 import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.utils.FavouriteClickable
+import com.example.moonlightapp.utils.UpdatableFavourites
 import com.example.moonlightapp.viewmodels.FavouriteViewModel
 
-class FavouriteActivity : AppCompatActivity(), FavouriteClickable {
+class FavouriteActivity : AppCompatActivity(), UpdatableFavourites {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: FavouriteAdapter

@@ -7,25 +7,25 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.data.FavouriteList
-import com.example.moonlightapp.utils.Addable
+import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.utils.ItemClickable
+import com.example.moonlightapp.utils.ShowableDish
 import com.example.moonlightapp.databinding.ItemDishBinding
-import com.example.moonlightapp.utils.FavouriteClickable
+import com.example.moonlightapp.utils.UpdatableFavourites
 import kotlinx.android.synthetic.main.item_dish.view.*
 
 class DishAdapter(
     private val categoryItem: List<Dish>,
-    private val listener: ItemClickable,
-    private val addable: Addable,
-    private var favListener: FavouriteClickable
+    private val listener: ShowableDish,
+    private val addable: AddableToCart,
+    private var favListener: UpdatableFavourites
 ) :
     RecyclerView.Adapter<DishAdapter.CategoryItemViewHolder>() {
 
     class CategoryItemViewHolder(private val binding: ItemDishBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: Dish, addable: Addable, favListener: FavouriteClickable) {
+        fun bind(data: Dish, addable: AddableToCart, favListener: UpdatableFavourites) {
             binding.dish = data
             binding.addToCart.setOnClickListener {
                 addable.addToCart(Cart(data))

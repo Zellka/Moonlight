@@ -2,6 +2,6 @@ package com.example.moonlightapp.utils
 
 import com.example.moonlightapp.entity.Cart
 
-interface Addable {
+interface AddableToCart {
     fun addToCart(cartItem: Cart)
 }

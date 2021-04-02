@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.CategoriesAdapter
-import com.example.moonlightapp.utils.Addable
+import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.ui.detail.DishFragment
 import com.example.moonlightapp.ui.MainActivity
-import com.example.moonlightapp.utils.ItemClickable
+import com.example.moonlightapp.utils.ShowableDish
 import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.utils.FavouriteClickable
+import com.example.moonlightapp.utils.UpdatableFavourites
 import com.example.moonlightapp.viewmodels.MenuViewModel
 import com.google.android.material.snackbar.Snackbar
 import io.reactivex.ObservableOnSubscribe
@@ -27,7 +27,7 @@ import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_menu.*
 import java.util.*
 
-class MenuFragment : Fragment(), ItemClickable, Addable, FavouriteClickable {
+class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavourites {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter

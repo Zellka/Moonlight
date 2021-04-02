@@ -2,6 +2,6 @@ package com.example.moonlightapp.utils
 
 import com.example.moonlightapp.entity.Dish
 
-interface FavouriteClickable {
+interface UpdatableFavourites {
     fun addToFavourites(item: Dish)
 }

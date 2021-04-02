@@ -1,7 +1,6 @@
 package com.example.moonlightapp.ui.detail
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,20 +11,17 @@ import androidx.lifecycle.observe
 import com.example.moonlightapp.R
 import com.example.moonlightapp.data.FavouriteList
 import com.example.moonlightapp.databinding.DishBinding
-import com.example.moonlightapp.utils.Addable
+import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.viewmodels.MenuViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.android.material.snackbar.Snackbar
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.dish.*
-import kotlinx.android.synthetic.main.fragment_menu.*
 
-class DishFragment : BottomSheetDialogFragment(), Addable {
+class DishFragment : BottomSheetDialogFragment(), AddableToCart {
 
     private lateinit var dishViewModel: MenuViewModel
 

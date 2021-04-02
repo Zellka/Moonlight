@@ -16,17 +16,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.CartAdapter
-import com.example.moonlightapp.utils.Removable
+import com.example.moonlightapp.utils.RemovableFromCart
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.ui.detail.OrderingActivity
-import com.example.moonlightapp.utils.Addable
+import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.viewmodels.CartViewModel
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 
-class CartFragment : Fragment(), Removable, Addable {
+class CartFragment : Fragment(), RemovableFromCart, AddableToCart {
     private lateinit var adapter: CartAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var cartViewModel: CartViewModel
