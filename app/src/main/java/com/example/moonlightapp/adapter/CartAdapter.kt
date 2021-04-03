@@ -9,13 +9,11 @@ import com.example.moonlightapp.R
 import com.example.moonlightapp.utils.RemovableFromCart
 import com.example.moonlightapp.databinding.ItemCartBinding
 import com.example.moonlightapp.entity.Cart
-import com.example.moonlightapp.utils.AddableToCart
 import kotlinx.android.synthetic.main.item_cart.view.*
 
 class CartAdapter(
     var context: Context,
-    private var removable: RemovableFromCart,
-    private var addable: AddableToCart
+    private var removable: RemovableFromCart
 ) :
     RecyclerView.Adapter<CartAdapter.ViewHolder>() {
 
@@ -38,10 +36,6 @@ class CartAdapter(
         viewHolder.bind(model)
         viewHolder.itemView.removeItem.setOnClickListener {
             removable.removeFromCart(cartItems, position)
-            notifyDataSetChanged()
-        }
-        viewHolder.itemView.addItem.setOnClickListener {
-            addable.addToCart(model)
             notifyDataSetChanged()
         }
     }
