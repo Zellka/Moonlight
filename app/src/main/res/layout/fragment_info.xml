@@ -2,7 +2,7 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data/>
+    <data />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -19,25 +19,11 @@
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/order_history"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/order_history"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/order_history" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/favorites"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/favorites" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            android:text="@string/order_history" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
@@ -115,7 +101,6 @@
                 android:text="->" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

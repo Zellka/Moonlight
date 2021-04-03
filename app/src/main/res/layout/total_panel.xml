@@ -41,6 +41,17 @@
                 android:textSize="24dp"
                 android:textStyle="bold" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/currency_symbols"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/total_price"
+                android:paddingLeft="5dp"
+                android:text="₽"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.AppCompatImageButton

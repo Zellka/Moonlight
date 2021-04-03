@@ -8,11 +8,11 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.moonlightapp.R
-import com.example.moonlightapp.data.OrderList
 import com.example.moonlightapp.entity.HistoryOrder
 import com.example.moonlightapp.viewmodels.OrderViewModel
 import kotlinx.android.synthetic.main.activity_ordering.*
-import java.time.LocalDate
+import java.text.SimpleDateFormat
+import java.util.*
 
 class OrderingActivity : AppCompatActivity() {
 
@@ -28,13 +28,14 @@ class OrderingActivity : AppCompatActivity() {
         supportActionBar!!.title = "Оформление заказа"
         val arguments = intent.extras
         val totalSum = arguments!!["TOTAL_SUM"].toString()
-        val orderNum = (1..101).random()
-        val date = LocalDate.now()
-        val order = HistoryOrder("Заказ № $orderNum", date.toString(), totalSum)
+        val orderNum = (1..1001).random()
+        val date: String = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(Date())
+        val order = HistoryOrder("Заказ № $orderNum", date, totalSum)
         button_order.setOnClickListener {
             if (userName.text!!.isNotEmpty() && userNumber.text!!.isNotEmpty() && userHome.text!!.isNotEmpty() && userStreet.text!!.isNotEmpty()) {
                 Toast.makeText(this, "Заказ оформлен", Toast.LENGTH_SHORT).show()
                 orderViewModel.addOrder(order)
+                this.finish()
             }
         }
     }

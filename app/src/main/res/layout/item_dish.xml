@@ -102,10 +102,9 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
                     android:layout_marginBottom="10dp"
-                    android:src="@drawable/ic_plus"
-                    android:background="@drawable/btn_to_cart_selector" />
+                    android:background="@drawable/btn_to_cart_selector"
+                    android:src="@drawable/ic_plus" />
 
             </RelativeLayout>
 

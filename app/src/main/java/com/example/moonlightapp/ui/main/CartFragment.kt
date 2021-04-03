@@ -29,7 +29,6 @@ class CartFragment : Fragment(), RemovableFromCart {
     private lateinit var cartViewModel: CartViewModel
     private lateinit var totalTextView: TextView
     private lateinit var btnToOrder: ImageButton
-    private lateinit var dishList: MutableList<Cart>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +52,6 @@ class CartFragment : Fragment(), RemovableFromCart {
         cartViewModel.getCartList()
         cartViewModel.cartMutableLiveData.observe(viewLifecycleOwner) { postModels ->
             adapter.setList(postModels)
-            dishList = postModels
         }
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
@@ -65,6 +63,7 @@ class CartFragment : Fragment(), RemovableFromCart {
             totalTextView.text = "$totalPrice"
             totalSum = "$totalPrice ₽"
         }
+
         btnToOrder.setOnClickListener {
             if (totalTextView.text != "0.0") {
                 if (totalTextView.text.toString().toDouble() > 400.0) {
@@ -118,6 +117,7 @@ class CartFragment : Fragment(), RemovableFromCart {
                 cartViewModel.totalPriceMutableLiveData.observe(viewLifecycleOwner) { totalPrice ->
                     totalTextView.text = "0.0"
                 }
+                (context as MainActivity).nav_view.getOrCreateBadge(R.id.navigation_cart).number = 0
                 true
             }
             else -> super.onOptionsItemSelected(item)

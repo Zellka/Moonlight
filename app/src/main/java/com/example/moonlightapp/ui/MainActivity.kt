@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.moonlightapp.R
 import com.example.moonlightapp.data.ShoppingCart
@@ -21,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar = findViewById<Toolbar>(R.id.toolbar_main)
+        toolbar.title = ""
         setSupportActionBar(toolbar)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
@@ -36,8 +36,6 @@ class MainActivity : AppCompatActivity() {
         )
         navView.getOrCreateBadge(R.id.navigation_cart).number = cart.getShoppingCartSize()
         toolbar.setupWithNavController(navController, appBarConfiguration)
-        //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
     }
 }

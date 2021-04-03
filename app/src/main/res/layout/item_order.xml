@@ -12,21 +12,23 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        android:layout_margin="3dp"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="0dp"
         app:cardUseCompatPadding="true">
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:padding="10dp">
+            android:layout_margin="8dp"
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/order_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                android:paddingBottom="5dp"
                 android:text="@{order.numberOrder}" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -34,13 +36,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/order_number"
+                android:textColor="@color/colorAccent"
+                android:textSize="16dp"
                 android:text="@{order.date}" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/order_sum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
                 android:layout_alignParentRight="true"
+                android:textSize="20dp"
                 android:text="@{order.sumOrder}" />
 
         </RelativeLayout>

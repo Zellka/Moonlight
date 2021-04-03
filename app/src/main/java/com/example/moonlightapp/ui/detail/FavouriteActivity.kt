@@ -7,8 +7,10 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.FavouriteAdapter
 import com.example.moonlightapp.entity.Cart
@@ -36,13 +38,24 @@ class FavouriteActivity : AppCompatActivity(), UpdatableFavourites, AddableToCar
         supportActionBar!!.title = "Избранное"
 
         recyclerView = findViewById(R.id.rv_favourite)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager =
+            GridLayoutManager(applicationContext, 2, LinearLayoutManager.VERTICAL, false)
         adapter = FavouriteAdapter(this, this)
+        getFavouriteList()
+        recyclerView.adapter = adapter
+
+        val swipeRefresh = findViewById<SwipeRefreshLayout>(R.id.swipe_refresh)
+        swipeRefresh.setOnRefreshListener {
+            getFavouriteList()
+            swipeRefresh.isRefreshing = false
+        }
+    }
+
+    private fun getFavouriteList() {
         favouriteViewModel.getFavouritesList()
         favouriteViewModel.favouritesMutableLiveData.observe(this) { postModels ->
             adapter.setList(postModels)
         }
-        recyclerView.adapter = adapter
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

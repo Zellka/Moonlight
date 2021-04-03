@@ -39,10 +39,6 @@ class InfoFragment : Fragment() {
         binding.delivery.setOnClickListener {
             startActivity(intentDelivery)
         }
-        val intentFavorites = Intent(this.context, FavouriteActivity::class.java)
-        binding.favorites.setOnClickListener {
-            startActivity(intentFavorites)
-        }
         val intentOrders = Intent(this.context, HistoryOrdersActivity::class.java)
         binding.orderHistory.setOnClickListener {
             startActivity(intentOrders)

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -12,16 +13,16 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        app:cardBackgroundColor="@android:color/white"
+        android:orientation="horizontal"
         app:cardCornerRadius="0dp"
+        app:cardElevation="5dp"
         app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:weightSum="1.5">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -29,61 +30,87 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/img_fav"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_weight=".2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher"
                     app:imageUrl="@{dish.url}" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/add_to_favourite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
                     android:background="@null"
-                    android:paddingStart="90dp"
                     android:src="@drawable/ic_heart" />
 
             </RelativeLayout>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_weight=".5"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:padding="8dp">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name_fav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:maxLines="1"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:text="@{dish.name}"
+                android:textColor="@android:color/black"
+                android:textSize="12dp"
+                tools:ignore="RtlHardcoded" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/name_fav"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{dish.name}"
-                    android:textColor="@android:color/black"
-                    android:textSize="19sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/price_fav"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_alignParentLeft="true"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
                     android:text="@{dish.price}"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:textStyle="normal"
+                    tools:ignore="RtlHardcoded" />
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/currency_symbols"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/price_fav"
+                    android:gravity="left"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="₽"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:textStyle="normal"
+                    tools:ignore="RtlHardcoded" />
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/add_to_cart"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:background="@drawable/btn_to_cart_selector"
-                android:src="@drawable/ic_plus_20"/>
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/add_to_cart"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_to_cart_selector"
+                    android:src="@drawable/ic_plus" />
+
+            </RelativeLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
 
     </androidx.cardview.widget.CardView>
 
