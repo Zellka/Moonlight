@@ -10,7 +10,7 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="4dp"
         android:background="@drawable/send_round_box"
-        android:backgroundTint="@color/back_mes"
+        android:backgroundTint="@color/back"
         android:padding="14dp"
         android:textColor="@color/colorAccent"
         android:textSize="14sp" />

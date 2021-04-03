@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@color/back_panel"
+        android:background="@color/back"
         android:padding="8dp"
         tools:targetApi="lollipop">
 
@@ -28,18 +28,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Всего:"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24dp"
-                android:textStyle="bold" />
+                android:textColor="@color/colorAccent"
+                android:textSize="24dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/total_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24dp"
-                android:textStyle="bold" />
+                android:textColor="@color/colorAccent"
+                android:textSize="24dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/currency_symbols"
@@ -47,10 +45,9 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/total_price"
                 android:paddingLeft="5dp"
-                android:text="₽"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24dp"
-                android:textStyle="bold" />
+                android:text=" ₽"
+                android:textColor="@color/colorAccent"
+                android:textSize="24dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
