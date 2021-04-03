@@ -5,7 +5,9 @@
     android:id="@+id/main_content_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="0dp">
 
