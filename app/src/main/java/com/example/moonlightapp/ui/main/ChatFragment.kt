@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +19,7 @@ import kotlinx.coroutines.*
 
 class ChatFragment : Fragment() {
 
-    private lateinit var btnSend:Button
+    private lateinit var btnSend: ImageButton
     private lateinit var enterMes:EditText
     private lateinit var recyclerView: RecyclerView
 
@@ -37,18 +37,14 @@ class ChatFragment : Fragment() {
         btnSend = root.findViewById(R.id.btn_send)
         enterMes = root.findViewById(R.id.enter_message)
         recyclerView = root.findViewById(R.id.rv_messages)
-        recyclerView()
+        adapter = MessagingAdapter()
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(context)
 
         clickEvents()
 
         customBotMessage("Привет! Вам нужна помощь?")
         return root
-    }
-
-    private fun recyclerView() {
-        adapter = MessagingAdapter()
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(context)
     }
 
     private fun clickEvents() {

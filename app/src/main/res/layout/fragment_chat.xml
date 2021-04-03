@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="70dp"
+    android:layout_marginBottom="52dp"
     tools:context=".ui.main.ChatFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -11,32 +11,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#E4E4E4"
+        android:background="@color/white"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/enter_message"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight=".5"
-            android:background="@drawable/round_button"
             android:backgroundTint="@android:color/white"
             android:hint="@string/hint_message"
             android:inputType="textShortMessage"
             android:padding="10dp"
+            android:background="@color/white"
             android:singleLine="true" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btn_send"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/round_button"
-            android:backgroundTint="@color/colorAccent"
-            android:text="@string/text_btn_send"
-            android:textColor="@android:color/white" />
+            android:layout_gravity="center"
+            android:background="@null"
+            android:src="@drawable/ic_send"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
