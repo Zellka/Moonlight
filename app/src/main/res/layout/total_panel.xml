@@ -1,51 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="70dp"
     android:layout_gravity="bottom"
-    android:elevation="15dp"
-    android:padding="8dp"
-    app:elevation="4dp"
-    tools:targetApi="lollipop">
+    app:cardCornerRadius="0dp"
+    app:cardUseCompatPadding="true">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="15dp"
-        tools:ignore="RtlCompat">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/back"
+        android:padding="8dp"
+        tools:targetApi="lollipop">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/totalLabel"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Всего:"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            tools:ignore="RtlCompat">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/total_price"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Всего:"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/button_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:textColor="@color/colorAccent"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:src="@drawable/ic_arrow" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_order"
-        android:layout_width="95dp"
-        android:layout_height="45dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:text="Далее"
-        android:textAllCaps="true"
-        android:textSize="14dp" />
-
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
