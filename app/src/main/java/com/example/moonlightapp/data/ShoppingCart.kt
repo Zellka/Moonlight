@@ -46,4 +46,10 @@ class ShoppingCart {
         }
         return cartSize
     }
+
+    fun clearList() {
+        val cartList = getCart()
+        cartList.clear()
+        saveCart(cartList)
+    }
 }

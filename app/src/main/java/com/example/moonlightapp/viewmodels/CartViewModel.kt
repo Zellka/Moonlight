@@ -15,10 +15,6 @@ class CartViewModel : ViewModel() {
     var totalPriceMutableLiveData: MutableLiveData<Double> =
         MutableLiveData()
 
-    fun addDishToCart(cartItem: Cart) {
-        cart.addItem(cartItem)
-    }
-
     fun removeDishFromCart(cartItems: MutableList<Cart>, position: Int) {
         cart.removeItem(cartItems, position)
     }
@@ -31,5 +27,9 @@ class CartViewModel : ViewModel() {
         val totalPrice = cart.getCart()
             .fold(0.toDouble()) { acc, cartItem -> acc + cartItem.quantity.times(cartItem.product.price.toDouble()) }
         totalPriceMutableLiveData.value = totalPrice
+    }
+
+    fun clearAllList() {
+        cart.clearList()
     }
 }

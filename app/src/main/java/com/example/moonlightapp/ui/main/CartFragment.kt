@@ -3,10 +3,8 @@ package com.example.moonlightapp.ui.main
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
+import android.view.*
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -20,22 +18,22 @@ import com.example.moonlightapp.utils.RemovableFromCart
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.ui.detail.OrderingActivity
-import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.viewmodels.CartViewModel
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 
-class CartFragment : Fragment(), RemovableFromCart, AddableToCart {
+class CartFragment : Fragment(), RemovableFromCart {
     private lateinit var adapter: CartAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var cartViewModel: CartViewModel
     private lateinit var totalTextView: TextView
-    private lateinit var btnToOrder: Button
+    private lateinit var btnToOrder: ImageButton
     private lateinit var dishList: MutableList<Cart>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
         cartViewModel = ViewModelProvider(this).get(CartViewModel::class.java)
     }
 
@@ -50,7 +48,7 @@ class CartFragment : Fragment(), RemovableFromCart, AddableToCart {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = CartAdapter(this.requireContext(), this, this)
+        adapter = CartAdapter(this.requireContext(), this)
         recyclerView = view.findViewById(R.id.rv_basket)
         cartViewModel.getCartList()
         cartViewModel.cartMutableLiveData.observe(viewLifecycleOwner) { postModels ->
@@ -77,7 +75,6 @@ class CartFragment : Fragment(), RemovableFromCart, AddableToCart {
                     Toast.makeText(context, "Минимальная сумма заказа 400₽", Toast.LENGTH_SHORT)
                         .show()
                 }
-
             } else {
                 Toast.makeText(context, "Корзина пуста", Toast.LENGTH_SHORT).show()
             }
@@ -105,25 +102,25 @@ class CartFragment : Fragment(), RemovableFromCart, AddableToCart {
         }
     }
 
-    @SuppressLint("CheckResult")
-    override fun addToCart(cartItem: Cart) {
-        cartViewModel.getCartList()
-        Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
-            cartViewModel.addDishToCart(cartItem)
-            cartViewModel.cartMutableLiveData.observe(viewLifecycleOwner) { postModels ->
-                it.onNext(postModels)
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.clear_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.clear_action -> {
+                cartViewModel.clearAllList()
+                cartViewModel.getCartList()
+                cartViewModel.cartMutableLiveData.observe(this) { postModels ->
+                    adapter.setList(postModels)
+                }
+                cartViewModel.totalPriceMutableLiveData.observe(viewLifecycleOwner) { totalPrice ->
+                    totalTextView.text = "0.0"
+                }
+                true
             }
-        }).subscribe { cart ->
-            var quantity = 1
-            cart.forEach { cartItem ->
-                quantity += cartItem.quantity
-            }
-            cartViewModel.getTotalPrice()
-            cartViewModel.totalPriceMutableLiveData.observe(viewLifecycleOwner) { totalPrice ->
-                totalTextView.text = "$totalPrice"
-            }
-            (context as MainActivity).nav_view.getOrCreateBadge(R.id.navigation_cart).number =
-                quantity
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
