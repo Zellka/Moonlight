@@ -35,21 +35,19 @@
     <string name="time_and_cost_delivery">Доставка осуществляется по Донецку с 10:00 до 21:00. Доставка бесплатная. Минимальная сумма заказа - 400 рублей.</string>
 
     <string name="title_delivery_areas">В районы</string>
-    <string name="green_zone">
-        - Ворошиловский район\n
-        - Калининский район\n
-        - Будённовский район\n
-        - Куйбышевский район\n
-        - Ленинский район
+    <string name="green_zone">\t- Ворошиловский район\n
+        \t- Калининский район\n
+        \t- Будённовский район\n
+        \t- Куйбышевский район\n
+        \t- Ленинский район
     </string>
-    <string name="information_green_zone">Зелёная зона - бесплатная доставка в течение 30 минут.</string>
-    <string name="yellow_zone">
-        - Киевский район\n
-        - Кировский район\n
-        - Петровский район\n
-        - Пролетарский район
+    <string name="information_green_zone">Бесплатная доставка в течение 30 минут.</string>
+    <string name="yellow_zone">\t- Киевский район\n
+        \t- Кировский район\n
+        \t- Петровский район\n
+        \t- Пролетарский район
     </string>
-    <string name="information_yellow_zone">Жёлтая зона - бесплатная доставка в течение часа.</string>
+    <string name="information_yellow_zone">Бесплатная доставка в течение часа.</string>
 
     <string name="hint_message">Напиши сообщение</string>
     <string name="text_btn_send">Отправить</string>
