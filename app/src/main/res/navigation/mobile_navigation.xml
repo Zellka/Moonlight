@@ -20,12 +20,12 @@
     <fragment
         android:id="@+id/navigation_chat"
         android:name="com.example.moonlightapp.ui.main.ChatFragment"
-        android:label="@string/title_chat"
+        android:label="Поддержка"
         tools:layout="@layout/fragment_chat" />
 
     <fragment
         android:id="@+id/navigation_info"
         android:name="com.example.moonlightapp.ui.main.InfoFragment"
-        android:label="@string/title_info"
+        android:label="Привет!"
         tools:layout="@layout/fragment_info" />
 </navigation>
