@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
 import com.example.moonlightapp.adapter.MessagingAdapter
 import com.example.moonlightapp.entity.Message
-import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.utils.BotResponse
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 
 class ChatFragment : Fragment() {
@@ -32,7 +30,6 @@ class ChatFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        (context as MainActivity).toolbar_title.text = context?.getString(R.string.title_chat)
         val root = inflater.inflate(R.layout.fragment_chat, container, false)
         btnSend = root.findViewById(R.id.btn_send)
         enterMes = root.findViewById(R.id.enter_message)

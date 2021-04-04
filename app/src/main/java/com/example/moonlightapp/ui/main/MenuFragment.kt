@@ -47,7 +47,6 @@ class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavourite
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        (context as MainActivity).toolbar_title.text = context?.getString(R.string.title_menu)
         return inflater.inflate(R.layout.fragment_menu, container, false)
     }
 
@@ -79,8 +78,11 @@ class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavourite
         val dishFragment = DishFragment()
         val args = Bundle()
         args.putString("NAME_DISH", item.name)
-        args.putString("IMAGE_DISH", item.url)
         args.putString("PRICE_DISH", item.price)
+        args.putString("IMAGE_DISH", item.url)
+        args.putString("DESCRIPTION_DISH", item.description)
+        args.putString("WEIGHT_DISH", item.weight)
+        args.putString("CALORIES_DISH", item.calories)
         dishFragment.arguments = args
         dishFragment.show(this@MenuFragment.requireFragmentManager(), "Dialog")
     }

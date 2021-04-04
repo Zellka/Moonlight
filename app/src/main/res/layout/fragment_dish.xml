@@ -11,12 +11,11 @@
     </data>
 
 
-    <FrameLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/bottom_sheet_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:elevation="5dp"
         app:behavior_hideable="true"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
@@ -25,101 +24,85 @@
             android:layout_height="wrap_content"
             android:padding="8dp">
 
-            <RelativeLayout
-                android:id="@+id/img_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/dish_img"
-                    android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher"
-                    app:imageUrl="@{dish.url}" />
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/add_to_favourite"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_margin="10dp"
-                    android:background="@null"
-                    android:src="@drawable/ic_heart_30" />
-
-            </RelativeLayout>
-
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/dish_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/img_layout"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:paddingTop="8dp"
                 android:text="@{dish.name}"
-                android:textSize="24sp" />
+                android:textColor="@color/colorAccent"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dish_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dish_name"
+                android:paddingTop="8dp"
+                android:text="@{dish.price}"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/currency_symbols"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dish_name"
+                android:layout_toRightOf="@+id/dish_price"
+                android:gravity="left"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text=" ₽"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/dish_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/dish_name"
+                android:layout_below="@+id/dish_price"
                 android:ellipsize="end"
                 android:maxLines="3"
-                android:paddingTop="8dp"
-                android:text="Лучшее"
-                android:textSize="18sp" />
+                android:paddingTop="10dp"
+                android:text="@{dish.description}"
+                android:textColor="@color/darker_gray"
+                android:textSize="16dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/dish_weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dish_description"
-                android:paddingTop="8dp"
-                android:text="150г"
-                android:textSize="18sp" />
+                android:paddingTop="10dp"
+                android:text="@{dish.weight}"
+                android:textColor="@color/darker_gray"
+                android:textSize="16dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/dish_price"
+                android:id="@+id/dish_calories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dish_weight"
-                android:paddingTop="8dp"
-                android:text="@{dish.price}"
-                android:textSize="18dp" />
+                android:paddingTop="10dp"
+                android:text="@{dish.calories}"
+                android:textColor="@color/darker_gray"
+                android:textSize="16dp" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/currency_symbols"
-                android:layout_width="wrap_content"
-                android:layout_below="@+id/dish_weight"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/dish_price"
-                android:gravity="left"
-                android:textStyle="normal"
-                android:text="₽"
-                android:paddingTop="8dp"
-                android:paddingLeft="0dp"
-                android:textColor="@android:color/black"
-                android:textSize="18dp"/>
-
-            <androidx.appcompat.widget.AppCompatImageButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_add"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dish_weight"
                 android:layout_alignParentRight="true"
-                android:paddingTop="8dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/btn_to_cart_selector"
-                android:src="@drawable/ic_plus_30" />
+                android:background="@drawable/btn_round_selector"
+                android:text="Добавить"
+                android:textColor="@color/colorAccent" />
 
         </RelativeLayout>
 
-    </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

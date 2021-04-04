@@ -8,20 +8,24 @@
     <fragment
         android:id="@+id/navigation_menu"
         android:name="com.example.moonlightapp.ui.main.MenuFragment"
+        android:label="@string/title_menu"
         tools:layout="@layout/fragment_menu" />
 
     <fragment
         android:id="@+id/navigation_cart"
         android:name="com.example.moonlightapp.ui.main.CartFragment"
+        android:label="@string/title_cart"
         tools:layout="@layout/fragment_cart" />
 
     <fragment
         android:id="@+id/navigation_chat"
         android:name="com.example.moonlightapp.ui.main.ChatFragment"
+        android:label="@string/title_chat"
         tools:layout="@layout/fragment_chat" />
 
     <fragment
         android:id="@+id/navigation_info"
         android:name="com.example.moonlightapp.ui.main.InfoFragment"
+        android:label="@string/title_info"
         tools:layout="@layout/fragment_info" />
 </navigation>

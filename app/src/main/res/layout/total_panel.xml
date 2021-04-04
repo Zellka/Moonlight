@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@color/back"
+        android:background="@color/colorPrimaryDark"
         android:padding="8dp"
         tools:targetApi="lollipop">
 

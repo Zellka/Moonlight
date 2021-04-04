@@ -41,7 +41,6 @@ class CartFragment : Fragment(), RemovableFromCart {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        (context as MainActivity).toolbar_title.text = context?.getString(R.string.title_cart)
         return inflater.inflate(R.layout.fragment_cart, container, false)
     }
 
