@@ -4,9 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
@@ -28,7 +30,6 @@ class CartFragment : Fragment(), RemovableFromCart {
     private lateinit var recyclerView: RecyclerView
     private lateinit var cartViewModel: CartViewModel
     private lateinit var totalTextView: TextView
-    private lateinit var btnToOrder: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +45,7 @@ class CartFragment : Fragment(), RemovableFromCart {
         return inflater.inflate(R.layout.fragment_cart, container, false)
     }
 
+    @SuppressLint("ResourceAsColor")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = CartAdapter(this.requireContext(), this)
@@ -55,15 +57,14 @@ class CartFragment : Fragment(), RemovableFromCart {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
         totalTextView = view.findViewById(R.id.total_price)
-        btnToOrder = view.findViewById(R.id.button_order)
         cartViewModel.getTotalPrice()
         var totalSum = ""
         cartViewModel.totalPriceMutableLiveData.observe(viewLifecycleOwner) { totalPrice ->
             totalTextView.text = "$totalPrice"
             totalSum = "$totalPrice ₽"
         }
-
-        btnToOrder.setOnClickListener {
+        val totalPanel = view.findViewById<CardView>(R.id.total_panel)
+        totalPanel.setOnClickListener {
             if (totalTextView.text != "0.0") {
                 if (totalTextView.text.toString().toDouble() > 400.0) {
                     val intent = Intent(context, OrderingActivity::class.java)
