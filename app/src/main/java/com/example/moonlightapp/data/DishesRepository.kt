@@ -55,6 +55,26 @@ class DishesRepository {
                 "277 ккал"
             )
         )
+        items.add(
+            Dish(
+                "Бекон",
+                "127",
+                "https://3.downloader.disk.yandex.ua/disk/f12a9f52abead3e4cc4ef576b6ea51a041d8f89894eaa5e5fd69800c47c6a78a/606cb240/pvVNPdxkXXJ88uIpOLiGcODZS-8FbnM5MVs2lg8DUwkK0y5i4HU-UTVvhVJe0hTKDbkmG0e5UKxH6fLR8N-0mA%3D%3D?uid=1186320270&filename=sn6.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1186320270&fsize=27446&hid=d42c465294007c250c8416d36525d0bf&media_type=image&tknv=v2&etag=32af10045771a4056c825027d6b05efd",
+                "Бекон",
+                "30 г",
+                "261 ккал"
+            )
+        )
+        items.add(
+            Dish(
+                "Слабосолёный лосось",
+                "437",
+                "https://2.downloader.disk.yandex.ua/disk/3a5df5f8305b182962ed151ea1709339552e038cede4355f84359e2cae03f846/606cb245/pvVNPdxkXXJ88uIpOLiGcNV5sjyi_X5k33WrGum7WAwIHSUPHKpoDpLRzqUozWei0050pjHI-66rKccd1Ivj5Q%3D%3D?uid=1186320270&filename=sn7.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1186320270&fsize=24374&hid=4ae870863251e56723ece3f7ff965ea3&media_type=image&tknv=v2&etag=3233ff1290b0d4f07da2a4ddb5cc989e",
+                "Слабосолёный лосось",
+                "100 г",
+                "193 ккал"
+            )
+        )
         return items
     }
 
@@ -108,6 +128,16 @@ class DishesRepository {
                 "Гренки, айсберг, романо, курица, барбекю, паприка, пармезан, каперсы, анчоусы, майонез",
                 "290 г",
                 "717 ккал"
+            )
+        )
+        items.add(
+            Dish(
+                "Оливье с лососем",
+                "357",
+                "https://4.downloader.disk.yandex.ua/disk/d5cae7dc204ecff518a58b124de05e05c8a7bc727ea0172ebc4925a2f0677e97/606cb2cd/pvVNPdxkXXJ88uIpOLiGcKo66u88IrlzVGK2npsSWbGK4jG8cYvJjfJfpbc3ZHqEGy_MRDdGiRNN-cqNwWvrFQ%3D%3D?uid=1186320270&filename=sal6.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1186320270&fsize=36658&hid=9b86dc5cd319bc2fa83faecb7d92b297&media_type=image&tknv=v2&etag=85231fecb749afb5d12ca3a0494277c8",
+                "Каперсы, морковь, картофель, зелёный горошек, огурцы, слабосолёный лосось, майонез, маринованные огурцы, кетчуп, чеснок, ред девил соус",
+                "220 г",
+                "294 ккал"
             )
         )
         return items
@@ -165,6 +195,26 @@ class DishesRepository {
                 "1082 ккал"
             )
         )
+        items.add(
+            Dish(
+                "Лосось с зелёной пастой и жареными ананасами",
+                "827",
+                "https://3.downloader.disk.yandex.ua/disk/8a1e6fb7f1ddf511cec506ae1799539f6840ec12282abcabd5db48b6b47a7fba/606cb3c8/pvVNPdxkXXJ88uIpOLiGcAAbJDGsvEBsLn7Ae8Sa-Vr3Ie2eJthHx1W5KpKBj7MN6uGM8Uo328XOa-cQO5fywA%3D%3D?uid=1186320270&filename=m6.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1186320270&fsize=37654&hid=15754d10e0ca6f80406b3d1067ebc3c1&media_type=image&tknv=v2&etag=7b47171413dd41e7ac1b8d69683a6575",
+                "Лосось, спагетти, базилик, кедровый орех, арахис, мёд, ананас, пармезан, оливковое масло",
+                "290 г",
+                "800 ккал"
+            )
+        )
+        items.add(
+            Dish(
+                "Рулька с картофельным пюре",
+                "745",
+                "https://3.downloader.disk.yandex.ua/disk/12f52cb244a7c83ad582d5c14e171e2d53ef8981fbde84cffbcb1845345850bc/606cb3cc/pvVNPdxkXXJ88uIpOLiGcJDMoAyO7nc-wCzpNG4p8gKOomC3kxxMDL7RFdpjkfd9sLjY2w985qnD_6aKcH7P7Q%3D%3D?uid=1186320270&filename=m7.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1186320270&fsize=28697&hid=0b52583b535083b1efbac67eecfff423&media_type=image&tknv=v2&etag=af73909eed0b2b6ea06feb26f3c7c741",
+                "Свинина, барбекю, молоко, картофель, сливочное масло, зернистая горчица, мёд, майонез",
+                "690 г",
+                "2350 ккал"
+            )
+        )
         return items
     }
 
@@ -220,6 +270,26 @@ class DishesRepository {
                 "630 ккал"
             )
         )
+        items.add(
+            Dish(
+                "Сливочные гребешки с вешенками",
+                "767",
+                "https://4.downloader.disk.yandex.ua/disk/dc5a214aee018c65888977ca3759a1f852449cd182a22a2d81ce14ec4a56067e/606cb4d2/pvVNPdxkXXJ88uIpOLiGcMq8Jo6HX-XE3jEHZ3_sypjdn_98MIPav9tnIezGm6NZYVKDn9K332iPAhVvdOd8eA%3D%3D?uid=1186320270&filename=s6.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1186320270&fsize=34116&hid=5b7eaf5c3d1271a6d2af2d13a2193327&media_type=image&tknv=v2&etag=13248891c3bde34d5eb27acd34fd77ac",
+                "Гребешки, вешенки, репчатый лук, сливочное масло, лук зелёный",
+                "230 г",
+                "624 ккал"
+            )
+        )
+        items.add(
+            Dish(
+                "Азу из говядины с картофельным пюре",
+                "397",
+                "https://2.downloader.disk.yandex.ua/disk/b81857f3071f910e82c9c57e53cb84a936dcb6a0cd2a041d9620c6d9cb97cce6/606cb4d7/pvVNPdxkXXJ88uIpOLiGcDTFclTWA6Dkz7rgg7uI-JYKA2LmFVanqq2qKWfsUlV7zpuy3ePn7wvzz6JvLbIwXQ%3D%3D?uid=1186320270&filename=s7.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1186320270&fsize=34625&hid=9379f51f20addd42a4aba367d38c2e0b&media_type=image&tknv=v2&etag=daefc23f963d71920f57542dcbdcae76",
+                "Говядина, картофель, молоко, сахар, репчатый лук, солёные огурцы, томатная паста, уксус, маринованные огурцы",
+                "300 г",
+                "577 ккал"
+            )
+        )
         return items
     }
 
@@ -273,6 +343,26 @@ class DishesRepository {
                 "Пшеничная мука, сливочное масло, мёд, сливки, фундук, яйцо, какао, сахар",
                 "90 г",
                 "400 ккал"
+            )
+        )
+        items.add(
+            Dish(
+                "Завтрак с творожным сыром и лососем",
+                "297",
+                "https://3.downloader.disk.yandex.ua/disk/7413712831776e7b9087b89f0b86af2ef38f3273707fb29029332459ad170536/606cb5a4/pvVNPdxkXXJ88uIpOLiGcHS11fiUpWw4oeXaK7zIZncNGxdV6cg-yvqOw5ZxAZwekJJBUNqJ75v_Ok4aDMAlgA%3D%3D?uid=1186320270&filename=d6.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1186320270&fsize=19647&hid=9e8da6a6e31d1f0363ffeb1b3ae6c9e1&media_type=image&tknv=v2&etag=9b0e6c34ffff4745e03ba8cd56c91bfd",
+                "Мука, молоко, яйцо, сахар, творожный сыр, слабосолёный лосось, сметана",
+                "210 г",
+                "513 ккал"
+            )
+        )
+        items.add(
+            Dish(
+                "Творожная запеканка с вишнёвым вареньем",
+                "267",
+                "https://4.downloader.disk.yandex.ua/disk/748c21d2c3df17aacc878783af1bb2df1ac6a493d301d543d22c925d084f9be0/606cb5a8/pvVNPdxkXXJ88uIpOLiGcDKaAsPP-JhiRqqsCHDBCUK9LkDO3zLpYjO_RETLrXS65EB5ya-pYlQT5Ur8gw4eEQ%3D%3D?uid=1186320270&filename=d7.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1186320270&fsize=23149&hid=d4d74df0468941dcb3fcd0404f7995b8&media_type=image&tknv=v2&etag=32042986794d2b7ac54fc4a092a6c611",
+                "Творог, яйцо, мука, сметана, вишня, сахар, ванилин",
+                "310 г",
+                "745 ккал"
             )
         )
         return items
