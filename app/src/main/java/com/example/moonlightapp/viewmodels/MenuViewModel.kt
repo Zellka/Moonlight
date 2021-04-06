@@ -25,15 +25,11 @@ class MenuViewModel: ViewModel() {
         categoriesMutableLiveData.value = dishData.getData()
     }
 
-    fun isFavourite(item: Dish): Boolean {
-        return favourites.isFavourite(item)
-    }
-
     fun addDishToCart(cartItem: Cart){
         cart.addItem(cartItem)
     }
 
-    fun addToFavourites(dishItem: Dish){
+    fun updateFavourites(dishItem: Dish){
         favourites.updateItem(dishItem)
     }
 

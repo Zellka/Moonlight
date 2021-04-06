@@ -58,20 +58,6 @@ class FavouriteActivity : AppCompatActivity(), UpdatableFavourites, AddableToCar
         }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                this.finish()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    override fun addToFavourites(item: Dish) {
-        favouriteViewModel.addToFavourites(item)
-    }
-
     @SuppressLint("CheckResult")
     override fun addToCart(cartItem: Cart) {
         favouriteViewModel.getCartList()
@@ -86,5 +72,19 @@ class FavouriteActivity : AppCompatActivity(), UpdatableFavourites, AddableToCar
                 it.onNext(postModels)
             }
         }).subscribe()
+    }
+
+    override fun updateItemFavourite(item: Dish) {
+        favouriteViewModel.updateFavourites(item)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                this.finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

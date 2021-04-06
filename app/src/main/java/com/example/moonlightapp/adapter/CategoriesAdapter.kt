@@ -28,10 +28,6 @@ class CategoriesAdapter(
     private var allCategory: MutableList<Categories> = ArrayList()
     private var categories: MutableList<Categories> = ArrayList()
 
-    fun setOnItemClickListener(onSaleable: ShowableDish) {
-        listener = onSaleable
-    }
-
     class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var categoryTitle: TextView = itemView.findViewById(R.id.title_text_view)
         var itemRecycler: RecyclerView = itemView.findViewById(R.id.recycler_nested)
@@ -45,17 +41,21 @@ class CategoriesAdapter(
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         holder.categoryTitle.text = allCategory[position].categoryTitle
-        setCatItemRecycler(holder.itemRecycler, allCategory[position].categoryItem)
+        setCategoryItemRecycler(holder.itemRecycler, allCategory[position].categoryItem)
     }
 
     override fun getItemCount(): Int = allCategory.size
 
-    private fun setCatItemRecycler(recyclerView: RecyclerView, categoryItem: List<Dish>) {
+    private fun setCategoryItemRecycler(recyclerView: RecyclerView, categoryItem: List<Dish>) {
         val itemRecyclerAdapter = DishAdapter(
             categoryItem, listener, addable, favListener
         )
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         recyclerView.adapter = itemRecyclerAdapter
+    }
+
+    fun setOnItemClickListener(onShowable: ShowableDish) {
+        listener = onShowable
     }
 
     fun setList(dishList: MutableList<Categories>) {

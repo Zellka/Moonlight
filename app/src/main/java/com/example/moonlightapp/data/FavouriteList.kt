@@ -13,7 +13,7 @@ class FavouriteList {
         } else {
             favouriteList.remove(item)
         }
-        saveStock(favouriteList)
+        saveList(favouriteList)
     }
 
     fun isFavourite(item: Dish): Boolean {
@@ -21,8 +21,8 @@ class FavouriteList {
         return favouriteList.contains(item)
     }
 
-    private fun saveStock(stock: MutableList<Dish>) {
-        Paper.book().write("favourites", stock)
+    private fun saveList(favourites: MutableList<Dish>) {
+        Paper.book().write("favourites", favourites)
     }
 
     fun getFavouriteList(): MutableList<Dish> {

@@ -53,7 +53,7 @@ class FavouriteAdapter(private var listener: UpdatableFavourites,
             binding.dish = data
             var flag = !favourites.isFavourite(data)
             binding.addToFavourite.setOnClickListener {
-                listener.addToFavourites(data)
+                listener.updateItemFavourite(data)
                 if (flag) {
                     binding.addToFavourite.setImageResource(R.drawable.ic_heart_select)
                     flag = !flag

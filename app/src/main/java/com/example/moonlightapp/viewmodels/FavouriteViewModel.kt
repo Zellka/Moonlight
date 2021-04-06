@@ -21,7 +21,7 @@ class FavouriteViewModel : ViewModel() {
         favouritesMutableLiveData.value = favourites.getFavouriteList()
     }
 
-    fun addToFavourites(dishItem: Dish) {
+    fun updateFavourites(dishItem: Dish) {
         favourites.updateItem(dishItem)
     }
 

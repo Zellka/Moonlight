@@ -18,7 +18,7 @@ import kotlinx.coroutines.*
 class ChatFragment : Fragment() {
 
     private lateinit var btnSend: ImageButton
-    private lateinit var enterMes:EditText
+    private lateinit var enterMes: EditText
     private lateinit var recyclerView: RecyclerView
 
     private var messagesList = mutableListOf<Message>()
@@ -30,23 +30,35 @@ class ChatFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val root = inflater.inflate(R.layout.fragment_chat, container, false)
-        btnSend = root.findViewById(R.id.btn_send)
-        enterMes = root.findViewById(R.id.enter_message)
-        recyclerView = root.findViewById(R.id.rv_messages)
+        return inflater.inflate(R.layout.fragment_chat, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btnSend = view.findViewById(R.id.btn_send)
+        enterMes = view.findViewById(R.id.enter_message)
+        recyclerView = view.findViewById(R.id.rv_messages)
         adapter = MessagingAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         clickEvents()
-
         customBotMessage("Привет! Вам нужна помощь?")
-        return root
     }
 
     private fun clickEvents() {
         btnSend.setOnClickListener {
-            sendMessage()
+            val message = enterMes.text.toString()
+
+            if (message.isNotEmpty()) {
+                messagesList.add(Message(message, Companion.SEND_ID))
+                enterMes.setText("")
+
+                adapter.insertMessage(Message(message, Companion.SEND_ID))
+                recyclerView.scrollToPosition(adapter.itemCount - 1)
+
+                botResponse(message)
+            }
         }
         enterMes.setOnClickListener {
             GlobalScope.launch {
@@ -58,19 +70,7 @@ class ChatFragment : Fragment() {
             }
         }
     }
-    private fun sendMessage() {
-        val message = enterMes.text.toString()
 
-        if (message.isNotEmpty()) {
-            messagesList.add(Message(message, Companion.SEND_ID))
-            enterMes.setText("")
-
-            adapter.insertMessage(Message(message, Companion.SEND_ID))
-            recyclerView.scrollToPosition(adapter.itemCount - 1)
-
-            botResponse(message)
-        }
-    }
     private fun botResponse(message: String) {
         GlobalScope.launch {
             delay(2000)
@@ -82,6 +82,7 @@ class ChatFragment : Fragment() {
             }
         }
     }
+
     override fun onStart() {
         super.onStart()
         GlobalScope.launch {
@@ -91,6 +92,7 @@ class ChatFragment : Fragment() {
             }
         }
     }
+
     private fun customBotMessage(message: String) {
         GlobalScope.launch {
             delay(100)

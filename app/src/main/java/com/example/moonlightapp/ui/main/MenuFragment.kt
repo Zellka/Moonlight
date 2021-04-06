@@ -53,12 +53,12 @@ class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavourite
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.recycler_parent)
-        val swipeRefresh: SwipeRefreshLayout = view.findViewById(R.id.swipe_refresh)
         recyclerView.layoutManager = LinearLayoutManager(context)
         categoriesAdapter = CategoriesAdapter(this.requireContext(), this, this)
         categoriesAdapter.setOnItemClickListener(this)
         getDishList()
         recyclerView.adapter = categoriesAdapter
+        val swipeRefresh: SwipeRefreshLayout = view.findViewById(R.id.swipe_refresh)
         swipeRefresh.setOnRefreshListener {
             getDishList()
             swipeRefresh.isRefreshing = false
@@ -95,6 +95,7 @@ class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavourite
                 Color.parseColor("#FFFFFF")
             ).setTextColor(Color.BLACK)
             .show()
+
         Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
             dishViewModel.addDishToCart(cartItem)
             dishViewModel.cartMutableLiveData.observe(viewLifecycleOwner) { postModels ->
@@ -110,8 +111,8 @@ class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavourite
         }
     }
 
-    override fun addToFavourites(item: Dish) {
-        dishViewModel.addToFavourites(item)
+    override fun updateItemFavourite(item: Dish) {
+        dishViewModel.updateFavourites(item)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

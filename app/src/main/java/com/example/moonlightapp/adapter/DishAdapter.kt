@@ -21,11 +21,11 @@ class DishAdapter(
     private val addable: AddableToCart,
     private var favListener: UpdatableFavourites
 ) :
-    RecyclerView.Adapter<DishAdapter.CategoryItemViewHolder>() {
+    RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
 
     private var favourites: FavouriteList = FavouriteList()
 
-    class CategoryItemViewHolder(private val binding: ItemDishBinding) :
+    class DishViewHolder(private val binding: ItemDishBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(data: Dish, addable: AddableToCart, favListener: UpdatableFavourites, favourites: FavouriteList) {
@@ -35,7 +35,7 @@ class DishAdapter(
             }
             var flag = !favourites.isFavourite(data)
             binding.addToFavourite.setOnClickListener {
-                favListener.addToFavourites(data)
+                favListener.updateItemFavourite(data)
                 if (flag) {
                     binding.addToFavourite.setImageResource(R.drawable.ic_heart_select)
                     flag = !flag
@@ -47,18 +47,18 @@ class DishAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
         val binding: ItemDishBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
             R.layout.item_dish,
             parent,
             false
         )
-        return CategoryItemViewHolder(binding)
+        return DishViewHolder(binding)
     }
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: CategoryItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
         val item = categoryItem[position]
         holder.bind(item, addable, favListener, favourites)
         holder.itemView.setOnClickListener {
