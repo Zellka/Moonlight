@@ -2,12 +2,11 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_content_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="8dp"
-    android:layout_marginLeft="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="0dp">
 
@@ -17,7 +16,7 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/title_text_view"
+            android:id="@+id/title_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -25,7 +24,7 @@
             android:textSize="20dp" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_nested"
+            android:id="@+id/rv_dish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

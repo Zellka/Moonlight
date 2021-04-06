@@ -6,41 +6,46 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moonlightapp.R
-import com.example.moonlightapp.data.FavouriteList
+import com.example.moonlightapp.data.FavoritesList
 import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.utils.ShowableDish
 import com.example.moonlightapp.databinding.ItemDishBinding
-import com.example.moonlightapp.utils.UpdatableFavourites
+import com.example.moonlightapp.utils.UpdatableFavorites
 import kotlinx.android.synthetic.main.item_dish.view.*
 
 class DishAdapter(
     private val categoryItem: List<Dish>,
     private val listener: ShowableDish,
     private val addable: AddableToCart,
-    private var favListener: UpdatableFavourites
+    private var favListener: UpdatableFavorites
 ) :
     RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
 
-    private var favourites: FavouriteList = FavouriteList()
+    private var favourites: FavoritesList = FavoritesList()
 
     class DishViewHolder(private val binding: ItemDishBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(data: Dish, addable: AddableToCart, favListener: UpdatableFavourites, favourites: FavouriteList) {
+        fun bind(
+            data: Dish,
+            addable: AddableToCart,
+            favListener: UpdatableFavorites,
+            favourites: FavoritesList
+        ) {
             binding.dish = data
-            binding.addToCart.setOnClickListener {
+            binding.btnAdd.setOnClickListener {
                 addable.addToCart(Cart(data))
             }
-            var flag = !favourites.isFavourite(data)
-            binding.addToFavourite.setOnClickListener {
-                favListener.updateItemFavourite(data)
+            var flag = !favourites.isFavorite(data)
+            binding.btnAddFavorite.setOnClickListener {
+                favListener.updateItemFavorite(data)
                 if (flag) {
-                    binding.addToFavourite.setImageResource(R.drawable.ic_heart_select)
+                    binding.btnAddFavorite.setImageResource(R.drawable.ic_heart_select)
                     flag = !flag
                 } else {
-                    binding.addToFavourite.setImageResource(R.drawable.ic_heart)
+                    binding.btnAddFavorite.setImageResource(R.drawable.ic_heart)
                     flag = !flag
                 }
             }
@@ -64,10 +69,10 @@ class DishAdapter(
         holder.itemView.setOnClickListener {
             listener.showDish(item)
         }
-        if (favourites.isFavourite(item)) {
-            holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_heart_select)
+        if (favourites.isFavorite(item)) {
+            holder.itemView.btn_add_favorite.setImageResource(R.drawable.ic_heart_select)
         } else {
-            holder.itemView.add_to_favourite.setImageResource(R.drawable.ic_heart)
+            holder.itemView.btn_add_favorite.setImageResource(R.drawable.ic_heart)
         }
     }
 

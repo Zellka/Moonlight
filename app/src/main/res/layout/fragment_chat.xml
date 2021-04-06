@@ -20,21 +20,21 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight=".5"
+            android:background="@color/white"
             android:backgroundTint="@android:color/white"
             android:hint="@string/hint_message"
             android:inputType="textShortMessage"
             android:padding="10dp"
-            android:background="@color/white"
             android:singleLine="true" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btn_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:background="@null"
-            android:src="@drawable/ic_send"/>
+            android:src="@drawable/ic_send" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

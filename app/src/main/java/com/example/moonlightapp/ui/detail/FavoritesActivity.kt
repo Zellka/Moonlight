@@ -12,35 +12,35 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.moonlightapp.R
-import com.example.moonlightapp.adapter.FavouriteAdapter
+import com.example.moonlightapp.adapter.FavoriteAdapter
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Dish
 import com.example.moonlightapp.utils.AddableToCart
-import com.example.moonlightapp.utils.UpdatableFavourites
-import com.example.moonlightapp.viewmodels.FavouriteViewModel
+import com.example.moonlightapp.utils.UpdatableFavorites
+import com.example.moonlightapp.viewmodels.FavoritesViewModel
 import com.google.android.material.snackbar.Snackbar
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
-import kotlinx.android.synthetic.main.activity_favourite.*
+import kotlinx.android.synthetic.main.activity_favorites.*
 
-class FavouriteActivity : AppCompatActivity(), UpdatableFavourites, AddableToCart {
+class FavoritesActivity : AppCompatActivity(), UpdatableFavorites, AddableToCart {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: FavouriteAdapter
-    private lateinit var favouriteViewModel: FavouriteViewModel
+    private lateinit var adapter: FavoriteAdapter
+    private lateinit var favoritesViewModel: FavoritesViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_favourite)
-        favouriteViewModel = ViewModelProvider(this).get(FavouriteViewModel::class.java)
+        setContentView(R.layout.activity_favorites)
+        favoritesViewModel = ViewModelProvider(this).get(FavoritesViewModel::class.java)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = "Избранное"
 
-        recyclerView = findViewById(R.id.rv_favourite)
+        recyclerView = findViewById(R.id.rv_favorite)
         recyclerView.layoutManager =
             GridLayoutManager(applicationContext, 2, LinearLayoutManager.VERTICAL, false)
-        adapter = FavouriteAdapter(this, this)
+        adapter = FavoriteAdapter(this, this)
         getFavouriteList()
         recyclerView.adapter = adapter
 
@@ -52,30 +52,30 @@ class FavouriteActivity : AppCompatActivity(), UpdatableFavourites, AddableToCar
     }
 
     private fun getFavouriteList() {
-        favouriteViewModel.getFavouritesList()
-        favouriteViewModel.favouritesMutableLiveData.observe(this) { postModels ->
+        favoritesViewModel.getFavoritesList()
+        favoritesViewModel.favoritesMutableLiveData.observe(this) { postModels ->
             adapter.setList(postModels)
         }
     }
 
     @SuppressLint("CheckResult")
     override fun addToCart(cartItem: Cart) {
-        favouriteViewModel.getCartList()
-        Snackbar.make(favorite_layout, "Добавлено: " + cartItem.product.name, Snackbar.LENGTH_SHORT)
+        favoritesViewModel.getCartList()
+        Snackbar.make(layout_favorite, "Добавлено: " + cartItem.product.name, Snackbar.LENGTH_SHORT)
             .setBackgroundTint(
                 Color.parseColor("#FFFFFF")
             ).setTextColor(Color.BLACK)
             .show()
         Observable.create(ObservableOnSubscribe<MutableList<Cart>> {
-            favouriteViewModel.addDishToCart(cartItem)
-            favouriteViewModel.cartMutableLiveData.observe(this) { postModels ->
+            favoritesViewModel.addDishToCart(cartItem)
+            favoritesViewModel.cartMutableLiveData.observe(this) { postModels ->
                 it.onNext(postModels)
             }
         }).subscribe()
     }
 
-    override fun updateItemFavourite(item: Dish) {
-        favouriteViewModel.updateFavourites(item)
+    override fun updateItemFavorite(item: Dish) {
+        favoritesViewModel.updateFavorites(item)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

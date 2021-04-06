@@ -25,7 +25,7 @@
             tools:ignore="RtlCompat">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/totalLabel"
+                android:id="@+id/title_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Всего:"
@@ -53,7 +53,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/button_order"
+            android:id="@+id/btn_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"

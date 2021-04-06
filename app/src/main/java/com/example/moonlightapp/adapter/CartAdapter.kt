@@ -34,7 +34,7 @@ class CartAdapter(
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val model = cartItems[position]
         viewHolder.bind(model)
-        viewHolder.itemView.removeItem.setOnClickListener {
+        viewHolder.itemView.btn_remove.setOnClickListener {
             removable.removeFromCart(cartItems, position)
             notifyDataSetChanged()
         }
@@ -43,7 +43,7 @@ class CartAdapter(
     class ViewHolder(private val binding: ItemCartBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Cart) {
             binding.cart = data
-            binding.productQuantity.text = data.quantity.toString()
+            binding.quantity.text = data.quantity.toString()
         }
     }
 

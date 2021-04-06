@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data />
@@ -87,7 +86,7 @@
 
 
         <RelativeLayout
-            android:id="@+id/order_layout"
+            android:id="@+id/layout_orders"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp">
@@ -102,7 +101,7 @@
                 android:textSize="14dp" />
 
             <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/order_history"
+                android:id="@+id/btn_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -121,7 +120,7 @@
             android:padding="5dp" />
 
         <RelativeLayout
-            android:id="@+id/delivery_layout"
+            android:id="@+id/layout_delivery"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="5dp">
@@ -136,7 +135,7 @@
                 android:textSize="14dp" />
 
             <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/delivery"
+                android:id="@+id/btn_delivery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

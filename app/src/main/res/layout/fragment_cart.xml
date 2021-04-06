@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_margin="5dp"
+    android:orientation="vertical"
     android:paddingBottom="52dp"
     tools:context=".ui.main.CartFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_basket"
+        android:id="@+id/rv_cart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="65dp"
         android:scrollbars="vertical"
-        tools:listitem="@layout/item_cart"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_cart" />
 
     <include layout="@layout/total_panel" />
 

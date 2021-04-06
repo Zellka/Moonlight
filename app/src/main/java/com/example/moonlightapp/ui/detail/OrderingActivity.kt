@@ -28,12 +28,12 @@ class OrderingActivity : AppCompatActivity() {
         supportActionBar!!.title = "Оформление заказа"
         val arguments = intent.extras
         val totalSum = arguments!!["TOTAL_SUM"].toString()
-        button_order.text = "Заказать за $totalSum"
+        btn_order.text = "Заказать за $totalSum"
         val orderNum = (1..1001).random()
         val date: String = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(Date())
         val order = HistoryOrder("Заказ № $orderNum", date, totalSum)
-        button_order.setOnClickListener {
-            if (userName.text!!.isNotEmpty() && userNumber.text!!.isNotEmpty() && userAddress.text!!.isNotEmpty()) {
+        btn_order.setOnClickListener {
+            if (edit_name.text!!.isNotEmpty() && edit_number.text!!.isNotEmpty() && edit_address.text!!.isNotEmpty()) {
                 Toast.makeText(this, "Заказ оформлен", Toast.LENGTH_SHORT).show()
                 orderViewModel.addOrder(order)
                 this.finish()

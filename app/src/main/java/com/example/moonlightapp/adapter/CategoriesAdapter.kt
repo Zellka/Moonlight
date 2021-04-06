@@ -13,7 +13,7 @@ import com.example.moonlightapp.R
 import com.example.moonlightapp.utils.AddableToCart
 import com.example.moonlightapp.entity.Categories
 import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.utils.UpdatableFavourites
+import com.example.moonlightapp.utils.UpdatableFavorites
 import com.example.moonlightapp.utils.ShowableDish
 import java.util.*
 import kotlin.collections.ArrayList
@@ -21,7 +21,7 @@ import kotlin.collections.ArrayList
 class CategoriesAdapter(
     private val context: Context,
     private val addable: AddableToCart,
-    private var favListener: UpdatableFavourites
+    private var favListener: UpdatableFavorites
 ) :
     RecyclerView.Adapter<CategoriesAdapter.MainViewHolder>(), Filterable {
     private lateinit var listener: ShowableDish
@@ -29,8 +29,8 @@ class CategoriesAdapter(
     private var categories: MutableList<Categories> = ArrayList()
 
     class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var categoryTitle: TextView = itemView.findViewById(R.id.title_text_view)
-        var itemRecycler: RecyclerView = itemView.findViewById(R.id.recycler_nested)
+        var categoryTitle: TextView = itemView.findViewById(R.id.title_category)
+        var itemRecycler: RecyclerView = itemView.findViewById(R.id.rv_dish)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {

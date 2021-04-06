@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.moonlightapp.data.ShoppingCart
 import com.example.moonlightapp.data.CategoriesRepository
-import com.example.moonlightapp.data.FavouriteList
+import com.example.moonlightapp.data.FavoritesList
 import com.example.moonlightapp.entity.Cart
 import com.example.moonlightapp.entity.Categories
 import com.example.moonlightapp.entity.Dish
@@ -19,7 +19,7 @@ class MenuViewModel: ViewModel() {
 
     private var dishData: CategoriesRepository = CategoriesRepository()
     private var cart: ShoppingCart = ShoppingCart()
-    private var favourites: FavouriteList = FavouriteList()
+    private var favourites: FavoritesList = FavoritesList()
 
     fun getAllCategoriesList() {
         categoriesMutableLiveData.value = dishData.getData()

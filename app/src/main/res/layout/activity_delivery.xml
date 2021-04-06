@@ -8,87 +8,87 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:textSize="24dp"
-        android:paddingTop="10dp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:text="@string/title_delivery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/title_delivery"
+            android:textColor="@android:color/black"
+            android:textSize="24dp"
+            android:textStyle="bold" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="10dp"
-        android:lineSpacingExtra="5dp"
-        android:text="@string/information_delivery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/information_delivery"
+            android:textColor="@android:color/black" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:textSize="20dp"
-        android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:text="@string/title_time_and_cost_delivery"
-        android:layout_width="match_parent"
-        android:paddingTop="15dp"
-        android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="15dp"
+            android:text="@string/title_time_and_cost_delivery"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="10dp"
-        android:lineSpacingExtra="5dp"
-        android:text="@string/time_and_cost_delivery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/time_and_cost_delivery"
+            android:textColor="@android:color/black" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:textSize="20dp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="10dp"
-        android:text="@string/title_delivery_areas"
-        android:paddingTop="15dp"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="15dp"
+            android:text="@string/title_delivery_areas"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="10dp"
-        android:lineSpacingExtra="5dp"
-        android:text="@string/green_zone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/green_zone"
+            android:textColor="@android:color/black" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:textColor="@android:color/black"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:text="@string/information_green_zone"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/information_green_zone"
+            android:textColor="@android:color/black" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:textColor="@android:color/black"
-        android:text="@string/yellow_zone"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:lineSpacingExtra="5dp"
-        android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/yellow_zone"
+            android:textColor="@android:color/black" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:textColor="@android:color/black"
-        android:paddingTop="10dp"
-        android:text="@string/information_yellow_zone"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/information_yellow_zone"
+            android:textColor="@android:color/black" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </ScrollView>

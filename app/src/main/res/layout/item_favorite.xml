@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/img_fav"
+                    android:id="@+id/img_dish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -37,7 +37,7 @@
                     app:imageUrl="@{dish.url}" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/add_to_favourite"
+                    android:id="@+id/btn_add_favorite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -49,7 +49,7 @@
             </RelativeLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/name_fav"
+                android:id="@+id/name_dish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content">
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/price_fav"
+                    android:id="@+id/price_dish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -88,7 +88,7 @@
                     android:id="@+id/currency_symbols"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/price_fav"
+                    android:layout_toRightOf="@+id/price_dish"
                     android:gravity="left"
                     android:paddingLeft="0dp"
                     android:paddingRight="5dp"
@@ -100,7 +100,7 @@
                     tools:ignore="RtlHardcoded" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/add_to_cart"
+                    android:id="@+id/btn_add"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentRight="true"

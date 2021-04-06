@@ -32,11 +32,11 @@ class InfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val intentDelivery = Intent(this.context, DeliveryActivity::class.java)
-        binding.deliveryLayout.setOnClickListener {
+        binding.layoutDelivery.setOnClickListener {
             startActivity(intentDelivery)
         }
         val intentOrders = Intent(this.context, HistoryOrdersActivity::class.java)
-        binding.orderLayout.setOnClickListener {
+        binding.layoutOrders.setOnClickListener {
             startActivity(intentOrders)
         }
     }

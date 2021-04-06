@@ -37,7 +37,7 @@
                     app:imageUrl="@{dish.url}" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/add_to_favourite"
+                    android:id="@+id/btn_add_favorite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@null"
@@ -98,7 +98,7 @@
                     tools:ignore="RtlHardcoded" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/addToCart"
+                    android:id="@+id/btn_add"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentRight="true"

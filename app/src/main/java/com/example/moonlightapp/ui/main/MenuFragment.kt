@@ -20,8 +20,8 @@ import com.example.moonlightapp.ui.detail.DishFragment
 import com.example.moonlightapp.ui.MainActivity
 import com.example.moonlightapp.utils.ShowableDish
 import com.example.moonlightapp.entity.Dish
-import com.example.moonlightapp.ui.detail.FavouriteActivity
-import com.example.moonlightapp.utils.UpdatableFavourites
+import com.example.moonlightapp.ui.detail.FavoritesActivity
+import com.example.moonlightapp.utils.UpdatableFavorites
 import com.example.moonlightapp.viewmodels.MenuViewModel
 import com.google.android.material.snackbar.Snackbar
 import io.reactivex.ObservableOnSubscribe
@@ -30,7 +30,7 @@ import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_menu.*
 import java.util.*
 
-class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavourites {
+class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavorites {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
@@ -52,7 +52,7 @@ class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavourite
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView = view.findViewById(R.id.recycler_parent)
+        recyclerView = view.findViewById(R.id.rv_category)
         recyclerView.layoutManager = LinearLayoutManager(context)
         categoriesAdapter = CategoriesAdapter(this.requireContext(), this, this)
         categoriesAdapter.setOnItemClickListener(this)
@@ -90,7 +90,7 @@ class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavourite
     @SuppressLint("CheckResult")
     override fun addToCart(cartItem: Cart) {
         dishViewModel.getCartList()
-        Snackbar.make(menu_container, "Добавлено: " + cartItem.product.name, Snackbar.LENGTH_SHORT)
+        Snackbar.make(layout_menu, "Добавлено: " + cartItem.product.name, Snackbar.LENGTH_SHORT)
             .setBackgroundTint(
                 Color.parseColor("#FFFFFF")
             ).setTextColor(Color.BLACK)
@@ -111,7 +111,7 @@ class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavourite
         }
     }
 
-    override fun updateItemFavourite(item: Dish) {
+    override fun updateItemFavorite(item: Dish) {
         dishViewModel.updateFavourites(item)
     }
 
@@ -137,7 +137,7 @@ class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavourite
             })
         }
         if (id == R.id.action_favourite) {
-            val intent = Intent(this.context, FavouriteActivity::class.java)
+            val intent = Intent(this.context, FavoritesActivity::class.java)
             startActivity(intent)
         }
         return super.onOptionsItemSelected(item)

@@ -47,7 +47,7 @@ class CartFragment : Fragment(), RemovableFromCart {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = CartAdapter(this.requireContext(), this)
-        recyclerView = view.findViewById(R.id.rv_basket)
+        recyclerView = view.findViewById(R.id.rv_cart)
         cartViewModel.getCartList()
         cartViewModel.cartMutableLiveData.observe(viewLifecycleOwner) { postModels ->
             adapter.setList(postModels)

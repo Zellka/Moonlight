@@ -9,7 +9,7 @@
     tools:context=".ui.detail.OrderingActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img_name"
+        android:id="@+id/ic_person"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
@@ -20,10 +20,10 @@
         android:src="@drawable/ic_user" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/userName"
+        android:id="@+id/edit_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/img_name"
+        android:layout_toRightOf="@+id/ic_person"
         android:background="@color/colorPrimary"
         android:hint="@string/name_order"
         android:inputType="textPersonName"
@@ -34,10 +34,10 @@
         android:singleLine="true" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img_number"
+        android:id="@+id/ic_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userName"
+        android:layout_below="@+id/edit_name"
         android:background="@null"
         android:paddingLeft="20dp"
         android:paddingTop="30dp"
@@ -46,11 +46,11 @@
         android:src="@drawable/ic_phone" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/userNumber"
+        android:id="@+id/edit_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userName"
-        android:layout_toRightOf="@+id/img_number"
+        android:layout_below="@+id/edit_name"
+        android:layout_toRightOf="@+id/ic_phone"
         android:background="@color/colorPrimary"
         android:hint="@string/number_order"
         android:inputType="phone"
@@ -61,10 +61,10 @@
         android:singleLine="true" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img_address"
+        android:id="@+id/ic_marker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userNumber"
+        android:layout_below="@+id/edit_number"
         android:background="@null"
         android:paddingLeft="20dp"
         android:paddingTop="30dp"
@@ -73,11 +73,11 @@
         android:src="@drawable/ic_maps_flags" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/userAddress"
+        android:id="@+id/edit_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userNumber"
-        android:layout_toRightOf="@+id/img_address"
+        android:layout_below="@+id/edit_number"
+        android:layout_toRightOf="@+id/ic_marker"
         android:background="@color/colorPrimary"
         android:hint="Адрес доставки"
         android:paddingLeft="10dp"
@@ -87,10 +87,10 @@
         android:singleLine="true" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img_comment"
+        android:id="@+id/ic_comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userAddress"
+        android:layout_below="@+id/edit_address"
         android:background="@null"
         android:paddingLeft="20dp"
         android:paddingTop="30dp"
@@ -99,11 +99,11 @@
         android:src="@drawable/ic_comment" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/userComment"
+        android:id="@+id/edit_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userAddress"
-        android:layout_toRightOf="@+id/img_comment"
+        android:layout_below="@+id/edit_address"
+        android:layout_toRightOf="@+id/ic_comment"
         android:background="@color/colorPrimary"
         android:hint="@string/comment_order"
         android:paddingLeft="10dp"
@@ -113,10 +113,10 @@
         android:singleLine="true" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_order"
+        android:id="@+id/btn_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userComment"
+        android:layout_below="@+id/edit_comment"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_marginLeft="10dp"
@@ -127,6 +127,5 @@
         android:gravity="center"
         android:textColor="@color/colorAccent"
         android:textSize="18dp" />
-
 
 </RelativeLayout>
