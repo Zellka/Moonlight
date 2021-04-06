@@ -23,7 +23,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/title_city"
                 android:textColor="@android:color/black"
-                android:textSize="20dp"
+                android:textSize="22dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -32,7 +32,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/name_city"
                 android:textColor="@android:color/black"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                 android:paddingTop="15dp"
                 android:text="@string/title_communication"
                 android:textColor="@android:color/black"
-                android:textSize="20dp"
+                android:textSize="22dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -50,7 +50,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="@string/call_to_chat"
                 android:textColor="@android:color/black"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -59,7 +59,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/help_offer"
                 android:textColor="@android:color/black"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
@@ -67,7 +67,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="@string/delivery_service_number"
                 android:textColor="@android:color/black"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -76,7 +76,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/call_to_call"
                 android:textColor="@android:color/black"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -86,9 +86,8 @@
                 android:paddingTop="15dp"
                 android:text="Дополнительная информация"
                 android:textColor="@android:color/black"
-                android:textSize="20dp"
+                android:textSize="22dp"
                 android:textStyle="bold" />
-
 
             <RelativeLayout
                 android:id="@+id/layout_orders"
@@ -103,7 +102,7 @@
                     android:paddingTop="5dp"
                     android:text="Ваша история заказов"
                     android:textColor="@android:color/black"
-                    android:textSize="14dp" />
+                    android:textSize="16dp" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/btn_order"
@@ -137,7 +136,7 @@
                     android:paddingTop="5dp"
                     android:text="@string/title_delivery"
                     android:textColor="@android:color/black"
-                    android:textSize="14dp" />
+                    android:textSize="16dp" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/btn_delivery"
