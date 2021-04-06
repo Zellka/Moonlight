@@ -1,131 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:layout_margin="10dp"
-    android:padding="10dp"
     tools:context=".ui.detail.OrderingActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ic_person"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:paddingLeft="20dp"
-        android:paddingTop="30dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:src="@drawable/ic_user" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edit_name"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/ic_person"
-        android:background="@color/colorPrimary"
-        android:hint="@string/name_order"
-        android:inputType="textPersonName"
-        android:paddingLeft="10dp"
-        android:paddingTop="30dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:singleLine="true" />
+        android:layout_margin="10dp"
+        android:padding="10dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ic_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_name"
-        android:background="@null"
-        android:paddingLeft="20dp"
-        android:paddingTop="30dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:src="@drawable/ic_phone" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:paddingLeft="20dp"
+            android:paddingTop="30dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/ic_user" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edit_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_name"
-        android:layout_toRightOf="@+id/ic_phone"
-        android:background="@color/colorPrimary"
-        android:hint="@string/number_order"
-        android:inputType="phone"
-        android:paddingLeft="10dp"
-        android:paddingTop="30dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:singleLine="true" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ic_person"
+            android:background="@color/colorPrimary"
+            android:hint="@string/name_order"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:paddingTop="30dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ic_marker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_number"
-        android:background="@null"
-        android:paddingLeft="20dp"
-        android:paddingTop="30dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:src="@drawable/ic_maps_flags" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_name"
+            android:background="@null"
+            android:paddingLeft="20dp"
+            android:paddingTop="30dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/ic_phone" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edit_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_number"
-        android:layout_toRightOf="@+id/ic_marker"
-        android:background="@color/colorPrimary"
-        android:hint="Адрес доставки"
-        android:paddingLeft="10dp"
-        android:paddingTop="30dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:singleLine="true" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_name"
+            android:layout_toRightOf="@+id/ic_phone"
+            android:background="@color/colorPrimary"
+            android:hint="@string/number_order"
+            android:inputType="phone"
+            android:paddingLeft="10dp"
+            android:paddingTop="30dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ic_comment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_address"
-        android:background="@null"
-        android:paddingLeft="20dp"
-        android:paddingTop="30dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:src="@drawable/ic_comment" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_marker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_number"
+            android:background="@null"
+            android:paddingLeft="20dp"
+            android:paddingTop="30dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/ic_maps_flags" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edit_comment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_address"
-        android:layout_toRightOf="@+id/ic_comment"
-        android:background="@color/colorPrimary"
-        android:hint="@string/comment_order"
-        android:paddingLeft="10dp"
-        android:paddingTop="30dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:singleLine="true" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_number"
+            android:layout_toRightOf="@+id/ic_marker"
+            android:background="@color/colorPrimary"
+            android:hint="Адрес доставки"
+            android:paddingLeft="10dp"
+            android:paddingTop="30dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_order"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_comment"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/btn_round_selector"
-        android:gravity="center"
-        android:textColor="@color/colorAccent"
-        android:textSize="18dp" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_address"
+            android:background="@null"
+            android:paddingLeft="20dp"
+            android:paddingTop="30dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/ic_comment" />
 
-</RelativeLayout>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_address"
+            android:layout_toRightOf="@+id/ic_comment"
+            android:background="@color/colorPrimary"
+            android:hint="@string/comment_order"
+            android:paddingLeft="10dp"
+            android:paddingTop="30dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_comment"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_round_selector"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+</ScrollView>
