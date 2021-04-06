@@ -92,10 +92,12 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_add"
-                android:layout_width="100dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dish_weight"
                 android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:textSize="16dp"
                 android:background="@drawable/btn_round_selector"
                 android:text="Добавить"
                 android:textColor="@color/colorAccent" />
