@@ -59,4 +59,7 @@
 
     <string name="first_mes_bot">Привет! Вам нужна помощь?</string>
 
+    <string name="warning_chat_min_sum">Минимальная сумма заказа 400₽</string>
+    <string name="warning_chat_cart_empty">Корзина пуста</string>
+
 </resources>

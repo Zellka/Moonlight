@@ -59,7 +59,7 @@ class CartFragment : Fragment(), RemovableFromCart {
         var totalSum = ""
         cartViewModel.totalPriceMutableLiveData.observe(viewLifecycleOwner) { totalPrice ->
             totalTextView.text = "$totalPrice"
-            totalSum = "$totalPrice ₽"
+            totalSum = "$totalPrice " + context?.getString(R.string.currency_symbols)
         }
         val totalPanel = view.findViewById<CardView>(R.id.total_panel)
         totalPanel.setOnClickListener {
@@ -69,11 +69,11 @@ class CartFragment : Fragment(), RemovableFromCart {
                     intent.putExtra("TOTAL_SUM", totalSum)
                     context?.startActivity(intent)
                 } else {
-                    Toast.makeText(context, "Минимальная сумма заказа 400₽", Toast.LENGTH_SHORT)
+                    Toast.makeText(context, context?.getString(R.string.warning_chat_min_sum), Toast.LENGTH_SHORT)
                         .show()
                 }
             } else {
-                Toast.makeText(context, "Корзина пуста", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, context?.getString(R.string.warning_chat_cart_empty), Toast.LENGTH_SHORT).show()
             }
         }
     }
