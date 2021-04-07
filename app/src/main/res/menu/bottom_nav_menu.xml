@@ -14,11 +14,11 @@
     <item
         android:id="@+id/navigation_chat"
         android:icon="@drawable/chat_selector"
-        android:title="@string/title_chat" />
+        android:title="@string/title_chat_menu" />
 
     <item
         android:id="@+id/navigation_info"
         android:icon="@drawable/info_selector"
-        android:title="@string/title_info" />
+        android:title="@string/title_info_menu" />
 
 </menu>

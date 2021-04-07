@@ -28,7 +28,7 @@
                 android:id="@+id/title_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Всего:"
+                android:text="@string/title_total_panel"
                 android:textColor="@color/colorAccent"
                 android:textSize="24dp" />
 
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/total_price"
                 android:paddingLeft="5dp"
-                android:text=" ₽"
+                android:text="@string/currency_symbols"
                 android:textColor="@color/colorAccent"
                 android:textSize="24dp" />
 

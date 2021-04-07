@@ -3,37 +3,39 @@
     <string name="title_home">Главная</string>
     <string name="title_menu">Меню</string>
     <string name="title_cart">Корзина</string>
-    <string name="title_chat">Чат</string>
-    <string name="title_profile">Профиль</string>
+    <string name="title_chat_menu">Чат</string>
+    <string name="title_chat">Поддержка</string>
+    <string name="title_info_menu">Ещё</string>
+    <string name="title_history_order">Заказы</string>
+    <string name="title_favorites">Избранное</string>
+    <string name="title_delivery">Доставка и оплата</string>
+    <string name="title_clear">Очистить</string>
+    <string name="title_search">Поиск</string>
 
-    <string name="title_pizza">Пицца</string>
     <string name="title_salads">Салаты</string>
-    <string name="title_main_dishes">Основное</string>
+    <string name="title_snacks">Закуски</string>
+    <string name="title_main_dishes">Основные блюда</string>
+    <string name="title_side_dishes">Гарниры</string>
     <string name="title_desserts">Десерты</string>
 
     <string name="hint_name">Имя</string>
     <string name="hint_number">Номер телефона</string>
+    <string name="hint_address">Адрес доставки</string>
+    <string name="hint_comment">Комментарий к заказу</string>
+    <string name="hint_search">Найти блюдо или категорию</string>
+    <string name="hint_message">Напиши сообщение</string>
 
     <string name="text_greeting">Привет!</string>
-    <string name="log_in">Войти</string>
-    <string name="log_out">Выйти</string>
-    <string name="authorization">Авторизация</string>
-    <string name="order_history">Заказы</string>
-    <string name="favorites">Избранное</string>
-    <string name="title_city">Ваш город</string>
+    <string name="your_city">Ваш город</string>
     <string name="name_city">Донецк</string>
     <string name="title_communication">Давай общаться!</string>
     <string name="call_to_chat">Напиши нам в чат</string>
     <string name="help_offer">Ответим на любой вопрос и оформим заказ</string>
     <string name="delivery_service_number">+38 (071) 333–33-00</string>
     <string name="call_to_call">Звони, будем рады слышать</string>
-
-    <string name="title_delivery">Доставка и оплата</string>
     <string name="information_delivery">Заказы принимаются круглосуточно каждый день по телефону +38 (071) 000–00-00 или в режиме онлайн через приложение. Мы доставляем заказы с 10:00 до 21:00. Каждый заказ готовится индивидуально и упаковывается непосредственно перед отправкой.</string>
-
     <string name="title_time_and_cost_delivery">Время и стоимость доставки</string>
     <string name="time_and_cost_delivery">Доставка осуществляется по Донецку с 10:00 до 21:00. Доставка бесплатная. Минимальная сумма заказа - 400 рублей.</string>
-
     <string name="title_delivery_areas">В районы</string>
     <string name="green_zone">\t- Ворошиловский район\n
         \t- Калининский район\n
@@ -49,18 +51,12 @@
     </string>
     <string name="information_yellow_zone">Бесплатная доставка в течение часа.</string>
 
-    <string name="hint_message">Напиши сообщение</string>
     <string name="text_btn_send">Отправить</string>
+    <string name="text_btn_add">Добавить</string>
 
+    <string name="title_total_panel">Всего:</string>
+    <string name="currency_symbols"> ₽</string>
 
-    <string name="name_order">Имя получателя</string>
-    <string name="number_order">Номер мобильного</string>
-    <string name="street_order">Улица</string>
-    <string name="home_order">№ дома/строения</string>
-    <string name="number_office_order">№ квартиры/офиса/каб.</string>
-    <string name="code_intercom_order">Код домофона</string>
-    <string name="comment_order">Комментарий к заказу</string>
-    <string name="Donetsk">Донецк</string>
-    <string name="Makeevka">Макеевка</string>
-    <string name="title_info">Ещё</string>
+    <string name="first_mes_bot">Привет! Вам нужна помощь?</string>
+
 </resources>

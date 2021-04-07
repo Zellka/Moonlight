@@ -43,7 +43,7 @@ class ChatFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         clickEvents()
-        customBotMessage("Привет! Вам нужна помощь?")
+        customBotMessage(getString(R.string.first_mes_bot))
     }
 
     private fun clickEvents() {

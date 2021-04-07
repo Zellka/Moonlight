@@ -125,6 +125,7 @@ class MenuFragment : Fragment(), ShowableDish, AddableToCart, UpdatableFavorites
 
         if (id == R.id.action_search) {
             val searchView = item.actionView as SearchView
+            searchView.queryHint = context?.getString(R.string.hint_search)
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     return false

@@ -5,7 +5,7 @@
     <item
         android:id="@+id/action_search"
         android:icon="@drawable/ic_search"
-        android:title="Поиск"
+        android:title="@string/title_search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always|collapseActionView" />
 
@@ -13,6 +13,6 @@
         android:id="@+id/action_favourite"
         android:icon="@drawable/ic_heart_menu"
         android:iconTint="@color/colorAccent"
-        android:title="@string/favorites"
+        android:title="@string/title_favorites"
         app:showAsAction="always" />
 </menu>

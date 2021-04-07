@@ -54,7 +54,7 @@
                 android:gravity="left"
                 android:paddingLeft="0dp"
                 android:paddingTop="8dp"
-                android:text=" ₽"
+                android:text="@string/currency_symbols"
                 android:textColor="@color/colorAccent"
                 android:textSize="20dp" />
 
@@ -96,11 +96,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dish_weight"
                 android:layout_alignParentRight="true"
-                android:gravity="center"
-                android:textSize="16dp"
                 android:background="@drawable/btn_round_selector"
-                android:text="Добавить"
-                android:textColor="@color/colorAccent" />
+                android:gravity="center"
+                android:text="@string/text_btn_add"
+                android:textColor="@color/colorAccent"
+                android:textSize="16dp" />
 
         </RelativeLayout>
 
