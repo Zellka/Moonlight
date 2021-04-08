@@ -26,11 +26,11 @@ class MenuViewModel: ViewModel() {
     }
 
     fun addDishToCart(cartItem: Cart){
-        cart.addItem(cartItem)
+        cart.addDish(cartItem)
     }
 
     fun updateFavourites(dishItem: Dish){
-        favourites.updateItem(dishItem)
+        favourites.updateFavorite(dishItem)
     }
 
     fun getCartList(){

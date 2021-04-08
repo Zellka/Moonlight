@@ -16,7 +16,7 @@ class CartViewModel : ViewModel() {
         MutableLiveData()
 
     fun removeDishFromCart(cartItems: MutableList<Cart>, position: Int) {
-        cart.removeItem(cartItems, position)
+        cart.removeDish(cartItems, position)
     }
 
     fun getCartList() {

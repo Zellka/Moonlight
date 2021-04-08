@@ -5,7 +5,7 @@ import io.paperdb.Paper
 
 class FavoritesList {
 
-    fun updateItem(item: Dish) {
+    fun updateFavorite(item: Dish) {
         val favoriteList = getFavoriteList()
         val targetItem = favoriteList.singleOrNull { it.name == item.name }
         if (targetItem == null) {

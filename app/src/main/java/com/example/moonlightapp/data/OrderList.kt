@@ -5,7 +5,7 @@ import io.paperdb.Paper
 
 class OrderList {
 
-    fun addItem(order: HistoryOrder) {
+    fun addOrder(order: HistoryOrder) {
         val orderList = getOrdersList()
 
         val targetItem = orderList.singleOrNull { it.numberOrder == order.numberOrder }
@@ -15,7 +15,7 @@ class OrderList {
         saveOrderList(orderList)
     }
 
-    fun clearList() {
+    fun clearOrderList() {
         val orderList = getOrdersList()
         orderList.clear()
         saveOrderList(orderList)

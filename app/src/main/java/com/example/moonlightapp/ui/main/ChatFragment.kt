@@ -75,7 +75,7 @@ class ChatFragment : Fragment() {
         GlobalScope.launch {
             delay(2000)
             withContext(Dispatchers.Main) {
-                val response = BotResponse.basicResponses(message)
+                val response = BotResponse.getBasicResponses(message)
                 messagesList.add(Message(response, Companion.RECEIVE_ID))
                 adapter.insertMessage(Message(response, Companion.RECEIVE_ID))
                 recyclerView.scrollToPosition(adapter.itemCount - 1)

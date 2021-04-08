@@ -22,11 +22,11 @@ class FavoritesViewModel : ViewModel() {
     }
 
     fun updateFavorites(dishItem: Dish) {
-        favorites.updateItem(dishItem)
+        favorites.updateFavorite(dishItem)
     }
 
     fun addDishToCart(cartItem: Cart) {
-        cart.addItem(cartItem)
+        cart.addDish(cartItem)
     }
 
     fun getCartList() {

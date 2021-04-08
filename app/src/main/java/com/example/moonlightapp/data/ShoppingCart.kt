@@ -5,7 +5,7 @@ import io.paperdb.Paper
 
 class ShoppingCart {
 
-    fun addItem(cartItem: Cart) {
+    fun addDish(cartItem: Cart) {
         val cart = getCart()
 
         val targetItem = cart.singleOrNull { it.product.name == cartItem.product.name }
@@ -18,7 +18,7 @@ class ShoppingCart {
         saveCart(cart)
     }
 
-    fun removeItem(cartItems: MutableList<Cart>, position: Int) {
+    fun removeDish(cartItems: MutableList<Cart>, position: Int) {
         val targetItem =
             cartItems.singleOrNull { it.product.name == cartItems[position].product.name }
         if (targetItem != null) {

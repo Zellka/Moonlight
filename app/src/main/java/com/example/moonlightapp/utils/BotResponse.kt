@@ -2,10 +2,10 @@ package com.example.moonlightapp.utils
 
 object BotResponse {
 
-    fun basicResponses(_message: String): String {
+    fun getBasicResponses(yourMessage: String): String {
 
         val random = (0..2).random()
-        val message =_message.toLowerCase()
+        val message = yourMessage.toLowerCase()
 
         return when {
 

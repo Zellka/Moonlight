@@ -17,10 +17,10 @@ class OrderViewModel : ViewModel() {
     }
 
     fun addOrder(order: HistoryOrder){
-        orders.addItem(order)
+        orders.addOrder(order)
     }
 
     fun clearAllList() {
-        orders.clearList()
+        orders.clearOrderList()
     }
 }
