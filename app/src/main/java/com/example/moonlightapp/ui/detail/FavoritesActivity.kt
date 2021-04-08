@@ -41,17 +41,17 @@ class FavoritesActivity : AppCompatActivity(), UpdatableFavorites, AddableToCart
         recyclerView.layoutManager =
             GridLayoutManager(applicationContext, 2, LinearLayoutManager.VERTICAL, false)
         adapter = FavoriteAdapter(this, this)
-        getFavouriteList()
+        getFavoriteList()
         recyclerView.adapter = adapter
 
         val swipeRefresh = findViewById<SwipeRefreshLayout>(R.id.swipe_refresh)
         swipeRefresh.setOnRefreshListener {
-            getFavouriteList()
+            getFavoriteList()
             swipeRefresh.isRefreshing = false
         }
     }
 
-    private fun getFavouriteList() {
+    private fun getFavoriteList() {
         favoritesViewModel.getFavoritesList()
         favoritesViewModel.favoritesMutableLiveData.observe(this) { postModels ->
             adapter.setList(postModels)
