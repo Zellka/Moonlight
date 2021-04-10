@@ -22,7 +22,7 @@
     <string name="hint_number">Номер телефона</string>
     <string name="hint_address">Адрес доставки</string>
     <string name="hint_comment">Комментарий к заказу</string>
-    <string name="hint_search">Найти блюдо или категорию</string>
+    <string name="hint_search">Найти категорию</string>
     <string name="hint_message">Напиши сообщение</string>
 
     <string name="text_greeting">Привет!</string>
