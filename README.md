@@ -24,6 +24,7 @@ git clone https://github.com/Zellka/Moonlight.git
 * Data Binding [Docs](https://developer.android.com/topic/libraries/data-binding?hl=lv)
 * Picasso [Docs](https://square.github.io/picasso/)
 * Paper [Docs](https://github.com/pilgr/Paper)
+* RxAndroid [Docs](https://github.com/ReactiveX/RxAndroid)
 
 # Views Used:
 * Bottom Navigation View
